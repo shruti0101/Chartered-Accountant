@@ -1,116 +1,90 @@
 "use client";
-import React from "react";
+
 import {
-  FaBalanceScale,
-  FaGavel,
-  FaUserTie,
-  FaFileAlt,
-} from "react-icons/fa";
-import Image from "next/image";
-import statueImage from "@/public/whychoose.png";
-import whychoosebg from "@/public/whychoosebg.jpg";
+  ShieldCheck,
+  Clock,
+  CheckCircle2,
+  FileCheck,
+  ThumbsUp,
+  UserCheck,
+} from "lucide-react";
+import { motion } from "framer-motion";
 
 const features = [
   {
-    title: "Affordable Services",
-    text: "We offer cost-effective CA solutions without compromising quality.",
-    icon: FaFileAlt,
+    title: "Trust & Compliance",
+    description: "We ensure 100% legal accuracy, transparency, and adherence to all government norms.",
+    icon: ShieldCheck,
   },
   {
-    title: "Compliance Ensured",
-    text: "Stay worry-free with our complete compliance and legal accuracy.",
-    icon: FaBalanceScale,
+    title: "Timely Delivery",
+    description: "Filing deadlines and reports delivered ahead of time — always.",
+    icon: Clock,
   },
   {
-    title: "Simplified Process",
-    text: "We streamline your accounting and tax processes for maximum efficiency.",
-    icon: FaGavel,
+    title: "Verified Expertise",
+    description: "Our Chartered Accountants bring decades of trusted experience.",
+    icon: CheckCircle2,
   },
   {
-    title: "On-Time Delivery",
-    text: "Be assured of timely filings, reports, and expert service every time.",
-    icon: FaUserTie,
+    title: "End-to-End Support",
+    description: "From GST to ROC, we handle every compliance need seamlessly.",
+    icon: FileCheck,
   },
   {
-    title: "Instant Response",
-    text: "Quick support and proactive guidance—anytime you need it.",
-    icon: FaFileAlt,
+    title: "Client Satisfaction",
+    description: "Over 95% client retention through our client-first approach.",
+    icon: ThumbsUp,
   },
   {
-    title: "Industry Experts",
-    text: "Our experienced team brings deep knowledge of multiple sectors.",
-    icon: FaBalanceScale,
+    title: "Dedicated Advisors",
+    description: "Your personal CA advisor is just a call away for real-time guidance.",
+    icon: UserCheck,
   },
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section
-      className="relative py-20 text-white overflow-hidden"
-      style={{
-        backgroundImage: `url(${whychoosebg.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/30 z-0" />
+    <section className="py-20 relative bg-gradient-to-br from-blue-50 via-white to-blue-100">
+      {/* Section Heading */}
+      <div className="text-center mb-14 px-4">
+        <div className="flex items-center justify-center mb-3">
+          <div className="w-14 h-1 bg-sky-500 mr-3 rounded-full" />
+          <h4 className="text-sky-600 font-bold uppercase tracking-widest text-lg">
+            Why Choose Us
+          </h4>
+          <div className="w-14 h-1 bg-sky-500 ml-3 rounded-full" />
+        </div>
 
-      {/* Title */}
-      <div className="relative z-10 text-center mb-14 px-4">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Us</h2>
-        <p className="max-w-2xl mx-auto text-lg text-gray-300">
-          Our all-in-one platform and dedicated team of experts will guide you every step of the way, ensuring your business starts right and takes off in record time.
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-800">
+          Trusted CA Services, Simplified
+        </h2>
+        <p className="max-w-xl mx-auto mt-4 text-gray-600">
+          Our team of Chartered Accountants simplifies your financial journey with expert guidance, legal compliance, and timely delivery.
         </p>
       </div>
 
-      {/* Grid Layout */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-5 max-w-7xl mx-auto px-4 gap-6 items-center">
-        {/* Left 3 Cards */}
-        <div className="flex flex-col gap-6 col-span-2">
-          {features.slice(0, 3).map((item, idx) => (
-            <FeatureCard key={idx} {...item} />
-          ))}
-        </div>
-
-        {/* Center Statue */}
-        <div className="hidden md:flex justify-center col-span-1">
-          <Image
-            src={statueImage}
-            alt="Statue"
-            className="h-[440px] w-auto object-contain z-20"
-          />
-        </div>
-
-        {/* Right 3 Cards */}
-        <div className="flex flex-col gap-6 col-span-2">
-          {features.slice(3).map((item, idx) => (
-            <FeatureCard key={idx + 3} {...item} />
-          ))}
-        </div>
+      {/* Features Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-6">
+        {features.map((item, index) => (
+          <motion.div
+            key={index}
+            whileHover={{ y: -8 }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            className="p-6 bg-white/60 backdrop-blur-sm border border-blue-200 shadow-lg rounded-2xl group transition-all duration-300 hover:shadow-xl"
+          >
+            <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-sky-100 text-sky-600 mb-4 transition-transform duration-300 group-hover:rotate-6">
+              <item.icon size={28} />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-sky-600">
+              {item.title}
+            </h3>
+            <p className="text-sm text-gray-600">{item.description}</p>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
 };
-
-const FeatureCard = ({ title, text, icon: Icon }) => (
-  <div className="relative flex items-center gap-6 border border-white/30 bg-white/5 backdrop-blur-sm p-6 group hover:shadow-lg transition duration-300 h-full">
-    {/* Vertical Line Behind Icon */}
-    <div className="relative flex items-center justify-center h-full">
-      <div className="absolute h-full w-[2px] bg-[#F9B87F] left-1/2 -translate-x-1/2 z-0" />
-      <div className="relative z-10 bg-[#F9B87F] p-4 rounded-sm text-black transition-all duration-300 group-hover:bg-[#AB7949] group-hover:text-white">
-        <Icon size={28} />
-      </div>
-    </div>
-
-    {/* Text Content */}
-    <div>
-      <h3 className="text-xl font-semibold mb-1 transition-colors duration-300 group-hover:text-[#F9B87F]">
-        {title}
-      </h3>
-      <p className="text-sm text-gray-300">{text}</p>
-    </div>
-  </div>
-);
 
 export default WhyChooseUs;

@@ -25,7 +25,7 @@ const slides = [
     cta: { label: "Book a Consultation", href: "/contact" },
   },
   {
-    image: "/hero4.jpg",
+    image: "/home3.jpg",
     heading: "Reliable Accounting, Tax Planning & Financial Advisory",
     lines: [
       "Chartered Accountants You Can Trust for Clarity & Compliance",
@@ -34,7 +34,7 @@ const slides = [
     cta: { label: "Contact With Us", href: "/contact" },
   },
   {
-    image: "/home3.jpg",
+    image: "/hero4.jpg",
     heading: "Register Your Corporate Taxes with Confidence",
     lines: ["Trusted by Businesses Across India"],
     cta: { label: "Request Consultation", href: "/contact" },
@@ -58,15 +58,15 @@ const item = {
 const typewriterWords = [
   {
     text: "Trusted",
-    className: "text-white typed mr-1 font-bold",
+    className: "text-white  typed mr-1 font-bold",
   },
   {
     text: "Financial",
-    className: "text-white typed mr-1 font-bold",
+    className: "text-white  typed mr-1 font-bold",
   },
   {
     text: "Expertise",
-    className: "text-yellow-400 typed font-bold",
+    className: "text-[#2563EB] typed font-bold", 
   },
 ];
 
@@ -76,180 +76,162 @@ const Hero = () => {
   const nextRef = useRef(null);
 
   return (
+    <>
+      {/* Hero Section */}
+      <section className="relative hero w-full h-[100vh] overflow-hidden pb-[20px]">
+        {/* Arrows */}
+        <div
+          ref={prevRef}
+          className="hidden sm:flex group absolute top-1/2 left-4 z-20 transform -translate-y-1/2 cursor-pointer p-3 rounded-full bg-white/20 hover:bg-[#013B7A] transition"
+        >
+          <ChevronLeft className="w-6 h-6 text-white group-hover:text-black transition" />
+        </div>
+        <div
+          ref={nextRef}
+          className="hidden sm:flex group absolute top-1/2 right-4 z-20 transform -translate-y-1/2 cursor-pointer p-3 rounded-full bg-white/20 hover:bg-[#013B7A] transition"
+        >
+          <ChevronRight className="w-6 h-6 text-white group-hover:text-black transition" />
+        </div>
 
-
-<>
-
-
-<section className="relative hero w-full h-[110vh] overflow-hidden pb-[20px]">
-
-      {/* Arrows only on sm+ screens */}
-      <div
-        ref={prevRef}
-        className="hidden sm:flex group absolute top-1/2 left-4 z-20 transform -translate-y-1/2 cursor-pointer p-3 rounded-full bg-white/20 hover:bg-[#DAA520] transition"
-      >
-        <ChevronLeft className="w-6 h-6 text-white group-hover:text-black transition" />
-      </div>
-      <div
-        ref={nextRef}
-        className="hidden sm:flex group absolute top-1/2 right-4 z-20 transform -translate-y-1/2 cursor-pointer p-3 rounded-full bg-white/20 hover:bg-[#DAA520] transition"
-      >
-        <ChevronRight className="w-6 h-6 text-white group-hover:text-black transition" />
-      </div>
-
-      <Swiper
-        modules={[Autoplay, EffectFade, Pagination, Navigation]}
-        effect="fade"
-        loop
-        autoplay={{ delay: 6000, disableOnInteraction: false }}
-        pagination={{ clickable: true }}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
-        }}
-        onSwiper={(swiper) => {
-          setTimeout(() => {
-            if (swiper.params.navigation) {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
-            }
-          });
-        }}
-        onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
-        className="w-full h-full"
-      >
-        {slides.map((slide, idx) => (
-          <SwiperSlide key={idx}>
-            <div
-              className="w-full h-full bg-cover bg-center relative flex items-center justify-center px-4 sm:px-8"
-              style={{ backgroundImage: `url(${slide.image})` }}
-            >
-              <div className="absolute inset-0 bg-black/60 z-0" />
-
-              {activeSlide === idx && (
-                <motion.div
-                  variants={container}
-                  initial="hidden"
-                  animate="show"
-                  className="relative z-10 text-white text-center max-w-[90%] sm:max-w-2xl md:max-w-3xl space-y-5"
-                >
-                  {/* Golden Lines */}
+        {/* Swiper */}
+        <Swiper
+          modules={[Autoplay, EffectFade,  Navigation]}
+          effect="fade"
+          loop
+          autoplay={{ delay: 6000, disableOnInteraction: false }}
+          pagination={{ clickable: false }}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          onSwiper={(swiper) => {
+            setTimeout(() => {
+              if (swiper.params.navigation) {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+                swiper.navigation.init();
+                swiper.navigation.update();
+              }
+            });
+          }}
+          onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
+          className="w-full h-full"
+        >
+          {slides.map((slide, idx) => (
+            <SwiperSlide key={idx}>
+              <div
+                className="w-full h-full bg-cover bg-center relative flex items-center justify-center px-4 sm:px-8"
+                style={{ backgroundImage: `url(${slide.image})` }}
+              >
+                <div className="absolute inset-0 bg-black/50 z-0" />
+                {activeSlide === idx && (
                   <motion.div
-                    variants={item}
-                    className="flex flex-col items-center gap-1 mx-auto"
+                    variants={container}
+                    initial="hidden"
+                    animate="show"
+                    className="relative text-white text-center max-w-[90%] sm:max-w-2xl md:max-w-3xl space-y-5"
                   >
-                    <div className="w-16 h-1 bg-[#DAA520]" />
-                    <div className="w-10 h-1 bg-[#DAA520]" />
-                  </motion.div>
-
-                  {/* Heading */}
-                  <motion.h1
-                    variants={item}
-                    className="text-xl sm:text-3xl md:text-5xl font-bold mt-2"
-                  >
-                    {idx === 0 ? (
-                      <div className="inline-block text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
-                        <TypewriterEffectSmooth
-                          words={typewriterWords}
-                          className="!text-white !leading-snug"
-                          cursorClassName="!text-[#DAA520] !text-4xl sm:!text-5xl"
-                        />
-                      </div>
-                    ) : (
-                      slide.heading
-                    )}
-                  </motion.h1>
-
-                  {/* Paragraphs */}
-                  {slide.lines.map((text, i) => (
-                    <motion.p
-                      key={i}
+                    {/* Blue Lines */}
+                    <motion.div
                       variants={item}
-                      className="text-sm sm:text-base md:text-lg"
+                      className="flex flex-col z-100 items-center gap-1 mx-auto"
                     >
-                      {text}
-                    </motion.p>
-                  ))}
+                      <div className="w-16 h-1 bg-[#2563EB] z-100" />
+                      <div className="w-10 h-1 bg-[#2563EB] z-100" />
+                    </motion.div>
 
-                  {/* Button */}
-                  <motion.div variants={item}>
-                    <Link href={slide.cta.href}>
-                      <button className="mt-2 sm:mt-4 bg-[#996515] hover:bg-[#8D6E63] transition-colors px-4 py-2 sm:px-6 sm:py-3 rounded font-semibold shadow-md text-sm sm:text-base">
-                        {slide.cta.label}
-                      </button>
-                    </Link>
+                    {/* Heading */}
+                    <motion.h1
+                      variants={item}
+                      className="text-xl z-100 sm:text-3xl md:text-5xl font-bold leading-normal "
+                    >
+                      {idx === 0 ? (
+                        <div className="inline-block z-100 text-3xl sm:text-4xl md:text-5xl font-bold ">
+                          <TypewriterEffectSmooth
+                            words={typewriterWords}
+                            className="z-100"
+                            cursorClassName="z-100"
+                          />
+                        </div>
+                      ) : (
+                        slide.heading
+                      )}
+                    </motion.h1>
+
+                    {/* Text Lines */}
+                    {slide.lines.map((text, i) => (
+                      <motion.p
+                        key={i}
+                        variants={item}
+                        className="text-lg sm:text-base font-semibold md:text-lg z-100"
+                      >
+                        {text}
+                      </motion.p>
+                    ))}
+
+                    {/* CTA Button */}
+                    <motion.div variants={item}>
+                      <Link href={slide.cta.href}>
+                        <button className="mt-2 z-100 sm:mt-4 bg-[#004AAD] z-100 hover:bg-[#013B7A] transition-colors px-4 py-2 sm:px-6 sm:py-3 rounded font-semibold shadow-md text-sm sm:text-base">
+                          {slide.cta.label}
+                        </button>
+                      </Link>
+                    </motion.div>
                   </motion.div>
-                </motion.div>
-              )}
+                )}
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+
+      {/* Blue-Themed Cards Section */}
+      <div className="container">
+        <div className="md:absolute z-10  md:bottom-[-200px] mx-auto w-full max-w-screen-xl px-10 md:px-30" data-aos="flip-up">
+          <div className="grid md:grid-cols-3 card-hero">
+            {/* Advisory Excellence */}
+            <div className="bg-[#1E3A8A] text-white group hover:bg-[#2563EB] transition-all duration-300 p-6 shadow-md flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <FaChartLine className="text-[#3B82F6] group-hover:text-white text-2xl" />
+                <h3 className="text-xl font-bold">ADVISORY EXCELLENCE</h3>
+              </div>
+              <div className="border-l-2 border-[#3B82F6] group-hover:border-white transition-all duration-300 pl-4 text-sm">
+                <p>
+                  We provide strategic financial guidance tailored to your business or personal needs — from tax structuring to investment planning and compliance management.
+                </p>
+              </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </section>
 
+            {/* Accuracy */}
+            <div className="bg-[#1E3A8A] group hover:bg-[#2563EB] transition-all duration-300 text-white p-6 shadow-md flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <FaCalculator className="text-[#3B82F6] group-hover:text-white transition-all duration-300 text-3xl" />
+                <h3 className="text-xl font-bold">ACCURACY</h3>
+              </div>
+              <div className="border-l-2 border-[#3B82F6] group-hover:border-white transition-all duration-300 pl-4 text-sm">
+                <p>
+                  We ensure your financial data is meticulously reviewed and reported, adhering to all regulatory standards. Accuracy is the cornerstone of our practice.
+                </p>
+              </div>
+            </div>
 
-
-
-{/* Overlapping Card Section */}
-<div className="container">
-
-<div className="md:absolute  md:bottom-[-240px]   mx-auto z-20 w-full max-w-screen-xl   px-10 md:px-30" data-aos="flip-up">
-  <div className="grid md:grid-cols-3  card-hero ">
-    {/* Accuracy */}
-    <div className="bg-[#2f2f2f] text-white group hover:bg-[#9C7A6B] transition-all duration-300   p-6 shadow-md flex flex-col gap-4">
-      <div className="flex items-center gap-3">
-        <FaChartLine className="text-[#B0856C] group-hover:text-white text-2xl" />
-        <h3 className="text-xl font-bold">ADVISORY EXCELLENCE</h3>
-      </div>
-      <div className="border-l-2 border-[#B0856C] group-hover:border-white transition-all duration-300 pl-4 text-sm">
-        <p>
-          We provide strategic financial guidance tailored to your business or
-          personal needs — from tax structuring to investment planning and
-          compliance management.
-        </p>
-      </div>
-    </div>
-
-    {/* Integrity */}
-  <div className="bg-[#2F2F2F] group hover:bg-[#9C7A6B] transition-all duration-300 text-white p-6 shadow-md flex flex-col gap-4">
-        <div className="flex items-center gap-3">
-          <FaCalculator className="text-[#B0856C] group-hover:text-white transition-all duration-300 text-3xl" />
-          <h3 className="text-xl font-bold">ACCURACY</h3>
-        </div>
-        <div className="border-l-2 border-[#B0856C] group-hover:border-white transition-all duration-300 pl-4 text-sm">
-          <p>
-            We ensure your financial data is meticulously reviewed and reported,
-            adhering to all regulatory standards. Accuracy is the cornerstone of
-            our practice.
-          </p>
+            {/* Integrity */}
+            <div className="bg-[#1E3A8A] group hover:bg-[#2563EB] transition-all duration-300 text-white p-6 shadow-md flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <FaHandshake className="text-[#3B82F6] group-hover:text-white transition-all duration-300 text-3xl" />
+                <h3 className="text-xl font-bold">INTEGRITY</h3>
+              </div>
+              <div className="border-l-2 border-[#3B82F6] group-hover:border-white transition-all duration-300 pl-4 text-sm">
+                <p>
+                  We uphold the highest standards of professionalism and ethical conduct in every client interaction, building trust that lasts.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-    {/* Advisory Excellence */}
-  <div className="bg-[#2F2F2F] group hover:bg-[#9C7A6B] transition-all duration-300 text-white p-6  shadow-md flex flex-col gap-4">
-        <div className="flex items-center gap-3">
-          <FaHandshake className="text-[#B0856C] group-hover:text-white transition-all duration-300 text-3xl" />
-          <h3 className="text-xl font-bold">INTEGRITY</h3>
-        </div>
-        <div className="border-l-2 border-[#B0856C] group-hover:border-white transition-all duration-300 pl-4 text-sm">
-          <p>
-            We uphold the highest standards of professionalism and ethical
-            conduct in every client interaction, building trust that lasts.
-          </p>
-        </div>
-      </div>
-  </div>
-</div>
-</div>
-
-
-
-
-</>
+    </>
   );
 };
 
 export default Hero;
-   

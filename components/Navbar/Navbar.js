@@ -6,7 +6,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
-import "../Navbar/Navbar.css"
+import "../Navbar/Navbar.css";
 
 import {
   Sheet,
@@ -17,7 +17,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import logo from "../../public/logo.png"
+import logo from "../../public/logo.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -43,7 +43,7 @@ const Navbar = () => {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <nav className=" bg-background/50 sticky top-0 backdrop-blur  z-50 shadow-sm"  >
+    <nav className="py-1 bg-background/70 border-b  sticky top-0 backdrop-blur z-50 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -51,7 +51,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <div  className= "hidden  md:flex space-x-6 items-center text-base font-medium font-bold relative">
+        <div className="hidden md:flex space-x-5 items-center text-base font-medium text-lg font-bold relative">
           {navLinks.map((link) => {
             if (link.label === "Publication") {
               return (
@@ -60,14 +60,14 @@ const Navbar = () => {
                   <Link
                     href={link.href}
                     className={`relative group inline-block px-2 py-1 transition-all duration-300 ${
-                      isActive(link.href) ? "text-[#996515]" : ""
+                      isActive(link.href) ? "text-[#013B7A]" : ""
                     }`}
                   >
-                    <span className="group-hover:text-[#996515] transition-colors duration-300">
+                    <span className="group-hover:text-[#013B7A] transition-colors duration-300">
                       {link.label}
                     </span>
                     <span
-                      className={`absolute left-0 -bottom-0.5 h-0.5 bg-[#996515] transition-all duration-300 ${
+                      className={`absolute left-0 -bottom-0.5 h-0.5 bg-[#013B7A] transition-all duration-300 ${
                         isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"
                       }`}
                     ></span>
@@ -75,12 +75,12 @@ const Navbar = () => {
 
                   {/* Services Dropdown */}
                   <div className="relative group">
-                    <div className="flex items-center gap-1 cursor-pointer px-2 ">
+                    <div className="flex items-center gap-1 cursor-pointer px-2">
                       <span
                         className={`transition-colors duration-300 ${
                           pathname.startsWith("/services")
-                            ? "text-[#996515]"
-                            : "group-hover:text-[#996515]"
+                            ? "text-[#013B7A]"
+                            : "group-hover:text-[#013B7A]"
                         }`}
                       >
                         Services
@@ -88,12 +88,12 @@ const Navbar = () => {
                       <ChevronDown
                         className={`w-4 h-4 transition-transform duration-300 ${
                           pathname.startsWith("/services")
-                            ? "rotate-180 text-[#996515]"
-                            : "group-hover:text-[#996515]"
+                            ? "rotate-180 text-[#013B7A]"
+                            : "group-hover:text-[#013B7A]"
                         }`}
                       />
                       <span
-                        className={`absolute left-0 -bottom-0.5 h-0.5 bg-[#996515] transition-all duration-300 ${
+                        className={`absolute left-0 -bottom-0.5 h-0.5 bg-[#013B7A] transition-all duration-300 ${
                           pathname.startsWith("/services")
                             ? "w-full"
                             : "w-0 group-hover:w-full"
@@ -101,12 +101,12 @@ const Navbar = () => {
                       ></span>
                     </div>
 
-                    <div className="absolute left-0 mt-1 w-80 bg-white border rounded-md shadow-xl z-50 p-4 grid grid-cols-2 gap-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-opacity duration-200">
+                    <div className="absolute left-0 mt-1 w-80 bg-white border rounded-md shadow-xl z-50 p-4 grid grid-cols-2 gap-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200">
                       {servicesLinks.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
-                          className="block text-sm px-3 py-2 rounded hover:bg-gray-100 transition-colors"
+                          className="block text-sm px-3 py-2 rounded hover:bg-blue-50 transition-colors"
                         >
                           {item.label}
                         </Link>
@@ -122,14 +122,14 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 className={`relative group inline-block px-2 py-1 transition-all duration-300 ${
-                  isActive(link.href) ? "text-[#996515]" : ""
+                  isActive(link.href) ? "text-[#013B7A]" : ""
                 }`}
               >
-                <span className="group-hover:text-[#996515] transition-colors duration-300">
+                <span className="group-hover:text-[#013B7A] transition-colors duration-300">
                   {link.label}
                 </span>
                 <span
-                  className={`absolute left-0 -bottom-0.5 h-0.5 bg-[#996515] transition-all duration-300 ${
+                  className={`absolute left-0 -bottom-0.5 h-0.5 bg-[#013B7A] transition-all duration-300 ${
                     isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 ></span>
@@ -137,25 +137,25 @@ const Navbar = () => {
             );
           })}
 
-
-       <div className="flex justify-center md:justify-start ">
-  <button className="group relative inline-flex items-center overflow-hidden cursor-pointer rounded bg-[#9C7A6B] px-4 py-3 font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#7d5f51] hover:scale-105">
-    <span className="mr-2">Contact Us</span>
-    <svg
-      className="w-5 h-5 transition-transform duration-300 transform group-hover:translate-x-1"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M5 12h14M12 5l7 7-7 7"
-      />
-    </svg>
-  </button>
-</div>
+          {/* Blue CTA Button */}
+          <div className="flex justify-center md:justify-start">
+            <button className="group relative inline-flex items-center overflow-hidden cursor-pointer rounded bg-[#004AAD] px-4 py-3 font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#013B7A] hover:scale-105">
+              <span className="mr-2">Contact Us</span>
+              <svg
+                className="w-5 h-5 transition-transform duration-300 transform group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 12h14M12 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Nav */}
@@ -173,7 +173,7 @@ const Navbar = () => {
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M4 6h16M4 12h16m-7 6h7"
-                ></path>
+                />
               </svg>
             </SheetTrigger>
             <SheetContent>
@@ -185,7 +185,7 @@ const Navbar = () => {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className={isActive(link.href) ? "text-[#996515]" : ""}
+                        className={isActive(link.href) ? "text-[#013B7A]" : ""}
                       >
                         {link.label}
                       </Link>
@@ -194,7 +194,7 @@ const Navbar = () => {
                     {/* Mobile-friendly Services Dropdown */}
                     <MobileDropdown title="Services" links={servicesLinks} />
 
-                    <Button variant="outline" className="mt-4 w-full">
+                    <Button className="bg-[#004AAD] hover:bg-[#013B7A] mt-4 w-full text-white">
                       Contact Us
                     </Button>
                   </div>
@@ -208,7 +208,7 @@ const Navbar = () => {
   );
 };
 
-// Component for mobile dropdown toggle
+// Mobile dropdown component
 const MobileDropdown = ({ title, links }) => {
   const [open, setOpen] = useState(false);
   return (

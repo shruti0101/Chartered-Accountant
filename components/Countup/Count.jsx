@@ -1,94 +1,92 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+import VanillaTilt from "vanilla-tilt";
 import {
   FaUserTie,
   FaFileInvoice,
   FaCheckCircle,
   FaBuilding,
 } from "react-icons/fa";
-import CountUp from "react-countup";
-import { useInView } from "react-intersection-observer";
+import statsImage from "@/public/who.jpg";
+
+const stats = [
+  {
+    icon: <FaUserTie className="text-sky-500 text-4xl mb-2" />,
+    label: "Trusted Clients",
+    value: 760,
+  },
+  {
+    icon: <FaFileInvoice className="text-sky-500 text-4xl mb-2" />,
+    label: "Successful Filings",
+    value: 355,
+  },
+  {
+    icon: <FaCheckCircle className="text-sky-500 text-4xl mb-2" />,
+    label: "Audits Completed",
+    value: 617,
+  },
+  {
+    icon: <FaBuilding className="text-sky-500 text-4xl mb-2" />,
+    label: "Entities Registered",
+    value: 722,
+  },
+];
 
 const StatsSection = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.3, // Trigger when 30% is visible
-  });
+  const tiltRef = useRef(null);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  useEffect(() => {
+    if (tiltRef.current) {
+      VanillaTilt.init(tiltRef.current, {
+        max: 15,
+        speed: 400,
+        scale: 1.05,
+        glare: true,
+        "max-glare": 0.3,
+      });
+    }
+  }, []);
 
   return (
-    <section
-      ref={ref}
-      className="relative bg-fixed bg-center  bg-cover bg-no-repeat py-18 md:py-20"
-      style={{
-        backgroundImage: "url('/counterbg.jpg')",
-      }}
-    >
-      <div className="absolute inset-0 bg-opacity-60"></div>
+    <section className="py-20 bg-white overflow-hidden">
+      <div className="flex items-center justify-center mb-3">
+        <div className="w-14 h-1 bg-sky-500 mr-3 rounded-full" />
+        <h4 className="text-sky-600 font-bold uppercase tracking-widest text-lg">
+          WHAT ARE WE DOING
+        </h4>
+        <div className="w-14 h-1 bg-sky-500 ml-3 rounded-full" />
+      </div>
 
-      <div className="relative z-10 max-w-screen-xl mx-auto px-4 text-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8  text-center">
-        {/* Trusted Clients */}
-
-        <div className="md:border-l-4 border-[#9C7A6B] pl-4 mb-4"data-aos="fade-down"
-            data-aos-duration="1000">
-          <div
-            className="space-y-3"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            <FaUserTie className="text-4xl text-[#B0856C] mx-auto" />
-            <h3 className="text-4xl font-bold">
-              {inView ? <CountUp end={760} duration={2} /> : 0}+
-            </h3>
-            <p className="font-semibold uppercase">Trusted Clients</p>
-          </div>
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6">
+        {/* Tilt Image */}
+        <div data-aos="fade-right" ref={tiltRef} className="tilt overflow-hidden rounded-xl">
+          <Image
+            src={statsImage}
+            alt="Team Collaboration"
+            className="w-full h-full object-cover "
+          />
         </div>
 
-        {/* Successful Filings */}
-
-        <div className="md:border-l-4 border-[#9C7A6B] pl-4 mb-4"data-aos="fade-down"
-            data-aos-duration="1000">
-          <div
-            className="space-y-3"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            <FaFileInvoice className="text-4xl text-[#B0856C] mx-auto" />
-            <h3 className="text-4xl font-bold">
-              {inView ? <CountUp end={355} duration={2} /> : 0}+
-            </h3>
-            <p className="font-semibold uppercase">Successful Filings</p>
-          </div>
-        </div>
-
-        <div className="md:border-l-4 border-[#9C7A6B] pl-4 mb-4"data-aos="fade-down"
-            data-aos-duration="1000">
-          {/* Audits Completed */}
-          <div
-            className="space-y-3"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            <FaCheckCircle className="text-4xl text-[#B0856C] mx-auto" />
-            <h3 className="text-4xl font-bold">
-              {inView ? <CountUp end={617} duration={2} /> : 0}+
-            </h3>
-            <p className="font-semibold uppercase">Audits Completed</p>
-          </div>
-        </div>
-
-        <div className="md:border-l-4 border-[#9C7A6B] pl-4 mb-4"  data-aos="fade-down"
-            data-aos-duration="1000">
-          {/* Entities Registered */}
-          <div
-            className="space-y-3"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            <FaBuilding className="text-4xl text-[#B0856C] mx-auto" />
-            <h3 className="text-4xl font-bold">
-              {inView ? <CountUp end={722} duration={2} /> : 0}+
-            </h3>
-            <p className="font-semibold uppercase">Entities Registered</p>
+        {/* Stats */}
+        <div ref={ref} className="space-y-10" data-aos="fade-left">
+          <h2 className="text-4xl font-bold text-gray-900">Our Achievements</h2>
+          <div className="grid grid-cols-2 gap-6 border-l-4 border-sky-500 pl-6">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center sm:text-left">
+                <div className="flex items-center justify-center sm:justify-start gap-3 mb-1">
+                  {stat.icon}
+                  <div className="text-3xl font-extrabold text-gray-800">
+                    {inView ? <CountUp end={stat.value} duration={2} /> : 0}+
+                  </div>
+                </div>
+                <p className="text-gray-600 font-medium">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

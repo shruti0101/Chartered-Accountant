@@ -23,6 +23,11 @@
   opacity: 1;
 
 }
+
+
+  .typed{
+    font-size: 3.9rem;
+  }
 @media (max-width:576px) {
   .typed{
     font-size: 1.4rem;
