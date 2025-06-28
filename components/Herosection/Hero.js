@@ -57,15 +57,15 @@ const item = {
 
 const typewriterWords = [
   {
-    text: "Trusted ",
+    text: "Company ",
     className: "text-white  typed mr-1 font-bold",
   },
   {
-    text: "Financial ",
+    text: "Registration ",
     className: "text-white  typed mr-1 font-bold",
   },
   {
-    text: "Expertise", 
+    text: "Consultant", 
     className: "text-[#2563EB] typed font-bold", 
   },
 ];
