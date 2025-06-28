@@ -4,12 +4,12 @@ import { PointerHighlight } from "@/components/ui/Pointer-Highlight";
 const CTASection = () => {
   return (
     <section
-      className="w-full py-16 bg-no-repeat bg-[#1e73be]"
+      className="w-full  py-8 bg-no-repeat bg-[#1e73be]"
       style={{
         backgroundImage: "url('/ctabg.webp')",
         backgroundSize: "40%",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "right center",
+        backgroundPosition: "right 5% center",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -19,7 +19,7 @@ const CTASection = () => {
             Start your journey with <br className="hidden md:block" />
             <PointerHighlight
               rectangleClassName="bg-[#DBEAFE]"
-              pointerClassName="text-[#A8FF78]"
+              pointerClassName= " text-[#00C950]"
             >
               <span className="relative z-10 text-black">Chintan Agrawal & Co.</span>
             </PointerHighlight>{" "}

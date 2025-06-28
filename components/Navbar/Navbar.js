@@ -37,18 +37,68 @@ const servicesLinks = [
   { label: "International Taxation", href: "/services/web-d" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ className = "" }) => {
   const pathname = usePathname();
   const isActive = (href) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <nav className="py-1 bg-background/70 border-b  sticky top-0 backdrop-blur z-50 shadow-lg">
+    <nav className=" py-3 bg-background/70 border-b-white   sticky top-0 backdrop-blur z-50 shadow-xl">
       <div className="container mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="flex items-center">
-          <Image src={logo} alt="Logo" width={110} height={110} priority />
-        </Link>
+    
+
+<Link
+      href="/"
+      aria-label="Chintan Agrawal & Co • Chartered Accountants"
+      className={`flex items-center gap-2 group py-3 ${className}`}
+    >
+      {/* 1. Symbol Icon */}
+      <span className="relative inline-flex h-10 w-10 items-center justify-center">
+        {/* Blue circular stroke */}
+        <svg
+          viewBox="0 0 48 48"
+          className="h-full w-full text-[#004AAD] group-hover:scale-105 transition-transform"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="3"
+        >
+          <circle cx="24" cy="24" r="18" />
+        </svg>
+
+        {/* Green chevron inside */}
+        <svg
+          viewBox="0 0 24 24"
+          className="absolute h-4 w-4 text-green-600"
+          fill="currentColor"
+        >
+          <path d="M12 6l6 9H6l6-9z" />
+        </svg>
+      </span>
+
+      {/* 2. Brand Text */}
+      <span className="leading-none">
+        <h1
+          className="text-lg md:text-xl font-bold tracking-tight
+                     text-[#004AAD] group-hover:text-[#013B7A] transition-colors"
+        >
+          Chintan  Agrawal{" "}
+          <span className="relative">
+          
+            <svg
+              viewBox="0 0 24 24"
+              className="absolute -bottom-1 left-0 w-3 h-3 text-green-600"
+              fill="currentColor"
+            >
+              <path d="M12 2l4 7H8l4-7z" />
+            </svg>
+          </span>
+          <span className="text-green-600">& Co </span> 
+        </h1>
+        <p className="text-[10px] md:text-xs uppercase tracking-wider text-gray-600">
+          Chartered Accountants
+        </p>
+      </span>
+    </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex space-x-5 items-center text-base font-medium text-lg font-bold relative">
@@ -178,7 +228,65 @@ const Navbar = () => {
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
-                <SheetTitle className="text-center">Navigation</SheetTitle>
+                <SheetTitle 
+                
+                
+                
+                >
+
+                  <Link
+      href="/"
+      aria-label="Chintan Agrawal & Co • Chartered Accountants"
+      className={`flex items-center gap-2 group py-3 ${className}`}
+    >
+      {/* 1. Symbol Icon */}
+      <span className="relative inline-flex h-10 w-10 items-center justify-center">
+        {/* Blue circular stroke */}
+        <svg
+          viewBox="0 0 48 48"
+          className="h-full w-full text-[#004AAD] group-hover:scale-105 transition-transform"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="3"
+        >
+          <circle cx="24" cy="24" r="18" />
+        </svg>
+
+        {/* Green chevron inside */}
+        <svg
+          viewBox="0 0 24 24"
+          className="absolute h-4 w-4 text-green-600"
+          fill="currentColor"
+        >
+          <path d="M12 6l6 9H6l6-9z" />
+        </svg>
+      </span>
+
+      {/* 2. Brand Text */}
+      <span className="leading-none">
+        <h1
+          className="text-lg md:text-xl font-bold tracking-tight
+                     text-[#004AAD] group-hover:text-[#013B7A] transition-colors"
+        >
+          Chintan  Agrawal{" "}
+          <span className="relative">
+          
+            <svg
+              viewBox="0 0 24 24"
+              className="absolute -bottom-1 left-0 w-3 h-3 text-green-600"
+              fill="currentColor"
+            >
+              <path d="M12 2l4 7H8l4-7z" />
+            </svg>
+          </span>
+          <span className="text-green-600">& Co </span> 
+        </h1>
+        <p className="text-[10px] md:text-xs uppercase tracking-wider text-gray-600">
+          Chartered Accountants
+        </p>
+      </span>
+    </Link>
+                </SheetTitle>
                 <SheetDescription>
                   <div className="flex flex-col gap-4 pt-5 text-base">
                     {navLinks.map((link) => (

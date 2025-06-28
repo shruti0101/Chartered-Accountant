@@ -5,7 +5,7 @@ import { FaRegLightbulb, FaFileSignature, FaCheckDouble, FaHandshake } from "rea
 const steps = [
   {
     icon: <FaRegLightbulb />,
-    title: " Application Form",
+    title: " Application Form Submission",
     description: "Kindly complete the application form sent to your email with accurate and up-to-date information. This enables our CA team to initiate the compliance or advisory process with precision and efficiency.",
   },
   {
@@ -27,7 +27,7 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section className="relative bg-sky-50 py-12 overflow-hidden">
+    <section className="relative bg-sky-50 py-13  pb-17 overflow-hidden">
       {/* Wavy Background */}
       <div className="absolute inset-0 -z-10">
         <svg
@@ -65,7 +65,7 @@ const ProcessSection = () => {
          Experience a smooth and transparent workflow with Chintan Agrawal & CO. — where expert Chartered Accountancy services meet efficiency, accuracy, and client-focused execution at every step.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1    sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -73,11 +73,12 @@ const ProcessSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-white shadow-xl rounded-xl p-6 border-t-4 border-sky-500 hover:-translate-y-2 transition-all duration-300"
+              className="bg-white shadow-xl rounded-xl p-6 border-t-4 border-[#00C950] hover:-translate-y-2 transition-all duration-300"
             >
-              <div className="text-sky-500 text-4xl mb-4">{step.icon}</div>
+              <div className="text-sky-500 text-4xl mb-4 flex items-center justify-center  ">{step.icon}</div>
               <h4 className="text-xl font-semibold mb-2">{step.title}</h4>
-              <p className="text-gray-600 text-sm">{step.description}</p>
+              <p className="text-gray-600  text-sm mb-3">{step.description}</p>
+              <div className="border-b text-stone-200 transition-all  "></div>
             </motion.div>
           ))}
         </div>

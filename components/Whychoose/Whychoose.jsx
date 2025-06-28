@@ -10,42 +10,54 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 
+
 const features = [
   {
     title: "Trust & Compliance",
-    description: "We ensure 100% legal accuracy, transparency, and adherence to all government norms.",
+    description:
+      "We ensure 100% legal accuracy, transparency, and adherence to all government norms. From income tax to GST and ROC filings, every process is handled with integrity and accountability to keep your business fully compliant.",
     icon: ShieldCheck,
   },
   {
     title: "Timely Delivery",
-    description: "Filing deadlines and reports delivered ahead of time — always.",
+    description:
+      "Filing deadlines and reports delivered ahead of time — always. Our proactive reminder systems and streamlined workflows ensure you never miss important financial deadlines or face unnecessary penalties.",
     icon: Clock,
   },
   {
     title: "Verified Expertise",
-    description: "Our Chartered Accountants bring decades of trusted experience.",
+    description:
+      "Our Chartered Accountants bring decades of trusted experience. Backed by deep domain knowledge, we offer tailored solutions for startups, MSMEs, and enterprises across multiple sectors, ensuring optimal financial planning.",
     icon: CheckCircle2,
   },
   {
     title: "End-to-End Support",
-    description: "From GST to ROC, we handle every compliance need seamlessly.",
+    description:
+      "From GST to ROC, we handle every compliance need seamlessly. Whether it's registration, return filing, tax audits, or MCA compliance, our experts manage it all — so you can focus on growing your business.",
     icon: FileCheck,
   },
   {
     title: "Client Satisfaction",
-    description: "Over 95% client retention through our client-first approach.",
+    description:
+      "Over 95% client retention through our client-first approach. We prioritize open communication, personalized service, and quick turnaround times to build lasting relationships with individuals and businesses alike.",
     icon: ThumbsUp,
   },
   {
     title: "Dedicated Advisors",
-    description: "Your personal CA advisor is just a call away for real-time guidance.",
+    description:
+      "Your personal CA advisor is just a call away for real-time guidance. Get one-on-one expert consultation for financial decisions, investments, or complex tax planning whenever you need it.",
     icon: UserCheck,
   },
 ];
 
+
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 relative bg-gradient-to-br from-blue-50 via-white to-blue-100">
+    <section className=" mb-8 relative py-17 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+
+
+
+
       {/* Section Heading */}
       <div className="text-center mb-14 px-4">
         <div className="flex items-center justify-center mb-3">
@@ -65,7 +77,7 @@ const WhyChooseUs = () => {
       </div>
 
       {/* Features Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center md:text-start max-w-7xl mx-auto px-6">
         {features.map((item, index) => (
           <motion.div
             key={index}
@@ -73,10 +85,10 @@ const WhyChooseUs = () => {
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
             className="p-6 bg-white/60 backdrop-blur-sm border border-blue-200 shadow-lg rounded-2xl group transition-all duration-300 hover:shadow-xl"
           >
-            <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-sky-100 text-sky-600 mb-4 transition-transform duration-300 group-hover:rotate-6">
+            <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-green-100 text-sky-600 mb-4 transition-transform duration-300 group-hover:rotate-6 mx-auto md:mx-0">
               <item.icon size={28} />
             </div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-sky-600">
+            <h3 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-sky-600">
               {item.title}
             </h3>
             <p className="text-sm text-gray-600">{item.description}</p>

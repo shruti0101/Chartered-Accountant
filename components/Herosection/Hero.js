@@ -41,7 +41,7 @@ const slides = [
   },
 ];
 
-// Animation variants
+
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -57,15 +57,15 @@ const item = {
 
 const typewriterWords = [
   {
-    text: "Trusted",
+    text: "Trusted ",
     className: "text-white  typed mr-1 font-bold",
   },
   {
-    text: "Financial",
+    text: "Financial ",
     className: "text-white  typed mr-1 font-bold",
   },
   {
-    text: "Expertise",
+    text: "Expertise", 
     className: "text-[#2563EB] typed font-bold", 
   },
 ];
@@ -78,7 +78,7 @@ const Hero = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative hero w-full h-[100vh] overflow-hidden pb-[20px]">
+      <section className="relative hero w-full h-[100vh]  overflow-hidden pb-[20px]">
         {/* Arrows */}
         <div
           ref={prevRef}
@@ -115,7 +115,7 @@ const Hero = () => {
             });
           }}
           onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
-          className="w-full h-full"
+          className="w-full h-[40vh] md:h-full"
         >
           {slides.map((slide, idx) => (
             <SwiperSlide key={idx}>
@@ -146,7 +146,7 @@ const Hero = () => {
                       className="text-xl z-100 sm:text-3xl md:text-5xl font-bold leading-normal "
                     >
                       {idx === 0 ? (
-                        <div className="inline-block z-100 text-3xl sm:text-4xl md:text-5xl font-bold ">
+                        <div className="inline-block z-100 text-[1.6rem] sm:text-4xl md:text-5xl font-bold max-w-[280px] sm:max-w-none mx-auto leading-snug">
                           <TypewriterEffectSmooth
                             words={typewriterWords}
                             className="z-100"
@@ -163,7 +163,7 @@ const Hero = () => {
                       <motion.p
                         key={i}
                         variants={item}
-                        className="text-lg sm:text-base font-semibold md:text-lg z-100"
+                        className="text-lg hidden md:block sm:text-base font-semibold md:text-lg z-100"
                       >
                         {text}
                       </motion.p>
@@ -186,8 +186,8 @@ const Hero = () => {
       </section>
 
       {/* Blue-Themed Cards Section */}
-      <div className="container">
-        <div className="md:absolute z-10  md:bottom-[-200px] mx-auto w-full max-w-screen-xl px-10 md:px-30" data-aos="flip-up">
+      <div className="">
+        <div className="md:absolute z-10  md:bottom-[-200px] mx-auto w-full  px-10 md:px-30" data-aos="flip-up">
           <div className="grid md:grid-cols-3 card-hero">
             {/* Advisory Excellence */}
             <div className="bg-[#1E3A8A] text-white group hover:bg-[#2563EB] transition-all duration-300 p-6 shadow-md flex flex-col gap-4">

@@ -6,7 +6,9 @@ import Whychoose from "@/components/Whychoose/Whychoose";
 import Process from "@/components/Process/Process"
 import Reviews from "@/components/Reviews/Reviews";
 import Cta from "@/components/Cta/Cta";
+import Faq from "@/components/Faq/Faq";
 import Footer from "@/components/Footer/Footer";
+import Form from "@/components/Form/Form"
 export default function Home() {
   return (
     <div >
@@ -15,9 +17,13 @@ export default function Home() {
       <Whychoose></Whychoose>
        <Services></Services>
       <Count></Count>
+        <Cta></Cta>
      <Process></Process>
-     <Cta></Cta>
+   
      <Reviews></Reviews>
+    
+     <Form></Form>
+      <Faq></Faq>
      <Footer></Footer>
 
 

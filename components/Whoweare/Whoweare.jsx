@@ -2,12 +2,49 @@
 
 import Image from "next/image";
 import lawyersImage from "@/public/whoweare.jpg";
-
+import rocket from "@/public/rocket-image.png";
+import circle from "@/public/circle.png";
 const Whoweare = () => {
   return (
     <section className="bg-white pt-15 md:pt-43 pb-13">
+      
       <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center px-6 md:px-10 gap-10">
+
+
+ {/* Right Image */}
+        <div
+          className="md:w-1/2 flex justify-center relative"
+          data-aos="fade-down"
+        >
+          <Image
+            src={lawyersImage}
+            alt="Who We Are"
+            className="w-full h-auto max-w-md md:max-w-lg rounded-sm "
+            priority
+          />
+
+          <Image
+            src={circle}
+            alt="Who We Are"
+            className="hidden md:block  absolute round-circle right-0 -top-8 filter hue-rotate-[40deg] saturate-[700%]  "
+            style={{ width: "180px" }}
+            priority
+          />
+
+          <Image
+            src={rocket}
+            alt="Who We Are"
+            className="absolute hidden md:block right-13 top-6 "
+            style={{ width: "60px" }}
+            priority
+          />
+        </div>
+
+
+
         {/* Left Content */}
+
+
         <div className="md:w-1/2" data-aos="fade-up">
           <div className="border-l-4 border-sky-500 pl-4 mb-4">
             <p className="text-sm text-sky-500 font-bold uppercase">
@@ -24,15 +61,14 @@ const Whoweare = () => {
           </blockquote>
 
           <p className="text-gray-600 mb-4 text-sm md:text-base">
-            We are a team of experienced <strong>Chartered Accountants</strong> committed to
-            helping individuals, startups, and businesses navigate India’s
-            financial and legal systems with ease.{" "}
+            We are a team of experienced <strong>Chartered Accountants</strong>{" "}
+            committed to helping individuals, startups, and businesses navigate
+            India’s financial and legal systems with ease.{" "}
             <strong>
               Our mission is to simplify the complexities of finance, tax, and
               law so that you can focus on growing your business with
               confidence.
             </strong>{" "}
-           
           </p>
 
           <div className="mb-6">
@@ -69,15 +105,7 @@ const Whoweare = () => {
           </div>
         </div>
 
-        {/* Right Image */}
-        <div className="md:w-1/2 flex justify-center" data-aos="fade-down">
-          <Image
-            src={lawyersImage}
-            alt="Who We Are"
-            className="w-full h-auto max-w-md md:max-w-lg "
-            priority
-          />
-        </div>
+       
       </div>
     </section>
   );
