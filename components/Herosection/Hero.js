@@ -65,6 +65,7 @@ const typewriterWords = [
     className: "text-white  typed mr-1 font-bold",
   },
   {
+    
     text: "Expertise", 
     className: "text-[#2563EB] typed font-bold", 
   },
