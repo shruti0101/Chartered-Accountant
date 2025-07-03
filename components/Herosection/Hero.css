@@ -25,12 +25,9 @@
 }
 
 
-  .typed{
-    font-size: 3.9rem;
-  }
 @media (max-width:576px) {
   .typed{
-    font-size: 1.8rem;
+    font-size: 1.07rem;
     word-wrap: break-word;
   }
   .hero{
@@ -38,4 +35,14 @@
   }
 
   
+}
+
+
+
+
+/* Extra micro‑tweak for very small devices (≤360 px wide) */
+@media (max-width: 360px) {
+  .typed {
+    font-size: 1rem;
+  }
 }

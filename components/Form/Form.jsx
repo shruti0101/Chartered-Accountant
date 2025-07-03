@@ -50,8 +50,8 @@ export default function ContactSection() {
                 <p className="text-gray-500 text-sm font-semibold">CALL US</p>
                 <p className="text-gray-800 font-medium">
                   {" "}
-                  9818111206 ,
-                  9971595525
+                 +91 9818111206 ,
+                 +91 9971595525
                 </p>
               </div>
             </div>

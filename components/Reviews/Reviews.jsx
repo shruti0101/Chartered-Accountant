@@ -11,43 +11,66 @@ import { AuroraBackground } from '../ui/aurora-background';
 
 const reviews = [
     {
-    name: "Aarav Mehta",
-    designation: "Founder, Mehta Tech Solutions",
+    name: "Prop. Mohit Goyal",
+    designation: "Shree International",
     review:
-      "Partnering with Chintan Agrawal & Associates gave our startup a strong financial foundation. Their proactive approach to taxation and company compliance is invaluable.",
-    image: "/clients/aarav.jpg",
+      "Impressive attention to detail, our books have never been cleaner.They caught errors our previous accountant missed.Everything from GST filings to finalization of accounts was handled meticulously.",
+
+
+ 
+  },
+
+
+     {
+    name: "Shubham Bansal",
+    designation: " Founder Buntech",
+    review:
+      "They treat clients like partners, not just accounts.Personalized service feels like they genuinely care about our success. We've been with them for over 5 years trust and consistency.",
+
+
+ 
   },
 
      {
-    name: "Vikram Desai",
-    designation: "Managing Partner, Desai Traders",
+    name: "Gautam Jain",
+    designation: "Founder I-Printers",
+    review:
+      "We’ve been working with Chintan Agrawal & Co. for over three years and couldn’t be happier. Their team is professional, responsive, and deeply knowledgeable. They’ve helped us navigate complex tax regulations and provided valuable business advisory services. Highly recommend them .",
+
+
+ 
+  },
+
+     {
+    name: "Nitin Jain",
+    designation: "Co-Founder Playmate India",
     review:
       "Whether it’s audits, income tax scrutiny, or day-to-day compliance, they’re always just a call away. Truly dependable and ethical professionals.",
-    image: "/clients/vikram.jpg",
+ 
   },
 
     {
-    name: "Tanvi Malhotra",
-    designation: "Co-founder, Bliss Organics",
+    name: "Abhishek Jain",
+    designation: "Director Mobius Design Lab Pvt.Ltd",
     review:
       "What stood out was their client-first attitude. Chintan and team handled all our ROC, ITR, and GST filings with precision and explained every detail patiently.",
-    image: "/clients/tanvi.jpg",
+   
   },
 
     {
-    name: "Rohit Sinha",
-    designation: "Director, Nexus Infrastructures",
+    name: "Vipin Goyal",
+    designation: " Founder Brauch Enterprises     ",
     review:
-      "Excellent experience! Their deep knowledge in company law and financial structuring helped us streamline our processes and avoid penalties.",
-    image: "/clients/rohit.jpg",
+      "Always delivers reports and filings ahead of deadline. Available during crunch times, even on short notice.They helped us avoid late fees by being proactive with our filings.",
+   
   },
 
      {
-    name: "Priya Sharma",
-    designation: "CFO, GreenLeaf Enterprises",
+    name: "Shubham Bansal",
+    designation: "Co-Founder WIthinker Partner Shree Balajee Enterprise",
     review:
       "From GST filings to audit support, Chintan’s team delivers everything on time with clear guidance. They feel more like an in-house finance team than an external firm.",
-    image: "/clients/priya.jpg",
+   
   },
 ];
 
@@ -69,7 +92,7 @@ export default function ClientReviews() {
 
       {/* intro */}
       <div className="max-w-6xl mx-auto text-center mb-12" data-aos="fade-up">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Trusted by Professionals,<br className="hidden sm:block" />
           Appreciated by Clients
         </h2>
@@ -91,28 +114,29 @@ export default function ClientReviews() {
           speed={6000}                  // 6 s for a full wrapper lap
           autoplay={{
             delay: 0,                   // no “pause” between slides
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
+            disableOnInteraction: true,
+            pauseOnMouseEnter: false,
           }}
         >
           {reviews.map(({ name, designation, review }, i) => (
             <SwiperSlide
               key={i}
-              // Tailwind utility to set a fixed width so Swiper can
-              // calculate positions when slidesPerView="auto"
-              className="!w-[320px] md:!w-[360px]"
+          
+              className="!w-[340px] md:!w-[410px]"
             >
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 text-center h-full flex flex-col justify-between">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 text-center h-full flex flex-col justify-between min-h-[320px]">
                 <div>
                   <h4 className="text-lg font-semibold text-gray-800">{name}</h4>
                   <p className="text-sm text-gray-500 mb-4">{designation}</p>
-                  <p className="text-gray-700 italic mb-6">“{review}”</p>
-                </div>
-                <div className="flex justify-center gap-1 text-yellow-400">
+                  <p  className="text-gray-800  italic mb-6">“{review}”</p>
+
+                     <div className="flex justify-center gap-1 text-yellow-400 ">
                   {[...Array(5)].map((_, idx) => (
                     <FaStar key={idx} />
                   ))}
                 </div>
+                </div>
+             
               </div>
             </SwiperSlide>
           ))}

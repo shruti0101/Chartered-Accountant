@@ -136,6 +136,9 @@ animation: rotate 14s linear infinite;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+body {
+  font-family: 'Inter', sans-serif;
+}
 
 
 @import "tailwindcss";
@@ -153,5 +156,14 @@ animation: rotate 14s linear infinite;
         350% 50%,
         350% 50%;
     }
+  }
+}
+
+
+/* Center last card if it's alone in last row */
+@media (min-width: 1024px) {
+  .card-grid > *:nth-last-child(1):nth-child(3n + 1) {
+    grid-column: 1 / span 2;
+    margin: 0 auto;
   }
 }

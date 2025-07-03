@@ -1,7 +1,6 @@
 "use client";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, EffectFade,  Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -120,8 +119,9 @@ const Hero = () => {
         >
           {slides.map((slide, idx) => (
             <SwiperSlide key={idx}>
+            
               <div
-                className="w-full h-full bg-cover bg-center relative flex items-center justify-center px-4 sm:px-8"
+                className="  w-full h-full bg-cover bg-center relative flex items-center justify-center px-4 sm:px-8"
                 style={{ backgroundImage: `url(${slide.image})` }}
               >
                 <div className="absolute inset-0 bg-black/50 z-0" />
@@ -147,7 +147,7 @@ const Hero = () => {
                       className="text-xl z-100 sm:text-3xl md:text-5xl font-bold leading-normal "
                     >
                       {idx === 0 ? (
-                        <div className="inline-block z-100 text-[1.6rem] sm:text-4xl md:text-5xl font-bold max-w-[280px] sm:max-w-none mx-auto leading-snug">
+                        <div className="inline-block z-100 text-[1.9rem] sm:text-5xl md:text-5xl font-bold max-w-[320px] sm:max-w-none mx-auto leading-snug">
                           <TypewriterEffectSmooth
                             words={typewriterWords}
                             className="z-100"

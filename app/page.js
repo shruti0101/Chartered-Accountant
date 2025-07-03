@@ -7,8 +7,9 @@ import Process from "@/components/Process/Process"
 import Reviews from "@/components/Reviews/Reviews";
 import Cta from "@/components/Cta/Cta";
 import Faq from "@/components/Faq/Faq";
-import Footer from "@/components/Footer/Footer";
+// import Footer from "@/components/Footer/Footer";
 import Form from "@/components/Form/Form"
+import Facilites from "@/components/Facilities/Facilities"
 export default function Home() {
   return (
     <div >
@@ -21,10 +22,10 @@ export default function Home() {
      <Process></Process>
    
      <Reviews></Reviews>
-    
+    <Facilites></Facilites>
      <Form></Form>
       <Faq></Faq>
-     <Footer></Footer>
+   
 
 
 

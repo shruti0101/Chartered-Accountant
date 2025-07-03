@@ -50,8 +50,8 @@ export default function Footer() {
 381, Vardhman Grand Plaza, Sector-3, Rohini, Delhi            </p>
             <p className="flex items-center gap-2">
               <FaPhoneAlt className="text-sky-400" />
-       9818111206 <br />
-       9971595525
+      +91 9818111206 <br />
+       +91 9971595525
             </p>
             <p className="flex items-center gap-2">
               <FaEnvelope className="text-sky-400" />
@@ -62,9 +62,13 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-10 border-t border-white/10 pt-4 text-sm text-center gap-2">
-        <p>© 2025 <span className="font-semibold text-center ">Chartered Accountants</span>. All Rights Reserved</p>
+      <div className="mt-10 border-t border-white/10 pt-4 text-md text-center gap-2 mb-4">
+        <p>© 2025 <span className="font-semibold text-center ">Chintan Agrawal & CO</span>. All Rights Reserved.</p>
+    
+         <p className="text-center">Developed & Manage by <span className="font-semibold">Promozione Branding Pvt Ltd.</span> </p> 
+
       </div>
+      <p className="font-normal text-center text-sm">Chintan Agrawal & CO is a Chartered Accountancy firm offering professional consultancy and compliance services. We are an independent entity and are not affiliated with any government authority. Our services include business and startup registrations, GST filings, trademark registrations, and other statutory compliances. All services are provided for a professional fee</p>
     </footer>
   );
 }

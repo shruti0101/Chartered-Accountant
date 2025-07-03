@@ -21,7 +21,7 @@ const CTASection = () => {
               rectangleClassName="bg-[#DBEAFE]"
               pointerClassName= " text-[#00C950]"
             >
-              <span className="relative z-10 text-black">Chintan Agrawal & Co.</span>
+              <span className="relative z-10 text-black italic">Chintan Agrawal & Co.</span>
             </PointerHighlight>{" "}
             today
           </h2>
