@@ -71,7 +71,7 @@ const Navbar = ({ className = "" }) => {
 }, [pathname]);
 
   return (
-    <nav className="py-3 bg-background/70 border-b-white !sticky !top-0 backdrop-blur z-50 shadow-xl">
+    <nav className="py-3  bg-background/70 border-b-white !sticky !top-0 backdrop-blur z-50 shadow-xl">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link
