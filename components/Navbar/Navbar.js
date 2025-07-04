@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 import "../Navbar/Navbar.css";
+import { useEffect } from "react";
+
 
 import {
   Sheet,
@@ -28,6 +30,7 @@ const servicesLinks = [
     href: "/services/branding",
     sub: ["Tally & QuickBooks", "MIS Reports", "Payroll Services"],
   },
+
   {
     label: "Taxation Related Services",
     href: "/services/smo",
@@ -57,19 +60,24 @@ const servicesLinks = [
 
 const Navbar = ({ className = "" }) => {
   const [servicesOpen, setServicesOpen] = useState(false);
+
   const pathname = usePathname();
   const isActive = (href) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+
   useEffect(() => {
-    setServicesOpen(false);
-  }, [pathname]);
+  setServicesOpen(false); // Close dropdown on route change
+}, [pathname]);
 
   return (
-    <nav className="py-3 bg-background/70 border-b-white sticky top-0 backdrop-blur z-50 shadow-xl overflow-x-hidden">
-      <div className="w-full max-w-[1300px] px-4 mx-auto flex justify-between items-center overflow-x-hidden">
+    <nav className="py-3  bg-background/70 border-b-white !sticky !top-0 backdrop-blur z-50 shadow-xl">
+      <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className={`flex items-center gap-2 group py-3 ${className}`}>
+        <Link
+          href="/"
+          className={`flex items-center gap-2 group py-3 ${className}`}
+        >
           <span className="relative inline-flex h-10 w-10 items-center justify-center">
             <svg
               viewBox="0 0 48 48"
@@ -110,7 +118,10 @@ const Navbar = ({ className = "" }) => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex space-x-5 items-center text-base font-medium text-lg font-bold relative">
-          {[{ label: "Home", href: "/" }, { label: "About Us", href: "/about" }].map((link) => (
+          {[
+            { label: "Home", href: "/" },
+            { label: "About Us", href: "/about" },
+          ].map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -133,7 +144,7 @@ const Navbar = ({ className = "" }) => {
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <div className="flex items-center cursor-pointer px-2">
+            <div className="flex items-center  cursor-pointer px-2">
               <span
                 className={`transition-colors duration-300 ${
                   pathname.startsWith("/services") || servicesOpen
@@ -151,7 +162,8 @@ const Navbar = ({ className = "" }) => {
             </div>
 
             {servicesOpen && (
-              <div className="absolute left-1/2 -translate-x-1/2 mt-1 w-[95vw] max-w-[830px] bg-white border border-[#2AB55E] rounded-md shadow-xl z-50 p-6 grid grid-cols-3 gap-6 max-h-[90vh] overflow-y-auto">
+              <div className="absolute left-1/2 -translate-x-1/2 mt-1 w-[830px] bg-white border border-[#2AB55E] rounded-md shadow-xl z-50 p-6 grid grid-cols-3 gap-6 max-h-[90vh] overflow-y-auto">
+
                 {servicesLinks.map((item) => (
                   <div
                     key={item.href}
@@ -168,11 +180,19 @@ const Navbar = ({ className = "" }) => {
                         {item.sub.map((subItem, i) => (
                           <li
                             key={i}
-                            className="relative pl-4 flex items-center text-gray-600 transition-all duration-200 hover:text-[#004AAD] group"
+                            className="relative pl-4 flex items-center text-gray-600
+                 transition-all duration-200 hover:text-[#004AAD] group"
                           >
-                            <span className="absolute left-0 opacity-0 translate-x-0 transition-all duration-200 group-hover:opacity-100 group-hover:-translate-x-1">
+                            {/* arrow */}
+                            <span
+                              className="absolute left-0 opacity-0 translate-x-0
+                   transition-all duration-200 group-hover:opacity-100
+                   group-hover:-translate-x-1"
+                            >
                               ➜
                             </span>
+
+                            {/* text shifts right a bit on hover */}
                             <span className="transition-transform duration-200 group-hover:translate-x-1">
                               {subItem}
                             </span>
@@ -186,7 +206,12 @@ const Navbar = ({ className = "" }) => {
             )}
           </div>
 
-          {[{ label: "Publication", href: "/publication" }, { label: "Industries", href: "/industries" }, { label: "Knowledge Hub", href: "/knowledge" }].map((link) => (
+          {/* Remaining Links */}
+          {[
+            { label: "Publication", href: "/publication" },
+            { label: "Industries", href: "/industries" },
+            { label: "Knowledge Hub", href: "/knowledge" },
+          ].map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -213,18 +238,26 @@ const Navbar = ({ className = "" }) => {
           <Sheet>
             <SheetTrigger>
               <svg
-                className="w-7 h-7"
+                className="w-7 h-7 "
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
               </svg>
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
                 <SheetTitle>
-                  <Link href="/" className={`flex items-center gap-2 group py-3 ${className}`}>
+                  <Link
+                    href="/"
+                    className={`flex items-center gap-2 group py-3 ${className}`}
+                  >
                     <span className="relative inline-flex h-10 w-10 items-center justify-center">
                       <svg
                         viewBox="0 0 48 48"
@@ -245,7 +278,8 @@ const Navbar = ({ className = "" }) => {
                     </span>
                     <span className="leading-none">
                       <h1 className="text-lg font-bold text-[#004AAD]">
-                        Chintan Agrawal <span className="text-green-600">& Co</span>
+                        Chintan Agrawal
+                        <span className="text-green-600"> & Co</span>
                       </h1>
                       <p className="text-[10px] uppercase tracking-wider text-gray-600">
                         Chartered Accountants
@@ -255,12 +289,41 @@ const Navbar = ({ className = "" }) => {
                 </SheetTitle>
                 <SheetDescription>
                   <div className="flex flex-col gap-4 pt-5 text-base">
-                    <Link href="/" className={isActive("/") ? "text-[#013B7A]" : ""}>Home</Link>
-                    <Link href="/about" className={isActive("/about") ? "text-[#013B7A]" : ""}>About Us</Link>
+                    <Link
+                      href="/"
+                      className={isActive("/") ? "text-[#013B7A]" : ""}
+                    >
+                      Home
+                    </Link>
+                    <Link
+                      href="/about"
+                      className={isActive("/about") ? "text-[#013B7A]" : ""}
+                    >
+                      About Us
+                    </Link>
                     <MobileDropdown title="Services" links={servicesLinks} />
-                    <Link href="/publication" className={isActive("/publication") ? "text-[#013B7A]" : ""}>Publication</Link>
-                    <Link href="/industries" className={isActive("/industries") ? "text-[#013B7A]" : ""}>Industries</Link>
-                    <Link href="/knowledge" className={isActive("/knowledge") ? "text-[#013B7A]" : ""}>Knowledge Hub</Link>
+                    <Link
+                      href="/publication"
+                      className={
+                        isActive("/publication") ? "text-[#013B7A]" : ""
+                      }
+                    >
+                      Publication
+                    </Link>
+                    <Link
+                      href="/industries"
+                      className={
+                        isActive("/industries") ? "text-[#013B7A]" : ""
+                      }
+                    >
+                      Industries
+                    </Link>
+                    <Link
+                      href="/knowledge"
+                      className={isActive("/knowledge") ? "text-[#013B7A]" : ""}
+                    >
+                      Knowledge Hub
+                    </Link>
                     <Button className="bg-[#004AAD] hover:bg-[#013B7A] mt-4 w-full text-white">
                       Contact Us
                     </Button>
