@@ -92,7 +92,7 @@ export default function ClientReviews() {
 
       {/* intro */}
       <div className="max-w-6xl mx-auto text-center mb-12" data-aos="fade-up">
-        <h2 className="text-3xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Trusted by Professionals,<br className="hidden sm:block" />
           Appreciated by Clients
         </h2>
@@ -122,13 +122,13 @@ export default function ClientReviews() {
             <SwiperSlide
               key={i}
           
-              className="!w-[340px] md:!w-[410px]"
+              className="!w-[330px] md:!w-[410px]"
             >
               <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 text-center h-full flex flex-col justify-between min-h-[320px]">
                 <div>
                   <h4 className="text-lg font-semibold text-gray-800">{name}</h4>
-                  <p className="text-sm text-gray-500 mb-4">{designation}</p>
-                  <p  className="text-gray-800  italic mb-6">“{review}”</p>
+                  <p className="text-sm  text-gray-500 mb-4">{designation}</p>
+                  <p  className="text-gray-800 text-sm  italic mb-6">“{review}”</p>
 
                      <div className="flex justify-center gap-1 text-yellow-400 ">
                   {[...Array(5)].map((_, idx) => (

@@ -51,7 +51,7 @@ const CAHighlights = () => {
 
   return (
     <section style={{backgroundImage:"url(/facility.jpg)"}}  className="text-white py-18 px-4 md:px-16">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {items.map(({ icon: Icon, title, text }, i) => (
           <motion.div
             key={title}
@@ -66,11 +66,11 @@ const CAHighlights = () => {
           >
             {/* icon box */}
             <motion.div variants={pulse} animate="animate" className="flex justify-center mb-4">
-              <Icon className="text-4xl border-2 border-white p-2 rounded w-16 h-16" />
+              <Icon className="text-3xl  border-2 border-white p-2 rounded w-15 h-15" />
             </motion.div>
 
             {/* content */}
-            <h3 className="font-bold text-lg mb-2">{title}</h3>
+            <h3 className="font-bold text-sm mb-2">{title}</h3>
             <p className="text-sm text-white/90">{text}</p>
           </motion.div>
         ))}

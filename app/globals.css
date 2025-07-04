@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-body{
+html{
   overflow-x: hidden;
 }
 
@@ -138,6 +138,7 @@ animation: rotate 14s linear infinite;
 }
 body {
   font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 }
 
 
