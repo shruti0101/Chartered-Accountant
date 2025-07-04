@@ -162,7 +162,7 @@ const Navbar = ({ className = "" }) => {
             </div>
 
             {servicesOpen && (
-              <div className="absolute left-1/2 -translate-x-1/2 mt-1 w-[850px] bg-white border border-[#2AB55E] rounded-md shadow-xl z-50 p-6 grid grid-cols-3 gap-6 max-h-[90vh] overflow-y-auto">
+              <div className="absolute left-1/2 -translate-x-1/2 mt-1 w-[830px] bg-white border border-[#2AB55E] rounded-md shadow-xl z-50 p-6 grid grid-cols-3 gap-6 max-h-[90vh] overflow-y-auto">
 
                 {servicesLinks.map((item) => (
                   <div
@@ -238,7 +238,7 @@ const Navbar = ({ className = "" }) => {
           <Sheet>
             <SheetTrigger>
               <svg
-                className="w-7 h-7 mr-2"
+                className="w-7 h-7 "
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

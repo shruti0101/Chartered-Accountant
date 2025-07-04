@@ -91,7 +91,7 @@ export default function ClientReviews() {
       </div>
 
       {/* intro */}
-      <div className="max-w-6xl mx-auto text-center mb-12" data-aos="fade-up">
+      <div className="max-w-6xl mx-auto text-center mb-12">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Trusted by Professionals,<br className="hidden sm:block" />
           Appreciated by Clients
@@ -103,7 +103,7 @@ export default function ClientReviews() {
       </div>
 
       {/* running slider */}
-      <div className="w-full" data-aos="fade-up">
+      <div className="w-full">
         <Swiper
           modules={[Autoplay]}
           slidesPerView="auto"
