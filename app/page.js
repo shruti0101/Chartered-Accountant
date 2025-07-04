@@ -22,7 +22,7 @@ export default function Home() {
      <Process></Process>
    
      <Reviews></Reviews>
-    <Facilites></Facilites>
+    {/* <Facilites></Facilites> */}
      <Form></Form>
       <Faq></Faq>
    

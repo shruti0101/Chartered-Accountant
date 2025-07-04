@@ -151,7 +151,7 @@ const Hero = () => {
                           <TypewriterEffectSmooth
                             words={typewriterWords}
                             className="z-100"
-                            cursorClassName="z-100"
+                            cursorClassName="z-100 hidden sm:inline-block"
                           />
                         </div>
                       ) : (
