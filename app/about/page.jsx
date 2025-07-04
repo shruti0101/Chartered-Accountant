@@ -164,119 +164,136 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <div className="relative  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Section Content */}
-            <div className="mt-20 grid lg:grid-cols-2 gap-12 items-center">
-              {/* Text Content */}
-              <div data-aos="fade-right">
-                <h2 className="text-4xl font-extrabold text-blue-900 mb-4">
-                  Chintan Agrawal & Co.
-                </h2>
-                <p className="text-gray-700 text-lg leading-relaxed mb-3">
-                  At Chintan Agrawal & Co., we are a team of highly skilled and
-                  dedicated Chartered Accountants committed to providing
-                  exceptional financial solutions to individuals and businesses.
-                  With years of experience in the industry, we’ve earned a
-                  reputation for delivering reliable and trustworthy services
-                  tailored to our clients' unique needs.
-                </p>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  {/* ✅ Centered Section Heading */}
+  <div className="text-center max-w-3xl mx-auto mt-20" data-aos="fade-down">
+   <div className="flex items-center justify-center mb-3">
+          <div className="w-14 h-1 bg-sky-500 mr-3 rounded-full" />
+          <h4 className="text-sky-600 font-bold uppercase tracking-widest text-lg">
+       Our Company
+          </h4>
+          <div className="w-14 h-1 bg-sky-500 ml-3 rounded-full" />
+        </div>
+    <h2 className="text-4xl font-extrabold text-blue-900 mb-4">
+      Chintan Agrawal & Co.
+    </h2>
+    <p className="text-gray-700 text-lg leading-relaxed">
+    
+      Our mission is to empower businesses and individuals with clarity,
+      compliance, and confidence.
+    </p>
+  </div>
 
-                <h3 className="text-xl font-semibold text-green-700 mb-4">
-                  WHY CHOOSE US
-                </h3>
+  {/* ✅ Section Content: WHY CHOOSE US */}
+  <div className="mt-8 grid lg:grid-cols-2 gap-12 items-center">
+    {/* Text Content */}
+    <div data-aos="fade-right">
+      <p className="text-gray-700 text-lg leading-relaxed mb-3">
+        At Chintan Agrawal & Co., we are a team of highly skilled and dedicated
+        Chartered Accountants committed to providing exceptional financial
+        solutions to individuals and businesses. With years of experience in the
+        industry, we’ve earned a reputation for delivering reliable and
+        trustworthy services 
+      </p>
 
-                <ul className="space-y-4 text-gray-700">
-                  <li>
-                    <span className="font-semibold text-blue-900">
-                      Professional Excellence:
-                    </span>{" "}
-                    Our team consists of qualified Chartered Accountants with
-                    deep knowledge of accounting principles and a focus on
-                    delivering high-quality service.
-                  </li>
-                  <li>
-                    <span className="font-semibold text-blue-900">
-                      Personalized Approach:
-                    </span>{" "}
-                    We take the time to understand our clients’ specific needs
-                    and tailor services accordingly.
-                  </li>
-                  <li>
-                    <span className="font-semibold text-blue-900">
-                      Proactive Communication:
-                    </span>{" "}
-                    Open and transparent communication to ensure timely
-                    financial advice and client confidence.
-                  </li>
-                  <li>
-                    <span className="font-semibold text-blue-900">
-                      Client Satisfaction:
-                    </span>{" "}
-                    We aim to build long-term relationships based on trust,
-                    satisfaction, and exceptional service.
-                  </li>
-                </ul>
-              </div>
+      <h3 className="text-xl font-semibold text-green-700 mb-4">
+        WHY CHOOSE US
+      </h3>
 
-              {/* Image Side */}
-              <div
-                data-aos="fade-left"
-                className="relative w-full max-w-md mx-auto lg:mx-0"
-              >
-                <img
-                  src="/about.png"
-                  alt="Chintan Agrawal CA"
-                  width={600}
-                  height={600}
-                  className="rounded-xl object-cover"
-                />
-              </div>
-            </div>
-          </div>
+      <ul className="space-y-4 text-gray-700">
+        <li>
+          <span className="font-semibold text-blue-900">
+            Professional Excellence:
+          </span>{" "}
+          Our team consists of qualified Chartered Accountants with deep
+          knowledge of accounting principles and a focus on delivering
+          high-quality service.
+        </li>
+        <li>
+          <span className="font-semibold text-blue-900">
+            Personalized Approach:
+          </span>{" "}
+          We take the time to understand our clients’ specific needs and tailor
+          services accordingly.
+        </li>
+        <li>
+          <span className="font-semibold text-blue-900">
+            Proactive Communication:
+          </span>{" "}
+          Open and transparent communication to ensure timely financial advice
+          and client confidence.
+        </li>
+        <li>
+          <span className="font-semibold text-blue-900">
+            Client Satisfaction:
+          </span>{" "}
+          We aim to build long-term relationships based on trust, satisfaction,
+          and exceptional service.
+        </li>
+      </ul>
+    </div>
+
+    {/* Image Side */}
+    <div data-aos="fade-left" className="relative w-full max-w-md mx-auto lg:mx-0">
+      <img
+        src="/about.png"
+        alt="Chintan Agrawal CA"
+        width={600}
+        height={600}
+        className="rounded-xl object-cover"
+      />
+    </div>
+  </div>
+</div>
+
 
     {/* core services */}
- <div className="mt-12 md:mt-20 mb-10">
-      <h1
-        data-aos="zoom-up"
-        className="text-3xl font-bold text-blue-800 text-center mb-10"
-      >
-        Our Core Services
-      </h1>
+<div className="mt-12 md:mt-20 mb-10">
+  <h2
+    data-aos="zoom-up"
+    className="text-3xl md:text-5xl font-bold text-blue-800 text-center mb-4"
+  >
+    Our Core Services
+  </h2>
 
-      <div className="flex flex-col-reverse lg:flex-row items-start gap-7">
-        {/* Cards Section */}
-        <div className="grid card-grid gap-6 sm:grid-cols-2 lg:grid-cols-2 max-w-4xl flex-1">
-          {services.map(({ title, icon: Icon, blurb }, idx) => (
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.2 }}
-              key={idx}
-              className="group relative p-4 transition bg-white rounded-xl "
-            >
-              <div className="flex items-start gap-3 mb-3">
-                <Icon className="w-8 h-8 text-green-700 bg-[#DBFCE7] p-1 rounded-sm" />
-                <h4 className="text-lg font-semibold text-blue-900">
-                  {title}
-                </h4>
-              </div>
-              <p className="text-sm text-gray-600 leading-relaxed">{blurb}</p>
-          
-            </motion.div>
-          ))}
-        </div>
+  {/* ✅ Added description lines here */}
+  <p className="text-center text-gray-600 text-base md:text-lg max-w-3xl mx-auto mb-10">
+    We offer a wide range of services tailored to your business needs. <br />
+    Our team ensures excellence, compliance, and client satisfaction at every step.
+  </p>
 
-        {/* Image Section */}
-        <div className="w-full lg:w-[40%] flex justify-center items-center">
-          <img
-            src="/blind1.png"
-            alt="Service Illustration"
-            className="max-w-full h-auto object-contain mt-10"
-          />
-        </div>
-      </div>
+  <div className="flex flex-col-reverse lg:flex-row items-start gap-7">
+    {/* Cards Section */}
+    <div className="grid card-grid gap-6 sm:grid-cols-2 lg:grid-cols-2 max-w-4xl flex-1">
+      {services.map(({ title, icon: Icon, blurb }, idx) => (
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: idx * 0.2 }}
+          key={idx}
+          className="group relative p-4 transition bg-white rounded-xl "
+        >
+          <div className="flex items-start gap-3 mb-3">
+            <Icon className="w-8 h-8 text-green-700 bg-[#DBFCE7] p-1 rounded-sm" />
+            <h4 className="text-lg font-semibold text-blue-900">{title}</h4>
+          </div>
+          <p className="text-sm text-gray-600 leading-relaxed">{blurb}</p>
+        </motion.div>
+      ))}
     </div>
+
+    {/* Image Section */}
+    <div className="w-full lg:w-[40%] flex justify-center items-center">
+      <img
+        src="/blind1.png"
+        alt="Service Illustration"
+        className="max-w-full h-auto object-contain mt-10"
+      />
+    </div>
+  </div>
+</div>
+
 
         </div>
       </section>

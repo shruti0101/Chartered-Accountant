@@ -25,7 +25,7 @@ const CTASection = () => {
             </PointerHighlight>{" "}
             today
           </h2>
-          <p className="mt-4 text-base md:text-lg text-white/90 tracking-wide uppercase">
+          <p className="mt-4 text-sm md:text-lg text-white/90 tracking-wide uppercase">
             If your business is in need of a trusted advisor, get in touch with us today.
           </p>
         </div>

@@ -55,7 +55,7 @@ export default function Footer() {
             </p>
             <p className="flex items-center gap-2">
               <FaEnvelope className="text-sky-400" />
-          agarwalchintan27@gmail.com
+          agrawalchintan27@gmail.com
             </p>
           </div>
         </div>

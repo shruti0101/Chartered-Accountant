@@ -7,6 +7,8 @@ import { ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 import "../Navbar/Navbar.css";
+import { useEffect } from "react";
+
 
 import {
   Sheet,
@@ -62,6 +64,11 @@ const Navbar = ({ className = "" }) => {
   const pathname = usePathname();
   const isActive = (href) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+
+  useEffect(() => {
+  setServicesOpen(false); // Close dropdown on route change
+}, [pathname]);
 
   return (
     <nav className="py-3 bg-background/70 border-b-white sticky top-0 backdrop-blur z-50 shadow-xl">
@@ -231,7 +238,7 @@ const Navbar = ({ className = "" }) => {
           <Sheet>
             <SheetTrigger>
               <svg
-                className="w-6 h-6"
+                className="w-7 h-7 mr-2"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
