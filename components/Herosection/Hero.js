@@ -1,6 +1,6 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade,  Navigation } from "swiper/modules";
+import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -11,7 +11,6 @@ import { useState, useRef } from "react";
 import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
 import "../Herosection/Hero.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { FaCalculator, FaHandshake, FaChartLine } from "react-icons/fa";
 
 // Slide data
 const slides = [
@@ -21,6 +20,8 @@ const slides = [
       "Empowering You with Smart Accounting, Tax Solutions & Financial Clarity",
       " Tax Filing |  Audit & Assurance |  Business Advisory |  GST Compliance",
     ],
+    description:
+      "We provide a comprehensive range of financial and tax services tailored for individuals, businesses, and corporations.",
     cta: { label: "Book a Consultation", href: "/contact" },
   },
   {
@@ -28,18 +29,21 @@ const slides = [
     heading: "Reliable Accounting, Tax Planning & Financial Advisory",
     lines: [
       "Chartered Accountants You Can Trust for Clarity & Compliance",
-      "Let’s Build Your Financial Confidence",
+    
     ],
+    description:
+      "Our expert team ensures timely compliance, strategic tax planning, and proactive advisory for sustainable business growth.",
     cta: { label: "Contact With Us", href: "/contact" },
   },
   {
     image: "/hero4.jpg",
     heading: "Register Your Corporate Taxes with Confidence",
     lines: ["Trusted by Businesses Across India"],
+    description:
+      "From GST registration to corporate filings, we simplify tax processes so you can focus on scaling your business.",
     cta: { label: "Request Consultation", href: "/contact" },
   },
 ];
-
 
 const container = {
   hidden: { opacity: 0 },
@@ -64,9 +68,8 @@ const typewriterWords = [
     className: "text-white  typed mr-1 font-bold",
   },
   {
-    
-    text: "Expertise", 
-    className: "text-[#2563EB] typed font-bold", 
+    text: "Expertise",
+    className: "text-[#2563EB] typed font-bold",
   },
 ];
 
@@ -78,24 +81,24 @@ const Hero = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative hero w-full h-[100vh]  overflow-hidden pb-[20px]">
+      <section className="relative hero w-full h-[110vh]  overflow-hidden">
         {/* Arrows */}
         <div
           ref={prevRef}
-          className="hidden sm:flex group absolute top-1/2 left-4 z-20 transform -translate-y-1/2 cursor-pointer p-3 rounded-full bg-white/20 hover:bg-[#013B7A] transition"
+          className="hidden md:flex group absolute top-1/2 left-4 z-20 transform -translate-y-1/2 cursor-pointer p-3 rounded-full bg-white/20 hover:bg-[#013B7A] transition"
         >
           <ChevronLeft className="w-6 h-6 text-white group-hover:text-black transition" />
         </div>
         <div
           ref={nextRef}
-          className="hidden sm:flex group absolute top-1/2 right-4 z-20 transform -translate-y-1/2 cursor-pointer p-3 rounded-full bg-white/20 hover:bg-[#013B7A] transition"
+          className="hidden md:flex group absolute top-1/2 right-4 z-20 transform -translate-y-1/2 cursor-pointer p-3 rounded-full bg-white/20 hover:bg-[#013B7A] transition"
         >
           <ChevronRight className="w-6 h-6 text-white group-hover:text-black transition" />
         </div>
 
         {/* Swiper */}
         <Swiper
-          modules={[Autoplay, EffectFade,  Navigation]}
+          modules={[Autoplay, EffectFade, Navigation]}
           effect="fade"
           loop
           autoplay={{ delay: 6000, disableOnInteraction: false }}
@@ -119,7 +122,6 @@ const Hero = () => {
         >
           {slides.map((slide, idx) => (
             <SwiperSlide key={idx}>
-            
               <div
                 className="  w-full h-full bg-cover bg-center relative flex items-center justify-center px-4 sm:px-8"
                 style={{ backgroundImage: `url(${slide.image})` }}
@@ -148,11 +150,19 @@ const Hero = () => {
                     >
                       {idx === 0 ? (
                         <div className="inline-block z-100 text-[1.9rem] sm:text-5xl md:text-5xl font-bold max-w-[320px] sm:max-w-none mx-auto leading-snug">
-                          <TypewriterEffectSmooth
-                            words={typewriterWords}
-                            className="z-100"
-                            cursorClassName="z-100 hidden sm:inline-block"
-                          />
+                          {/* Show typing effect only on md+ screens */}
+                          <div className="hidden md:inline-block">
+                            <TypewriterEffectSmooth
+                              words={typewriterWords}
+                              className="z-100"
+                              cursorClassName="inline-block"
+                            />
+                          </div>
+
+                          {/* Static fallback heading for mobile */}
+                          <div className="md:hidden text-white text-[1.9rem] font-bold ">
+                            Trusted Financial Expertise
+                          </div>
                         </div>
                       ) : (
                         slide.heading
@@ -164,11 +174,21 @@ const Hero = () => {
                       <motion.p
                         key={i}
                         variants={item}
-                        className="text-lg hidden md:block sm:text-base font-semibold md:text-lg z-100"
+                        className="text-md hidden md:block sm:text-base font-normal md:text-lg z-100"
                       >
                         {text}
                       </motion.p>
                     ))}
+
+                    {/* Description Paragraph */}
+                    {slide.description && (
+                      <motion.p
+                        variants={item}
+                        className="text-sm  sm:text-base md:text-lg font-normal text-muted px-2 sm:px-4 md:px-6 max-w-3xl mx-auto"
+                      >
+                        {slide.description}
+                      </motion.p>
+                    )}
 
                     {/* CTA Button */}
                     <motion.div variants={item}>
@@ -187,50 +207,6 @@ const Hero = () => {
       </section>
 
       {/* Blue-Themed Cards Section */}
-      <div className="">
-        <div className="md:absolute z-10  md:bottom-[-200px] mx-auto w-full  px-10 md:px-30" data-aos="flip-up">
-          <div className="grid md:grid-cols-3 card-hero">
-            {/* Advisory Excellence */}
-            <div className="bg-[#1E3A8A] text-white group hover:bg-[#2563EB] transition-all duration-300 p-6 shadow-md flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <FaChartLine className="text-[#3B82F6] group-hover:text-white text-2xl" />
-                <h3 className="text-xl font-bold">ADVISORY EXCELLENCE</h3>
-              </div>
-              <div className="border-l-2 border-[#3B82F6] group-hover:border-white transition-all duration-300 pl-4 text-sm">
-                <p>
-                  We provide strategic financial guidance tailored to your business or personal needs — from tax structuring to investment planning and compliance management.
-                </p>
-              </div>
-            </div>
-
-            {/* Accuracy */}
-            <div className="bg-[#1E3A8A] group hover:bg-[#2563EB] transition-all duration-300 text-white p-6 shadow-md flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <FaCalculator className="text-[#3B82F6] group-hover:text-white transition-all duration-300 text-3xl" />
-                <h3 className="text-xl font-bold">ACCURACY</h3>
-              </div>
-              <div className="border-l-2 border-[#3B82F6] group-hover:border-white transition-all duration-300 pl-4 text-sm">
-                <p>
-                  We ensure your financial data is meticulously reviewed and reported, adhering to all regulatory standards. Accuracy is the cornerstone of our practice.
-                </p>
-              </div>
-            </div>
-
-            {/* Integrity */}
-            <div className="bg-[#1E3A8A] group hover:bg-[#2563EB] transition-all duration-300 text-white p-6 shadow-md flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <FaHandshake className="text-[#3B82F6] group-hover:text-white transition-all duration-300 text-3xl" />
-                <h3 className="text-xl font-bold">INTEGRITY</h3>
-              </div>
-              <div className="border-l-2 border-[#3B82F6] group-hover:border-white transition-all duration-300 pl-4 text-sm">
-                <p>
-                  We uphold the highest standards of professionalism and ethical conduct in every client interaction, building trust that lasts.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </>
   );
 };

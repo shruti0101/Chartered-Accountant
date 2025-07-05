@@ -62,7 +62,7 @@ const WhyChooseUs = () => {
       <div className="text-center mb-14 px-4">
         <div className="flex items-center justify-center mb-3">
           <div className="w-14 h-1 bg-sky-500 mr-3 rounded-full" />
-          <h4 className="text-sky-600 font-bold uppercase tracking-widest text-lg">
+          <h4 className="text-sky-600 font-bold uppercase tracking-[0.15em] text-sm sm:text-base">
             Why Choose Us
           </h4>
           <div className="w-14 h-1 bg-sky-500 ml-3 rounded-full" />

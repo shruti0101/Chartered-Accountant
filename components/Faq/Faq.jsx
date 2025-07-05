@@ -55,11 +55,11 @@ export default function Faq() {
       </div>
 
       <div className="container mx-auto px-4 max-w-5xl">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#0b0d30] mb-12">
+        <h2 className="text-xl md:text-4xl lg:text-5xl font-bold text-center text-[#0b0d30] mb-12">
           Frequently Asked Questions
         </h2>
 
-        <ul className="space-y-6">
+        <ul className="space-y-6 ">
           {faqs.map(({ q, a }, idx) => (
             <li
               key={q}
@@ -70,7 +70,7 @@ export default function Faq() {
                 className="w-full flex justify-between items-start text-left group"
               >
                 <span
-                  className={`text-lg md:text-xl font-medium transition-colors ${
+                  className={`text-md md:text-xl font-medium transition-colors ${
                     open === idx
                       ? "text-[#004AAD]"
                       : "text-[#0b0d30] group-hover:text-[#004AAD]"
@@ -79,15 +79,15 @@ export default function Faq() {
                   {q}
                 </span>
                 {open === idx ? (
-                  <Minus className="shrink-0 text-[#004AAD]" />
+                  <Minus className=" text-sm shrink-0 text-[#004AAD]" />
                 ) : (
-                  <Plus className="shrink-0 text-[#004AAD]" />
+                  <Plus className=" text-sm  shrink-0 text-[#004AAD]" />
                 )}
               </button>
 
               {/* answer */}
               {open === idx && (
-                <p className="mt-4 text-gray-700 leading-relaxed">{a}</p>
+                <p className="mt-4 text-md md:text-xl text-gray-700 leading-relaxed">{a}</p>
               )}
             </li>
           ))}

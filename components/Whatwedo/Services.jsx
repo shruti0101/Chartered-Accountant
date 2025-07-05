@@ -15,7 +15,7 @@ import "aos/dist/aos.css";
 const services = [
   { title: "Taxation Related Services", image: "/services/tax.jpg" },
   { title: "ROC Compliance", image: "/services/compliance.jpeg" },
-  { title: "BookKeeping and Accounting Services", image: "/services/book.jpg" },
+  { title: "Book Keeping and Accounting Services", image: "/services/book.jpg" },
   { title: "International Taxation", image: "/services/fdi.webp" },
   { title: "Business Setup Solution", image: "/services/businessadvice.webp" },
   { title: "GST Related Services", image: "/services/GSTFilling.jpg" },
@@ -48,24 +48,14 @@ const ServicesCarousel = () => {
         </div>
 
         {/* main heading with gradient + hand-drawn underline */}
-        <h2 className="relative inline-block font-bold text-[#1E2939] text-3xl sm:text-4xl md:text-5xl leading-snug group">
+        <h2 className="relative inline-block font-bold text-[#1E2939] text-3xl sm:text-3xl md:text-5xl leading-snug group">
           Solutions tailored to your needs,
           <br />
-          <span className="bg-gradient-to-r from-sky-500 via-indigo-500 to-sky-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r  from-sky-500 via-indigo-500 to-sky-600 bg-clip-text text-2xl md:text-5xl text-transparent">
             service perfected
           </span>
 
-          {/* hand-drawn underline (reveals on hover) */}
-          <span className="absolute left-0 bottom-0 w-full h-4 overflow-hidden pointer-events-none">
-            <span className="block w-full h-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
-              style={{
-                backgroundImage:
-                  "url(\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='189'%20height='20'%20viewBox='0%200%20189%2020'%20fill='none'%3E%3Cpath%20d='M2%2018C30%2010%2070%202%20102%202C134%202%20160%2010%20188%2018'%20stroke='%2348b2ff'%20stroke-width='4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E\")",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "100% 100%",
-              }}
-            />
-          </span>
+      
         </h2>
 
         {/* paragraph with subtle hover reveal */}
@@ -73,7 +63,7 @@ const ServicesCarousel = () => {
       </div>
 
       {/* ───── Swiper Carousel (unchanged) ───── */}
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="md:max-w-6xl   mx-auto px-4">
         <Swiper
           modules={[Navigation, Autoplay]}
           navigation
@@ -101,7 +91,7 @@ const ServicesCarousel = () => {
                 <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#1869C1] via-[#7DAADA]/30 to-transparent opacity-90 group-hover:h-full transition-all duration-500 z-20" />
                 {/* title */}
                 <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 text-white text-center transition-all duration-500 group-hover:bottom-28">
-                  <h3 className="text-base sm:text-xl md:text-2xl font-bold tracking-wide drop-shadow-md">
+                  <h3 className="text-3xl   font-extrabold tracking-wide drop-shadow-md">
                     {service.title}
                   </h3>
                 </div>

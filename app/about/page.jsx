@@ -1,4 +1,5 @@
 "use client";
+import { FaCalculator, FaHandshake, FaChartLine } from "react-icons/fa";
 import {
   CheckCircleIcon,
   GlobeAltIcon,
@@ -50,10 +51,10 @@ const services = [
       "Global tax planning and DTAA benefits to support international expansion.",
   },
   {
-    title: "Bookkeeping & Accounting",
+    title: "Book keeping & Accounting",
     icon: FaBookOpen,
     blurb:
-      "Clean, timely bookkeeping and accounting for compliance and growth planning.",
+      "Clean, timely book keeping and accounting for compliance and growth planning.",
   },
   {
     title: "Taxation Related Services",
@@ -174,9 +175,7 @@ export default function AboutSection() {
           </h4>
           <div className="w-14 h-1 bg-sky-500 ml-3 rounded-full" />
         </div>
-    <h2 className="text-4xl font-extrabold text-blue-900 mb-4">
-      Chintan Agrawal & Co.
-    </h2>
+    
     <p className="text-gray-700 text-lg leading-relaxed">
     
       Our mission is to empower businesses and individuals with clarity,
@@ -196,9 +195,10 @@ export default function AboutSection() {
         trustworthy services 
       </p>
 
-      <h3 className="text-xl font-semibold text-green-700 mb-4">
-        WHY CHOOSE US
+      <h3 className="text-2xl font-bold text-green-700 mb-4">
+        WHY CHOOSE US 
       </h3>
+    
 
       <ul className="space-y-4 text-gray-700">
         <li>
@@ -247,8 +247,55 @@ export default function AboutSection() {
 </div>
 
 
+
+   <div className="mb-10 mt-14">
+        <h2 className="font-bold text-4xl text-center text-blue-900 mb-5">Our Values</h2>
+        <div className=" mx-auto max-w-5xl " data-aos="flip-up">
+          <div className="grid md:grid-cols-3 card-hero">
+            {/* Advisory Excellence */}
+            <div className="bg-[#1E3A8A] text-white group hover:bg-[#2563EB] transition-all duration-300 p-6 shadow-md flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <FaChartLine className="text-[#3B82F6] group-hover:text-white text-2xl" />
+                <h3 className="text-xl font-bold">ADVISORY EXCELLENCE</h3>
+              </div>
+              <div className="border-l-2 border-[#3B82F6] group-hover:border-white transition-all duration-300 pl-4 text-sm">
+                <p>
+                  We provide strategic financial guidance tailored to your business or personal needs — from tax structuring to investment planning and compliance management.
+                </p>
+              </div>
+            </div>
+
+            {/* Accuracy */}
+            <div className="bg-[#1E3A8A] group hover:bg-[#2563EB] transition-all duration-300 text-white p-6 shadow-md flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <FaCalculator className="text-[#3B82F6] group-hover:text-white transition-all duration-300 text-3xl" />
+                <h3 className="text-xl font-bold">ACCURACY</h3>
+              </div>
+              <div className="border-l-2 border-[#3B82F6] group-hover:border-white transition-all duration-300 pl-4 text-sm">
+                <p>
+                  We ensure your financial data is meticulously reviewed and reported, adhering to all regulatory standards. Accuracy is the cornerstone of our practice.
+                </p>
+              </div>
+            </div>
+
+            {/* Integrity */}
+            <div className="bg-[#1E3A8A] group hover:bg-[#2563EB] transition-all duration-300 text-white p-6 shadow-md flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <FaHandshake className="text-[#3B82F6] group-hover:text-white transition-all duration-300 text-3xl" />
+                <h3 className="text-xl font-bold">INTEGRITY</h3>
+              </div>
+              <div className="border-l-2 border-[#3B82F6] group-hover:border-white transition-all duration-300 pl-4 text-sm">
+                <p>
+                  We uphold the highest standards of professionalism and ethical conduct in every client interaction, building trust that lasts.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     {/* core services */}
-<div className="mt-12 md:mt-20 mb-10">
+<div className="mt-12 md:mt-18 mb-10">
   <h2
     data-aos="zoom-up"
     className="text-3xl md:text-5xl font-bold text-blue-800 text-center mb-4"
@@ -293,6 +340,9 @@ export default function AboutSection() {
     </div>
   </div>
 </div>
+
+
+
 
 
         </div>

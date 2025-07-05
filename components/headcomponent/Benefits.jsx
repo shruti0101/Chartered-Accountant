@@ -1,17 +1,22 @@
-import { FaCheckCircle } from "react-icons/fa";
+import { CheckCircle2 } from "lucide-react";
 
-export default function BenefitsList({ benefits = [] }) {
+
+
+export default function GSTBenefits({benefits}) {
   return (
-    <div className="grid mt-7 grid-cols-2 lg:grid-cols-4 gap-4 md:gap-7 ">
-      {benefits.map((text, i) => (
-        <div
-          key={i}
-          className="flex items-start gap-3   bg-white shadow rounded-lg p-3"
-        >
-          <FaCheckCircle className="hidden md:block w-7 h-7 gap-5 text-green-600 mt-1" />
-          <p className="text-gray-700">{text}</p>
-        </div>
-      ))}
-    </div>
+    <section className=" px-4 md:px-10 lg:px-20 ">
+      
+      <ul className="space-y-6">
+        {benefits.map((benefit, index) => (
+          <li key={index} className="flex items-start gap-3">
+            <CheckCircle2 className="text-green-500  w-6 h-6 mt-1 flex-shrink-0" />
+            <p className="text-gray-800 text-base md:text-xl  leading-relaxed">
+              <span className="font-bold">{benefit.title}:</span>{" "}
+              {benefit.description}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }

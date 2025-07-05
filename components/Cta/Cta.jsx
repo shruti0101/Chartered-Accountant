@@ -4,15 +4,15 @@ import { PointerHighlight } from "@/components/ui/Pointer-Highlight";
 const CTASection = () => {
   return (
     <section
-      className="w-full  py-8 bg-no-repeat bg-[#1e73be]"
+      className="w-full  py-5 bg-no-repeat bg-[#1e73be]"
       style={{
         backgroundImage: "url('/ctabg.webp')",
         backgroundSize: "40%",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "right 5% center",
+        backgroundPosition: "right 10% center",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="md:max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Left Text */}
         <div className="text-white max-w-2xl">
           <h2 className="text-3xl md:text-5xl font-semibold leading-snug">
@@ -31,7 +31,7 @@ const CTASection = () => {
         </div>
 
         {/* CTA Button */}
-        <div>
+        <div className="mx-auto">
           <a
             href="#contact"
             className="bg-white text-black text-lg font-semibold py-3 px-6 rounded-full shadow hover:bg-gray-100 transition duration-300"

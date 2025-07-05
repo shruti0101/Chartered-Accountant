@@ -26,10 +26,7 @@
 
 
 @media (max-width:576px) {
-  .typed{
-    font-size: 1rem;
-    word-wrap: break-word;
-  }
+ 
   .hero{
     height: auto;
   }
@@ -39,10 +36,3 @@
 
 
 
-
-/* Extra micro‑tweak for very small devices (≤360 px wide) */
-@media (max-width: 360px) {
-  .typed {
-    font-size: 1rem;
-  }
-}

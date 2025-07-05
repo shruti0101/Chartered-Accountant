@@ -27,20 +27,38 @@ export default function gstregistration() {
     "TDS & TCS Registrations", "UN / Embassy & Notified Bodies", "E‑Commerce Operator Registration"
   ];
 
-  const benefits = [
-    "Full legal compliance—avoid penalties & late fees.",
-    "Claim Input‑Tax Credit and reduce tax outflow.",
-    "Free interstate trading—grow beyond state borders.",
-    "Boost credibility with customers & suppliers.",
-    "Access lucrative government tenders/contracts.",
-    "Automated invoicing & streamlined tax filing.",
-    "Mandatory for most e‑commerce platform sellers.",
-    "Quick refunds for exporters—improve cash flow.",
-    "Unlock financial transparency—enhance confidence.",
-    "Better financial record keeping and auditing.",
-    "Eligibility for input credit on capital goods & services.",
-    "Improves supplier and vendor relationships.",
-  ];
+const benefits = [
+  {
+    title: "Legal Compliance",
+    description:
+      "Registering under GST ensures compliance with tax laws, avoiding penalties and legal issues.",
+  },
+  {
+    title: "Input Tax Credit",
+    description:
+      "Registered businesses can claim input tax credit on GST paid for goods and services used in their business, reducing overall tax liability.",
+  },
+  {
+    title: "Interstate Sales",
+    description:
+      "GST registration enables businesses to sell goods and services across state borders without restrictions, fostering interstate trade.",
+  },
+  {
+    title: "Market Competitiveness",
+    description:
+      "Registered businesses gain credibility and trust among customers and suppliers, enhancing their market competitiveness.",
+  },
+  {
+    title: "Access to Government Contracts",
+    description:
+      "Many government contracts and tenders require GST registration, opening up opportunities for registered businesses.",
+  },
+  {
+    title: "Smooth Business Operations",
+    description:
+      "GST registration streamlines tax processes, simplifies invoicing, and facilitates easier compliance with tax regulations.",
+  },
+];
 
 const steps = [
   {
@@ -141,7 +159,7 @@ const steps = [
 
     <>
     
-    <section id="gst-services" className="py-12 md:py-31 ">
+    <section id="gst-services" className="py-12 md:py-25 ">
 
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-100/90 via-sky-100/60 to-teal-50" />
       <div className="absolute inset-0 -z-20 rotate-30 origin-top-left">

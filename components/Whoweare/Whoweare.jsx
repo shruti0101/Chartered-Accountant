@@ -6,14 +6,14 @@ import rocket from "@/public/rocket-image.png";
 import circle from "@/public/circle.png";
 const Whoweare = () => {
   return (
-    <section className="bg-white pt-15 md:pt-43 pb-13">
+    <section className="bg-white pt-12 md:pt-15 pb-4">
       
-      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center px-6 md:px-10 gap-10">
+      <div className="  md:max-w-screen-xl mx-auto flex flex-col md:flex-row items-center px-6 md:px-10 gap-10">
 
 
  {/* Right Image */}
         <div
-          className="md:w-1/2 flex justify-center relative"
+          className="order-2 md:order-1  md:w-1/2 flex justify-center relative"
           data-aos="fade-down"
         >
           <Image
@@ -45,7 +45,7 @@ const Whoweare = () => {
         {/* Left Content */}
 
 
-        <div className="md:w-1/2" data-aos="fade-up">
+        <div className=" order-1 md:order-2 md:w-1/2" data-aos="fade-up">
           <div className="border-l-4 border-sky-500 pl-4 mb-4">
             <p className="text-sm text-sky-500 font-bold uppercase">
               Who We Are
@@ -55,12 +55,12 @@ const Whoweare = () => {
             </h2>
           </div>
 
-          <blockquote className="italic text-sky-600 text-lg mb-6">
+          <blockquote className="italic text-sky-600 text-lg mb-3">
             “To Earn Trust in Finance, We Must First Make Financial Practices
             Trustworthy — Years of Chartered Expertise You Can Count On.”
           </blockquote>
 
-          <p className="text-gray-600 mb-4 text-sm md:text-base">
+          <p className="text-gray-600 mb-3 text-sm md:text-base">
             We are a team of experienced <strong>Chartered Accountants</strong>{" "}
             committed to helping individuals, startups, and businesses navigate
             India’s financial and legal systems with ease.{" "}
@@ -72,20 +72,23 @@ const Whoweare = () => {
           </p>
 
           <div className="mb-6">
-            <p className="text-black font-semibold text-lg">
+            <p className="text-black font-bold text-lg md:text-xl mb-3">
               Our Core Services Include:
             </p>
-            <ul className="list-disc pl-5 text-gray-700 text-sm md:text-base">
-              <li>
-                Business Entity Registration (Private Ltd., LLP, MSMEs, NGOs)
-              </li>
-              <li>GST Advisory and Filing</li>
-              <li>Intellectual Property Protection</li>
-              <li>Accounting, Auditing & Compliance Solutions</li>
+            <ul className="text-[#0AA9F4] pl-5  text-sm md:text-base">
+             
+             
+              <li>  ➜ GST Advisory and Filing</li>
+              <li>  ➜ Intellectual Property Protection</li>
+              <li>  ➜ Auditing & Compliance Solutions</li>
+              <li>  ➜ internation taxation</li>
+              <li>  ➜ book keeping and Accounting services </li>
+              <li>  ➜ business setup solution </li>
+              <li>  ➜ ROC Compliance</li>
             </ul>
           </div>
 
-          <div className="flex justify-center md:justify-start mt-6">
+          <div className="flex justify-center md:justify-start mt-2">
             <button className="group relative inline-flex items-center overflow-hidden cursor-pointer rounded-full bg-sky-500 px-4 py-3 font-semibold text-white shadow-md transition-all duration-300 hover:bg-sky-600 hover:scale-105">
               <span className="mr-1 mx-auto">Know More</span>
               <svg

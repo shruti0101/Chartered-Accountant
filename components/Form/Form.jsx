@@ -39,6 +39,7 @@ export default function ContactSection() {
               <div>
                 <p className="text-gray-500 text-sm font-semibold">EMAIL</p>
                 <p className="text-gray-800 font-medium">agarwalchintan27@gmail.com</p>
+                  <p className="text-gray-800 font-medium">info@cachintanagrawal@gmail.com</p>
               </div>
             </div>
 
@@ -104,6 +105,7 @@ export default function ContactSection() {
           >
             Submit
           </button>
+          
 
           {/* Optional FormSubmit config */}
           <input type="hidden" name="_captcha" value="false" />
