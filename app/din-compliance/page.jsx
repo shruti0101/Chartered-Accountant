@@ -171,9 +171,9 @@ const benefits = [
 <div>
   <h3 className="text-2xl md:text-4xl pt-2 capitalize font-bold text-center text-blue-900">why choose us for DIN Compliance</h3>
             <img
-              src="/navservices/Din.png"
+              src="/navservices/din.png"
               alt="DIN Compliance"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-contain"
               loading="lazy"
             />
           </div>

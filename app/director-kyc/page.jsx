@@ -1,25 +1,20 @@
 'use client';
 
-import { lazy, Suspense, useState } from "react";
+import { useState } from "react";
 import {
-  FaCheckCircle, FaLock,
-  FaIdCard, FaMapMarkedAlt, FaFileContract,
-  FaUniversity, FaUserShield, FaKey, FaLaptopCode, FaCertificate,
-  FaBuilding
+  FaCheckCircle, FaLock, FaIdCard, FaMapMarkedAlt,
+  FaFileContract, FaUniversity, FaUserShield, FaKey,
+  FaLaptopCode, FaCertificate, FaBuilding
 } from "react-icons/fa";
 
-// Lazy-loaded components
-const SectionTitle = lazy(() => import("@/components/headcomponent/Sectiontitle"));
-const FormSection = lazy(() => import("@/components/headcomponent/Formsection"));
-const BenefitsList = lazy(() => import("@/components/headcomponent/Benefits"));
-const ProcessSteps = lazy(() => import("@/components/headcomponent/Process"));
-const DocumentsRequired = lazy(() => import("@/components/headcomponent/Documents"));
-const FAQSection = lazy(() => import("@/components/headcomponent/Faq"));
-const Cta = lazy(() => import("@/components/Cta/Cta"));
-const Setsapart = lazy(() => import("@/components/Setsapart/Setsapart"));
-
-// Fallback for Suspense
-const Loading = () => <div className="text-center py-6 text-gray-500 animate-pulse">Loading...</div>;
+import SectionTitle from "@/components/headcomponent/Sectiontitle";
+import FormSection from "@/components/headcomponent/Formsection";
+import BenefitsList from "@/components/headcomponent/Benefits";
+import ProcessSteps from "@/components/headcomponent/Process";
+import DocumentsRequired from "@/components/headcomponent/Documents";
+import FAQSection from "@/components/headcomponent/Faq";
+import Cta from "@/components/Cta/Cta";
+import Setsapart from "@/components/Setsapart/Setsapart";
 
 export default function AnnualFiling() {
   const [open, setOpen] = useState(null);
@@ -41,6 +36,7 @@ export default function AnnualFiling() {
     { icon: FaCertificate, subtitle: "MCA Portal Filing", desc: "Upload form with DSC on MCA portal and obtain SRN/Acknowledgment." },
     { icon: FaCheckCircle, subtitle: "Receive Confirmation", desc: "Receive MCA confirmation mail with successful filing status." },
     { icon: FaLock, subtitle: "Stay Compliant Yearly", desc: "Ensure annual eKYC is completed before every 30th September." },
+    { icon: FaUniversity, subtitle: "Track Filing & Notices", desc: "We monitor MCA filings and alert you on future compliance or MCA notices." }
   ];
 
   const documents = [
@@ -53,26 +49,11 @@ export default function AnnualFiling() {
   ];
 
   const faqs = [
-    {
-      q: "Who needs to file DIR-3 KYC?",
-      a: "Every individual with a DIN on or before March 31 must file DIR-3 KYC—even if not associated with any company."
-    },
-    {
-      q: "What happens if I miss the deadline?",
-      a: "Your DIN gets deactivated and a ₹5,000 penalty applies to reactivate it."
-    },
-    {
-      q: "Is DSC mandatory for KYC?",
-      a: "Yes. The form must be digitally signed by the director and verified by a practicing CA, CS, or CMA."
-    },
-    {
-      q: "When is the due date?",
-      a: "30th September of each financial year."
-    },
-    {
-      q: "Is KYC needed if DIN is not in use?",
-      a: "Yes. Unless the DIN has been surrendered or canceled, filing is mandatory."
-    }
+    { q: "Who needs to file DIR-3 KYC?", a: "Every individual with a DIN on or before March 31 must file DIR-3 KYC—even if not associated with any company." },
+    { q: "What happens if I miss the deadline?", a: "Your DIN gets deactivated and a ₹5,000 penalty applies to reactivate it." },
+    { q: "Is DSC mandatory for KYC?", a: "Yes. The form must be digitally signed by the director and verified by a practicing CA, CS, or CMA." },
+    { q: "When is the due date?", a: "30th September of each financial year." },
+    { q: "Is KYC needed if DIN is not in use?", a: "Yes. Unless the DIN has been surrendered or canceled, filing is mandatory." }
   ];
 
   const filingTypes = [
@@ -86,8 +67,7 @@ export default function AnnualFiling() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="">
+      <section>
         <div className="absolute inset-0 -z-10 h-auto md:min-h-[670px] bg-gradient-to-br from-blue-100 via-green-100 to-white" />
         <div className="container mx-auto px-4 py-12">
           <div className="flex flex-col lg:flex-row items-center gap-10">
@@ -103,20 +83,14 @@ export default function AnnualFiling() {
               </p>
             </div>
             <div className="flex-1 w-full max-w-xl">
-              <Suspense fallback={<Loading />}>
-                <FormSection />
-              </Suspense>
+              <FormSection />
             </div>
           </div>
         </div>
       </section>
 
-      {/* What Sets Us Apart */}
-      <Suspense fallback={<Loading />}>
-        <Setsapart />
-      </Suspense>
+      <Setsapart />
 
-      {/* Info Section */}
       <div className="bg-white w-full py-12 px-4 md:px-10 lg:px-20">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
@@ -152,7 +126,6 @@ export default function AnnualFiling() {
         </div>
       </div>
 
-      {/* Types Section */}
       <section className="py-12 px-4">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-10">
@@ -170,36 +143,21 @@ export default function AnnualFiling() {
         </div>
       </section>
 
-      {/* Benefits */}
       <div className="bg-gradient-to-br from-[#eef3fb] to-[#fdfdff] md:py-12 px-4 rounded-xl">
-        <Suspense fallback={<Loading />}>
-          <SectionTitle>Benefits of Director KYC</SectionTitle>
-          <BenefitsList benefits={benefits} />
-        </Suspense>
+        <SectionTitle>Benefits of Director KYC</SectionTitle>
+        <BenefitsList benefits={benefits} />
       </div>
 
-      {/* Process */}
-      <Suspense fallback={<Loading />}>
-        <SectionTitle>Process for Director KYC</SectionTitle>
-        <ProcessSteps steps={steps} />
-      </Suspense>
+      <SectionTitle>Process for Director KYC</SectionTitle>
+      <ProcessSteps steps={steps} />
 
-      {/* Documents */}
-      <Suspense fallback={<Loading />}>
-        <SectionTitle>Documents Required for Director KYC</SectionTitle>
-        <DocumentsRequired documents={documents} />
-      </Suspense>
+      <SectionTitle>Documents Required for Director KYC</SectionTitle>
+      <DocumentsRequired documents={documents} />
 
-      {/* FAQs */}
-      <Suspense fallback={<Loading />}>
-        <SectionTitle>Frequently Asked Questions</SectionTitle>
-        <FAQSection faqs={faqs} open={open} toggle={toggle} />
-      </Suspense>
+      <SectionTitle>Frequently Asked Questions</SectionTitle>
+      <FAQSection faqs={faqs} open={open} toggle={toggle} />
 
-      {/* CTA */}
-      <Suspense fallback={<Loading />}>
-        <Cta />
-      </Suspense>
+      <Cta />
     </>
   );
 }
