@@ -1,25 +1,22 @@
 'use client';
-import { lazy, Suspense, useState } from "react";
+import {  useState } from "react";
 import {
   FaCheckCircle, FaSmile, FaLock, FaIdCard, FaMapMarkedAlt,
   FaFileContract, FaUniversity, FaUserShield, FaKey, FaLaptopCode, FaCertificate, FaBuilding
 } from "react-icons/fa";
 
-// Lazy-loaded components
-const SectionTitle = lazy(() => import("@/components/headcomponent/Sectiontitle"));
-const StatsSection = lazy(() => import("@/components/headcomponent/StatsSection"));
-const FormSection = lazy(() => import("@/components/headcomponent/Formsection"));
-const TypesList = lazy(() => import("@/components/headcomponent/Typelist"));
-const BenefitsList = lazy(() => import("@/components/headcomponent/Benefits"));
-const ProcessSteps = lazy(() => import("@/components/headcomponent/Process"));
-const DocumentsRequired = lazy(() => import("@/components/headcomponent/Documents"));
-const FAQSection = lazy(() => import("@/components/headcomponent/Faq"));
-const Cta = lazy(() => import("@/components/Cta/Cta"));
 
-// Loading fallback
-const Loading = () => (
-  <div className="text-center text-gray-500 py-6 animate-pulse">Loading...</div>
-);
+import { useState } from 'react';
+import SectionTitle from "@/components/headcomponent/Sectiontitle";
+import FormSection from "@/components/headcomponent/Formsection";
+import TypesList from "@/components/headcomponent/Typelist";
+import BenefitsList from "@/components/headcomponent/Benefits";
+import ProcessSteps from "@/components/headcomponent/Process";
+import DocumentsRequired from "@/components/headcomponent/Documents";
+import FAQSection from "@/components/headcomponent/Faq";
+import Cta from "@/components/Cta/Cta";
+
+
 
 export default function DINCompliance() {
   const [open, setOpen] = useState(null);
@@ -148,20 +145,19 @@ const benefits = [
             </p>
           </div>
 
-          <Suspense fallback={<Loading />}>
+         
             <StatsSection stats={stats} />
-          </Suspense>
+        
 
           <div className="grid lg:grid-cols-2 gap-10 md:mb-20">
-            <Suspense fallback={<Loading />}>
+           
               <FormSection />
-            </Suspense>
-            <Suspense fallback={<Loading />}>
+          
               <TypesList types={types} head={heading} para={para} />
-            </Suspense>
+           
           </div>
 
-          <Suspense fallback={<Loading />}>
+     
             <div className="bg-gradient-to-br from-[#eef3fb] to-[#fdfdff] md:py-12 mt-3 px-4 rounded-xl">
               <SectionTitle>Benefits of Filing DIR-3 KYC</SectionTitle>
               <BenefitsList benefits={benefits} />
@@ -187,13 +183,13 @@ const benefits = [
 
             <SectionTitle>Frequently Asked Questions</SectionTitle>
             <FAQSection faqs={faqs} open={open} toggle={toggle} />
-          </Suspense>
+         
         </div>
       </section>
 
-      <Suspense fallback={<Loading />}>
+     
         <Cta />
-      </Suspense>
+     
     </>
   );
 }

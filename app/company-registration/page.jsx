@@ -1,21 +1,23 @@
 'use client';
-import { lazy, Suspense, useState } from "react";
+import {  useState } from "react";
 import {
   FaCheckCircle, FaRegBuilding, FaSmile, FaLock,
   FaIdCard, FaMapMarkedAlt, FaFileContract,
   FaUniversity, FaUserShield, FaKey
 } from "react-icons/fa";
 
-// Lazy loaded components
-const SectionTitle = lazy(() => import("@/components/headcomponent/Sectiontitle"));
-const StatsSection = lazy(() => import("@/components/headcomponent/StatsSection"));
-const FormSection = lazy(() => import("@/components/headcomponent/Formsection"));
-const TypesList = lazy(() => import("@/components/headcomponent/Typelist"));
-const BenefitsList = lazy(() => import("@/components/headcomponent/Benefits"));
-const ProcessSteps = lazy(() => import("@/components/headcomponent/Process"));
-const DocumentsRequired = lazy(() => import("@/components/headcomponent/Documents"));
-const FAQSection = lazy(() => import("@/components/headcomponent/Faq"));
-const Cta = lazy(() => import("@/components/Cta/Cta"));
+
+
+import { useState } from 'react';
+import SectionTitle from "@/components/headcomponent/Sectiontitle";
+import FormSection from "@/components/headcomponent/Formsection";
+import TypesList from "@/components/headcomponent/Typelist";
+import BenefitsList from "@/components/headcomponent/Benefits";
+import ProcessSteps from "@/components/headcomponent/Process";
+import DocumentsRequired from "@/components/headcomponent/Documents";
+import FAQSection from "@/components/headcomponent/Faq";
+import Cta from "@/components/Cta/Cta";
+import Setsapart from "@/components/Setsapart/Setsapart";
 
 // Simple fallback for suspense
 const Loading = () => <div className="text-center py-6 text-gray-500 animate-pulse">Loading...</div>;
@@ -155,20 +157,18 @@ export default function gstregistration() {
             </p>
           </div>
 
-          <Suspense fallback={<Loading />}>
             <StatsSection stats={companyStats} />
-          </Suspense>
+         
 
           <div className="grid lg:grid-cols-2 gap-10 md:mb-20">
-            <Suspense fallback={<Loading />}>
+           
               <FormSection />
-            </Suspense>
-            <Suspense fallback={<Loading />}>
+     
+          
               <TypesList types={types} />
-            </Suspense>
+      
           </div>
 
-          <Suspense fallback={<Loading />}>
             <div className="bg-gradient-to-br from-[#eef3fb] to-[#fdfdff] md:py-12 mt-3 px-4 rounded-xl">
               <SectionTitle>Benefits of Company Registration</SectionTitle>
               <BenefitsList benefits={benefits} />
@@ -176,7 +176,7 @@ export default function gstregistration() {
 
             <SectionTitle>Our Company Registration Process</SectionTitle>
             <ProcessSteps steps={steps} />
-          </Suspense>
+    
 
           <div className="overflow-hidden max-w-5xl mx-auto my-10">
             <img
@@ -187,19 +187,19 @@ export default function gstregistration() {
             />
           </div>
 
-          <Suspense fallback={<Loading />}>
+        
             <SectionTitle>Documents Required for Company Registration</SectionTitle>
             <DocumentsRequired documents={documents} />
 
             <SectionTitle>Frequently Asked Questions</SectionTitle>
             <FAQSection faqs={faqs} open={open} toggle={toggle} />
-          </Suspense>
+     
         </div>
       </section>
 
-      <Suspense fallback={<Loading />}>
+    
         <Cta />
-      </Suspense>
+   
     </>
   );
 }

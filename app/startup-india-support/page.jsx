@@ -1,24 +1,22 @@
 'use client';
 
-import { useState, Suspense, lazy } from 'react';
+import { useState } from 'react';
 import SectionTitle from "@/components/headcomponent/Sectiontitle";
+import FormSection from "@/components/headcomponent/Formsection";
+import TypesList from "@/components/headcomponent/Typelist";
+import BenefitsList from "@/components/headcomponent/Benefits";
+import ProcessSteps from "@/components/headcomponent/Process";
+import DocumentsRequired from "@/components/headcomponent/Documents";
+import FAQSection from "@/components/headcomponent/Faq";
+import Cta from "@/components/Cta/Cta";
+import Setsapart from "@/components/Setsapart/Setsapart";
+
 import {
   FaCheckCircle, FaRegBuilding, FaSmile, FaLock,
   FaIdCard, FaMapMarkedAlt, FaFileContract,
   FaUniversity, FaUserShield, FaKey, FaLaptopCode, FaCertificate,
   FaExpand, FaBuilding, FaStore, FaHandshake, FaMoneyBillWave, FaChild
 } from "react-icons/fa";
-
-// Lazy load components
-// const StatsSection = lazy(() => import("@/components/headcomponent/StatsSection"));
-const FormSection = lazy(() => import("@/components/headcomponent/Formsection"));
-const TypesList = lazy(() => import("@/components/headcomponent/Typelist"));
-const BenefitsList = lazy(() => import("@/components/headcomponent/Benefits"));
-const ProcessSteps = lazy(() => import("@/components/headcomponent/Process"));
-const DocumentsRequired = lazy(() => import("@/components/headcomponent/Documents"));
-const FAQSection = lazy(() => import("@/components/headcomponent/Faq"));
-const Cta = lazy(() => import("@/components/Cta/Cta"));
-const Setsapart = lazy(() => import("@/components/Setsapart/Setsapart"));
 
 export default function StartupRegistration() {
   const [open, setOpen] = useState(null);
@@ -87,17 +85,13 @@ export default function StartupRegistration() {
               </p>
             </div>
             <div className="flex-1 w-full max-w-xl">
-              <Suspense fallback={<div>Loading Form...</div>}>
-                <FormSection />
-              </Suspense>
+              <FormSection />
             </div>
           </div>
         </div>
       </section>
 
-      <Suspense fallback={<div>Loading...</div>}>
-        <Setsapart />
-      </Suspense>
+      <Setsapart />
 
       {/* Recognition Info */}
       <div className="bg-white w-full py-12 px-4 md:px-10 lg:px-20">
@@ -148,32 +142,21 @@ export default function StartupRegistration() {
         </div>
       </section>
 
-      {/* Benefits */}
       <div className="bg-gradient-to-br from-[#eef3fb] to-[#fdfdff] md:py-12 px-4 rounded-xl">
         <SectionTitle>Benefits of Startup India Registration</SectionTitle>
-        <Suspense fallback={<div>Loading Benefits...</div>}>
-          <BenefitsList benefits={benefits} />
-        </Suspense>
+        <BenefitsList benefits={benefits} />
       </div>
 
       <SectionTitle>Process for Startup Registration</SectionTitle>
-      <Suspense fallback={<div>Loading Process...</div>}>
-        <ProcessSteps steps={steps} />
-      </Suspense>
+      <ProcessSteps steps={steps} />
 
       <SectionTitle>Documents Required for Startup Registration</SectionTitle>
-      <Suspense fallback={<div>Loading Documents...</div>}>
-        <DocumentsRequired documents={documents} />
-      </Suspense>
+      <DocumentsRequired documents={documents} />
 
       <SectionTitle>Frequently Asked Questions</SectionTitle>
-      <Suspense fallback={<div>Loading FAQs...</div>}>
-        <FAQSection faqs={faqs} open={open} toggle={toggle} />
-      </Suspense>
+      <FAQSection faqs={faqs} open={open} toggle={toggle} />
 
-      <Suspense fallback={<div>Loading Call to Action...</div>}>
-        <Cta />
-      </Suspense>
+      <Cta />
     </>
   );
 }
