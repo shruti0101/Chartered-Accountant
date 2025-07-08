@@ -1,0 +1,38 @@
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateX(20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes stagger {  /* empty keyframes for parent hook */ }
+.animate-stagger {
+  animation: stagger 0.1s linear both; /* establishes stacking context */
+}
+
+
+
+.swiper-pagination-bullet {
+  background-color: #d1d5db !important; /* base color (light grey) */
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #DAA520 !important; /* golden yellow */
+  opacity: 1;
+
+}
+
+
+@media (max-width:576px) {
+ 
+  .hero{
+    height: auto;
+  }
+
+  
+}
+
+
+
