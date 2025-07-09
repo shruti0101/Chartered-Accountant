@@ -16,7 +16,7 @@ import FAQSection from "@/components/headcomponent/Faq";
 import Cta from "@/components/Cta/Cta";
 import Setsapart from "@/components/Setsapart/Setsapart";
 
-export default function AnnualFiling() {
+export default function DirectorKYC() {
   const [open, setOpen] = useState(null);
   const toggle = (idx) => setOpen(open === idx ? null : idx);
 
@@ -67,7 +67,8 @@ export default function AnnualFiling() {
 
   return (
     <>
-      <section>
+      {/* Hero Section */}
+      <section className="">
         <div className="absolute inset-0 -z-10 h-auto md:min-h-[670px] bg-gradient-to-br from-blue-100 via-green-100 to-white" />
         <div className="container mx-auto px-4 py-12">
           <div className="flex flex-col lg:flex-row items-center gap-10">
@@ -89,9 +90,11 @@ export default function AnnualFiling() {
         </div>
       </section>
 
+      {/* What Sets Us Apart */}
       <Setsapart />
 
-      <div className="bg-white w-full py-12 px-4 md:px-10 lg:px-20">
+      {/* Why KYC Section */}
+      <section className="bg-white py-12 px-4 md:px-10 lg:px-20">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#1C398E] mb-4">
@@ -118,14 +121,15 @@ export default function AnnualFiling() {
           <div>
             <img
               src="/navservices/kyc.jpg"
-              alt="Director KYC Compliance"
+              alt="DIR-3 KYC process for directors"
               className="w-full h-auto object-contain rounded-md"
               loading="lazy"
             />
           </div>
         </div>
-      </div>
+      </section>
 
+      {/* KYC Types */}
       <section className="py-12 px-4">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-10">
@@ -143,20 +147,25 @@ export default function AnnualFiling() {
         </div>
       </section>
 
-      <div className="bg-gradient-to-br from-[#eef3fb] to-[#fdfdff] md:py-12 px-4 rounded-xl">
+      {/* Benefits */}
+      <section className="bg-gradient-to-br from-[#eef3fb] to-[#fdfdff] md:py-12 px-4 rounded-xl">
         <SectionTitle>Benefits of Director KYC</SectionTitle>
         <BenefitsList benefits={benefits} />
-      </div>
+      </section>
 
+      {/* Process */}
       <SectionTitle>Process for Director KYC</SectionTitle>
       <ProcessSteps steps={steps} />
 
+      {/* Documents */}
       <SectionTitle>Documents Required for Director KYC</SectionTitle>
       <DocumentsRequired documents={documents} />
 
+      {/* FAQs */}
       <SectionTitle>Frequently Asked Questions</SectionTitle>
       <FAQSection faqs={faqs} open={open} toggle={toggle} />
 
+      {/* CTA */}
       <Cta />
     </>
   );
