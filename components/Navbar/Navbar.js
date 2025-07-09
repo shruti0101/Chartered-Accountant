@@ -261,63 +261,74 @@ const Navbar = ({ className = "" }) => {
 /* ------------------------------------------------------------------ */
 /* mobile dropdown helper                                             */
 /* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------ */
+/* mobile dropdown helper – accordion style                           */
+/* ------------------------------------------------------------------ */
 const MobileDropdown = ({ title, links }) => {
-  const [open, setOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);     // overall “Services” accordion
+  const [expanded, setExpanded] = useState(null);          // which main group is open
+
+  const toggleGroup = (label) =>
+    setExpanded(expanded === label ? null : label);
 
   return (
     <div className="pt-2">
-      {/* toggle button */}
+      {/* top‑level button (“Services”) */}
       <button
-        onClick={() => setOpen(!open)}
+        onClick={() => setDrawerOpen(!drawerOpen)}
         className="w-full text-left font-semibold flex justify-between items-center"
       >
         {title}
         <ChevronDown
           className={`w-4 h-4 transition-transform duration-300 ${
-            open ? "rotate-180" : ""
+            drawerOpen ? "rotate-180" : ""
           }`}
         />
       </button>
 
-      {/* dropdown content */}
-      {open && (
-        <div className="mt-2 space-y-4 pl-2">
-          {links.map((item) =>
-            /* 1️⃣ category WITH href  → regular Link */
-            item.href ? (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block text-sm text-gray-700 hover:text-[#013B7A]"
+      {/* all service groups */}
+      {drawerOpen && (
+        <div className="mt-2 pl-2 space-y-2">
+          {links.map((item) => (
+            <div key={item.label}>
+              {/* main group row */}
+              <button
+                onClick={() => toggleGroup(item.label)}
+                className="w-full flex justify-between items-center text-[#013B7A] font-medium py-2"
               >
-                {item.label}
-              </Link>
-            ) : (
-              /* 2️⃣ category WITHOUT href → show its sub‑items */
-              <div key={item.label}>
-                <p className="text-sm font-semibold text-[#013B7A] mb-1">
-                  {item.label}
-                </p>
-                <ul className="space-y-1 pl-3">
-                  {item.sub?.map((sub) => (
+                <span>{item.label}</span>
+                {item.sub && (
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      expanded === item.label ? "rotate-180" : ""
+                    }`}
+                  />
+                )}
+              </button>
+
+              {/* sub‑services list */}
+              {expanded === item.label && item.sub && (
+                <ul className="pl-4 space-y-1 pb-2">
+                  {item.sub.map((sub) => (
                     <li key={sub.href}>
                       <Link
                         href={sub.href}
-                        className="text-sm text-gray-600 hover:text-[#013B7A]"
+                        className="block text-sm text-gray-600 hover:text-[#013B7A] py-1"
                       >
                         {sub.label}
                       </Link>
                     </li>
                   ))}
                 </ul>
-              </div>
-            )
-          )}
+              )}
+            </div>
+          ))}
         </div>
       )}
     </div>
   );
 };
+
 
 
 export default Navbar;
