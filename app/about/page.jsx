@@ -118,20 +118,20 @@ export default function AboutSection() {
           {/* Mission & Vision */}
           <div className="mt-16 grid gap-12 lg:grid-cols-2">
             <div>
-              <h3 data-aos="fade-right" className="text-2xl font-bold text-blue-800 mb-4">
+              <h3  className="text-2xl font-bold text-blue-800 mb-4">
                 Our Mission
               </h3>
-              <p data-aos="fade-right"
+              <p 
                
                 className="text-gray-700 leading-relaxed"
               >
                 To empower businesses and individuals with expert financial guidance that goes beyond numbers. We strive to ensure compliance, drive profitability, and promote sustainable growth through ethical practices and a client‑first approach. By combining deep industry knowledge with innovative thinking, we deliver actionable insights that help our clients make confident financial decisions — today and into the future.
               </p>
 
-              <h3 data-aos="fade-right" className="text-2xl font-bold text-blue-800 mt-10 mb-4">
+              <h3  className="text-2xl font-bold text-blue-800 mt-10 mb-4">
                 Our Vision
               </h3>
-              <p data-aos="fade-right"
+              <p 
               
                 className="text-gray-700 leading-relaxed"
               >
@@ -311,24 +311,21 @@ export default function AboutSection() {
 
   <div className="flex flex-col-reverse lg:flex-row items-start gap-7">
     {/* Cards Section */}
-    <div className="grid card-grid gap-6 sm:grid-cols-2 lg:grid-cols-2 max-w-4xl flex-1">
-      {services.map(({ title, icon: Icon, blurb }, idx) => (
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: idx * 0.2 }}
-          key={idx}
-          className="group relative p-4 transition bg-white rounded-xl "
-        >
-          <div className="flex items-start gap-3 mb-3">
-            <Icon className="w-8 h-8 text-green-700 bg-[#DBFCE7] p-1 rounded-sm" />
-            <h4 className="text-lg font-semibold text-blue-900">{title}</h4>
-          </div>
-          <p className="text-sm text-gray-600 leading-relaxed">{blurb}</p>
-        </motion.div>
-      ))}
+  <div className="grid card-grid gap-6 sm:grid-cols-2 lg:grid-cols-2 max-w-4xl flex-1">
+  {services.map(({ title, icon: Icon, blurb }, idx) => (
+    <div
+      key={idx}
+      className="group relative p-4 transition bg-white rounded-xl"
+    >
+      <div className="flex items-start gap-3 mb-3">
+        <Icon className="w-8 h-8 text-green-700 bg-[#DBFCE7] p-1 rounded-sm" />
+        <h4 className="text-lg font-semibold text-blue-900">{title}</h4>
+      </div>
+      <p className="text-sm text-gray-600 leading-relaxed">{blurb}</p>
     </div>
+  ))}
+</div>
+
 
     {/* Image Section */}
     <div className="w-full lg:w-[40%] flex justify-center items-center">

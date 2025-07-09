@@ -158,14 +158,14 @@ export default function DINCompliance() {
           </div>
 
           {/* why choose us */}
-          <div className="my-10">
+          <div className="my-10 mx-auto max-w-5xl">
             <h3 className="text-2xl md:text-4xl font-bold text-center text-blue-900 mb-4">
               Why choose us for DIN Compliance
             </h3>
             <img
-              src="/navservices/din.png"
+              src="/navservices/8.png"
               alt="DIN Compliance illustration"
-              className="w-full h-auto object-contain"
+              className="w-full h-auto object-contain rounded-md"
               loading="lazy"
             />
           </div>

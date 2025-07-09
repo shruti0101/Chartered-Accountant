@@ -16,6 +16,7 @@ import DocumentsRequired  from "@/components/headcomponent/Documents";
 import FAQSection         from "@/components/headcomponent/Faq";
 import Cta                from "@/components/Cta/Cta";
 import Setsapart          from "@/components/Setsapart/Setsapart";
+import Types from "@/components/headcomponent/Types";
 
 export default function AnnualFiling() {
   const [open, setOpen] = useState(null);
@@ -65,6 +66,7 @@ export default function AnnualFiling() {
     { icon: <FaSmile className="text-white text-3xl" />, title: "Small Company", subtitle: "Simplified filing with reduced penalties" },
     { icon: <FaHandshake className="text-white text-3xl" />, title: "Dormant Company", subtitle: "Annual compliance to retain dormant status" },
   ];
+  const heading="Types of Annual Filings"
 
   return (
     <>
@@ -131,25 +133,7 @@ export default function AnnualFiling() {
       </div>
 
       {/* Filing Types */}
-      <section className="py-12 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-10">
-            Types of Startups
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {filingTypes.map((type, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col items-center bg-[#E9FBFC] rounded-lg p-4 shadow hover:scale-105 transition-transform"
-              >
-                <div className="bg-[#1C398E] rounded-full p-3 mb-4">{type.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-800">{type.title}</h3>
-                <p className="text-gray-600">{type.subtitle}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     <Types filingTypes={filingTypes} heading={heading}></Types>
 
       {/* Benefits */}
       <div className="bg-gradient-to-br from-[#eef3fb] to-[#fdfdff] md:py-12 px-4 rounded-xl">

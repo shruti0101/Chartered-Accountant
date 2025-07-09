@@ -94,7 +94,7 @@ const Navbar = ({ className = "" }) => {
         {/* --------------------------------------------------------- */}
         {/* logo                                                     */}
         {/* --------------------------------------------------------- */}
-        <Link href="/" className={`flex items-center gap-2 group py-3 ${className}`}>
+        <Link href="/" className={`flex items-center ml-1 gap-2 group py-3 ${className}`}>
           {/* ...SVGs unchanged... */}
           <span className="leading-none">
             <h1 className="text-lg md:text-xl font-bold tracking-tight text-[#004AAD]">
@@ -221,7 +221,7 @@ const Navbar = ({ className = "" }) => {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger>
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
             </SheetTrigger>

@@ -17,7 +17,7 @@ export default function ContactSection() {
 
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
         {/* Left Info */}
-        <div data-aos="fade-left">
+        <div >
           <h2 className="text-4xl font-bold text-[#00205B] mb-4">
             Let's Start <br /> Something Great!
           </h2>
@@ -108,7 +108,7 @@ export default function ContactSection() {
         </div>
 
         {/* Right Form */}
-        <form data-aos="fade-right"
+        <form 
           action="https://formsubmit.co/agarwalchintan27@gmail.com"
           method="POST"
           className="bg-blue-600 p-8 rounded-lg space-y-4"

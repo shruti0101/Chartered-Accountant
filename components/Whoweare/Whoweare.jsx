@@ -14,7 +14,7 @@ const Whoweare = () => {
  {/* Right Image */}
         <div
           className="order-2 md:order-1  md:w-1/2 flex justify-center relative"
-          data-aos="fade-down"
+        
         >
           <Image
             src={lawyersImage}
@@ -45,7 +45,7 @@ const Whoweare = () => {
         {/* Left Content */}
 
 
-        <div className=" order-1 md:order-2 md:w-1/2" data-aos="fade-up">
+        <div className=" order-1 md:order-2 md:w-1/2">
           <div className="border-l-4 border-sky-500 pl-4 mb-4">
             <p className="text-sm text-sky-500 font-bold uppercase">
               Who We Are

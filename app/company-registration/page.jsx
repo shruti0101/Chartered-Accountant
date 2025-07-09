@@ -51,6 +51,9 @@ export default function CompanyRegistration() {
     'Producer Company',
   ];
 
+  const head="Types Of Company Registration"
+  const para="hgruy"
+
   const benefits = [
     { title: 'Legal Entity Recognition', description: 'Company registration gives your business a separate legal identity …' },
     { title: 'Limited Liability',        description: 'Shareholders’ personal assets are protected …' },
@@ -119,7 +122,7 @@ export default function CompanyRegistration() {
           {/* form + entity types */}
           <div className="grid lg:grid-cols-2 gap-10 md:mb-20">
             <FormSection />
-            <TypesList types={types} />
+            <TypesList types={types} head={head} para={para} />
           </div>
 
           {/* benefits */}

@@ -74,7 +74,7 @@ export default function LLPRegistration() {
 
   return (
     <>
-      <section id="llp-registration" className="py-12 relative">
+      <section id="llp-registration" className="py-12 ">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-100/90 via-sky-100/60 to-teal-50" />
         <div className="absolute inset-0 -z-20 rotate-30 origin-top-left">
           <div className="hidden md:block h-[120%] w-[140%] bg-gradient-to-tr from-violet-200/40 to-fuchsia-100/70" />
