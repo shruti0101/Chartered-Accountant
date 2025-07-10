@@ -11,7 +11,6 @@ import {
 import SectionTitle       from "@/components/headcomponent/Sectiontitle";
 import FormSection        from "@/components/headcomponent/Formsection";
 import BenefitsList       from "@/components/headcomponent/Benefits";
-import ProcessSteps       from "@/components/headcomponent/Process";
 import DocumentsRequired  from "@/components/headcomponent/Documents";
 import FAQSection         from "@/components/headcomponent/Faq";
 import Cta                from "@/components/Cta/Cta";
@@ -58,6 +57,7 @@ export default function TransferPricingServices() {
       q: "What is Form 3CEB?",
       a: "Form 3CEB is a mandatory tax audit report that must be filed with the Income Tax Department, certified by a Chartered Accountant, for transactions with associated enterprises."
     },
+
     {
       q: "What methods are acceptable for transfer pricing in India?",
       a: "Common methods include Comparable Uncontrolled Price (CUP), Resale Price, Cost Plus, Transactional Net Margin Method (TNMM), and Profit Split."
@@ -70,6 +70,7 @@ export default function TransferPricingServices() {
       q: "Can you help during a transfer pricing audit?",
       a: "Absolutely. We prepare technical submissions, respond to tax notices, and represent you during assessments or appellate proceedings."
     },
+
   ];
 
   const heading = "Types of Transfer Pricing Support";
@@ -87,7 +88,7 @@ export default function TransferPricingServices() {
     <>
       <section className="">
         <div className="absolute inset-0 -z-10 h-auto md:min-h-[675px] bg-gradient-to-br from-blue-100 via-green-100 to-white" />
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto px-4 md:py-12">
           <div className="flex flex-col lg:flex-row items-center gap-10">
             <div className="flex-1">
               <h1 className="text-3xl md:text-5xl font-extrabold text-[#1C398E] mb-4">
@@ -114,7 +115,7 @@ export default function TransferPricingServices() {
 
       
 
-      <div className=" w-full py-8 px-4 md:px-10 lg:px-20">
+      <div className=" w-full  px-4 md:px-10 lg:px-20">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-3xl md:text-5xl font-extrabold text-[#1C398E] mb-4 md:mb-10">
@@ -144,6 +145,7 @@ export default function TransferPricingServices() {
               alt="Transfer pricing illustration"
               className="w-full h-auto object-contain rounded-md"
               loading="lazy"
+              priority
             />
           </div>
         </div>
@@ -157,7 +159,7 @@ export default function TransferPricingServices() {
       <Types filingTypes={filingTypes} heading={heading} />
 
 
-   <section className="bg-[#f9f9f9] text-gray-800 px-4 py-12">
+   <section className="bg-[#f9f9f9] text-gray-800 px-4 md:py-12">
   <div className="mx-auto max-w-6xl">
     {/* heading */}
     <h2 className="text-center capitalize text-3xl sm:text-4xl font-bold text-[#1a3e72]">
@@ -189,7 +191,7 @@ export default function TransferPricingServices() {
       {/* right – image */}
       <div className="">
         <img
-          src="/navservices/transfer-process.png"
+          src="/navservices/Transfer-process.png"
           alt="Transfer pricing documentation process"
           className="w-full h-auto object-contain"
           priority
@@ -202,9 +204,6 @@ export default function TransferPricingServices() {
 
       <SectionTitle>Benefits of Transfer Pricing Compliance</SectionTitle>
       <BenefitsList benefits={benefits} />
-
-
-
 
       <SectionTitle>Information & Documents Required</SectionTitle>
       <DocumentsRequired documents={documents} />

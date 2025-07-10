@@ -1,5 +1,5 @@
 import { PointerHighlight } from "@/components/ui/Pointer-Highlight";
-
+import Link from "next/link";
 
 const CTASection = () => {
   return (
@@ -32,12 +32,12 @@ const CTASection = () => {
 
         {/* CTA Button */}
         <div className="mx-auto">
-          <a
-            href="#contact"
+          <Link
+            href="/contact-us"
             className="bg-white text-black text-lg font-semibold py-3 px-6 rounded-full shadow hover:bg-gray-100 transition duration-300"
           >
             Start a Conversation
-          </a>
+          </Link>
         </div>
       </div>
     </section>

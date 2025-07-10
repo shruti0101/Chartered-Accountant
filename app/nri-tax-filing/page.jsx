@@ -163,16 +163,17 @@ export default function ManagementAudit() {
       </section>
 
       <div className="mx-auto max-w-7xl ">
-        <h3 className="text-2xl md:text-4xl capitalize font-bold text-center text-blue-900 ">
+        <h3 className="text-2xl md:text-4xl mt-5 capitalize font-bold text-center text-blue-900 ">
           NRI Tax Filing Process
         </h3>
-        <img
-        height={200}
-          src="/navservices/nri (2).png"
-          alt="NRI Tax Filing Process"
-          className=" w-full h-auto object-contain rounded-md"
-          loading="lazy"
-        />
+        
+     <img
+  src="/navservices/nri (2).png"
+  alt="NRI Tax Filing Process"
+  className="w-full h-auto object-contain rounded-md"
+  loading="lazy"
+/>
+
       </div>
 
       <SectionTitle>Documents Required</SectionTitle>

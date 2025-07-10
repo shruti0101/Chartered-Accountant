@@ -124,9 +124,9 @@ export default function Footer() {
           © 2025 <span className="font-semibold">Chintan Agrawal & CO</span>. All Rights Reserved.
         </p>
         <p>
-          Developed & Managed by <span className="font-semibold">Promozione Branding Pvt Ltd.</span>
+          Developed & Managed by <a href="https://promozionebranding.com/" className="font-semibold underline">Promozione Branding Pvt Ltd.</a>
         </p>
-        <p className="mt-2 text-xs">
+        <p className="mt-2 mx-auto  max-w-4xl text-xs">
           Chintan Agrawal & CO is a Chartered Accountancy firm offering professional consultancy and compliance
           services. We are an independent entity and are not affiliated with any government authority. Our services
           include business and startup registrations, GST filings, trademark registrations, and other statutory

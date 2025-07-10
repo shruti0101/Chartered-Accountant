@@ -1,5 +1,6 @@
 import React from 'react'
 import Form from '@/components/Form/Form'
+import Link from "next/link";
 const contact = () => {
   return (
     <div>
@@ -52,41 +53,46 @@ const contact = () => {
         title: 'Business setup solution',
         img: '/contact/Business.jpg',
         desc: 'Start your business with the most trusted structure in India.',
+        link:"/company-registration"
       },
       {
         title: 'roc compliances',
         img: '/contact/roc.jpg',
         desc: 'Ensure food safety compliance with expert assistance.',
+         link:"/annual-filings"
       },
       {
         title: 'Audit book keeping and accounting services',
         img: '/contact/accounting.jpg',
         desc: 'Flexible structures for startups & service professionals.',
+         link:"/internal-audit"
       },
       {
         title: 'taxation related services',
         img: '/contact/Taxation.jpeg',
         desc: 'Protect your brand identity and gain legal ownership.',
+         link:"/income-tax-filing"
       },
     ].map((service, index) => (
-      <div
-        key={index}
-        className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden"
-      >
-        <div className="overflow-hidden">
-          <img
-            src={service.img}
-            alt={service.title}
-            className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-        </div>
-        <div className="p-6 text-center">
-          <h3 className="text-xl capitalize font-semibold text-[#044681] group-hover:text-green-700 transition-colors duration-300">
-            {service.title}
-          </h3>
-          <p className="text-sm text-gray-600 mt-2">{service.desc}</p>
-        </div>
-      </div>
+   <Link
+  key={index}
+  href={service.link}
+  className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden block"
+>
+  <div className="overflow-hidden">
+    <img
+      src={service.img}
+      alt={service.title}
+      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+    />
+  </div>
+  <div className="p-6 text-center">
+    <h3 className="text-xl capitalize font-semibold text-[#044681] group-hover:text-green-700 transition-colors duration-300">
+      {service.title}
+    </h3>
+    <p className="text-sm text-gray-600 mt-2">{service.desc}</p>
+  </div>
+</Link>
     ))}
   </div>
 </section>
@@ -95,7 +101,7 @@ const contact = () => {
 
 
  {/* Google Map */}
-<section className="pt-10 mb-10 md:mb-0 w-full">
+<section className="pt-10 mb-20 md:mb-0 w-full">
   <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2351.3531132063813!2d77.11159620901432!3d28.698967675526877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03e4b1e8d73b%3A0xd27723de9714939f!2sVardhman%20Grand%20Plaza!5e1!3m2!1sen!2sin!4v1751714899347!5m2!1sen!2sin"

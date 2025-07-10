@@ -23,7 +23,7 @@ export default function Home() {
    
      <Reviews></Reviews>
     <Facilites></Facilites>
-     {/* <Form></Form> */}
+     <Form></Form>
       <Faq></Faq>
    
 

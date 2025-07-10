@@ -6,7 +6,7 @@ const Types = ({filingTypes , heading}) => {
 
         
               {/* Filing Types */}
-              <section className="py-12 px-4">
+              <section className="md:py-10 px-4">
                 <div className="max-w-5xl mx-auto text-center">
                   <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-10">
                    {heading}
