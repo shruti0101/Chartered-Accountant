@@ -101,7 +101,7 @@ const contact = () => {
 
 
  {/* Google Map */}
-<section className="pt-10 mb-20 md:mb-0 w-full">
+<section className="pt-10 mb-15 md:mb-0 w-full">
   <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2351.3531132063813!2d77.11159620901432!3d28.698967675526877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03e4b1e8d73b%3A0xd27723de9714939f!2sVardhman%20Grand%20Plaza!5e1!3m2!1sen!2sin!4v1751714899347!5m2!1sen!2sin"
