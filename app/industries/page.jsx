@@ -20,7 +20,7 @@ const industries = [
   {
     title: "Manufacturers",
     tag: "Retail",
-    img: "/industries/Manufacturing.jpg",
+    img: "/industries/manufacturing.jpg",
   },
 
   {
