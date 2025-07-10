@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { Button } from "../ui/button";
+
 import "../Navbar/Navbar.css";
 
 import {
@@ -80,22 +79,20 @@ const servicesLinks = [
 /* ------------------------------------------------------------------ */
 const Navbar = ({ className = "" }) => {
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const pathname = usePathname();
 
   const isActive = (href) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
-  /* Close the desktop dropdown whenever the route changes */
   useEffect(() => setServicesOpen(false), [pathname]);
+
+  const handleCloseDrawer = () => setDrawerOpen(false);
 
   return (
     <nav className="py-3 bg-background/70 border-b-white !sticky !top-0 backdrop-blur z-50 shadow-xl">
       <div className="container mx-auto flex justify-between items-center">
-        {/* --------------------------------------------------------- */}
-        {/* logo                                                     */}
-        {/* --------------------------------------------------------- */}
         <Link href="/" className={`flex items-center ml-1 gap-2 group py-3 ${className}`}>
-          {/* ...SVGs unchanged... */}
           <span className="leading-none">
             <h1 className="text-lg md:text-xl font-bold tracking-tight text-[#004AAD]">
               Chintan Agrawal <span className="text-green-600">& Co</span>
@@ -106,16 +103,13 @@ const Navbar = ({ className = "" }) => {
           </span>
         </Link>
 
-        {/* --------------------------------------------------------- */}
-        {/* desktop navigation                                       */}
-        {/* --------------------------------------------------------- */}
         <div className="hidden md:flex space-x-5 items-center text-base font-medium text-lg font-bold relative">
           {[
             { label: "Home", href: "/" },
             { label: "About Us", href: "/about" },
           ].map((link) => (
             <Link
-              key={link.href}                             
+              key={link.href}
               href={link.href}
               className={`relative group inline-block px-2 py-1 transition-all duration-300 ${
                 isActive(link.href) ? "text-[#013B7A]" : ""
@@ -130,7 +124,6 @@ const Navbar = ({ className = "" }) => {
             </Link>
           ))}
 
-          {/* ----------------------- services dropdown ------------- */}
           <div
             className="relative"
             onMouseEnter={() => setServicesOpen(true)}
@@ -156,16 +149,13 @@ const Navbar = ({ className = "" }) => {
             {servicesOpen && (
               <div className="absolute left-1/2 -translate-x-1/2 w-[830px] bg-white border border-[#2AB55E] rounded-md shadow-xl z-50 p-6 grid grid-cols-3 gap-6 max-h-[90vh] overflow-y-auto">
                 {servicesLinks.map((item) => (
-                  <div
-                    key={item.label}                     
-                    className="group/item p-3 rounded-md hover:bg-green-100/50"
-                  >
+                  <div key={item.label} className="group/item p-3 rounded-md hover:bg-green-100/50">
                     <p className="block text-[16px] font-semibold text-gray-800 group-hover/item:text-[#004AAD]">
                       {item.label}
                     </p>
 
                     {item.sub.map((subItem) => (
-                      <li key={subItem.href} className="relative pl-4 group list-none">  {/* ✅ stable key */}
+                      <li key={subItem.href} className="relative pl-4 group list-none">
                         <Link
                           href={subItem.href}
                           className="flex items-center text-gray-600 hover:text-[#004AAD] transition-all duration-200"
@@ -185,14 +175,13 @@ const Navbar = ({ className = "" }) => {
             )}
           </div>
 
-     
           {[
             { label: "Publication", href: "/publication" },
             { label: "Industries", href: "/industries" },
             { label: "Knowledge Hub", href: "/knowledge" },
           ].map((link) => (
             <Link
-              key={link.href}                              
+              key={link.href}
               href={link.href}
               className={`relative group inline-block px-2 py-1 transition-all duration-300 ${
                 isActive(link.href) ? "text-[#013B7A]" : ""
@@ -207,7 +196,6 @@ const Navbar = ({ className = "" }) => {
             </Link>
           ))}
 
-          {/* contact button */}
           <div className="flex justify-center md:justify-start">
             <Link href="/contact-us">
               <button className="btn capitalize">Contact Us</button>
@@ -215,11 +203,8 @@ const Navbar = ({ className = "" }) => {
           </div>
         </div>
 
-        {/* --------------------------------------------------------- */}
-        {/* mobile drawer                                            */}
-        {/* --------------------------------------------------------- */}
         <div className="md:hidden">
-          <Sheet>
+          <Sheet open={drawerOpen} onOpenChange={setDrawerOpen}>
             <SheetTrigger>
               <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -227,23 +212,20 @@ const Navbar = ({ className = "" }) => {
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
-                <SheetTitle>
-                  {/* logo inside drawer (unchanged) */}
-                </SheetTitle>
+                <SheetTitle></SheetTitle>
                 <SheetDescription>
-                  <div className="flex flex-col gap-4 pt-5 text-base">
-                    <Link href="/" className={isActive("/") ? "text-[#013B7A]" : ""}>Home</Link>
-                    <Link href="/about" className={isActive("/about") ? "text-[#013B7A]" : ""}>About Us</Link>
+                  <div className="flex flex-col gap-4 pt-5 text-md">
+                    <Link href="/" className={isActive("/") ? "text-[#013B7A]" : ""} onClick={handleCloseDrawer}>Home</Link>
+                    <Link href="/about" className={isActive("/about") ? "text-[#013B7A]" : ""} onClick={handleCloseDrawer}>About Us</Link>
 
-                    {/* mobile dropdown for services */}
-                    <MobileDropdown title="Services" links={servicesLinks} />
+                    <MobileDropdown title="Services" links={servicesLinks} onNavigate={handleCloseDrawer} />
 
-                    <Link href="/publication" className={isActive("/publication") ? "text-[#013B7A]" : ""}>Publication</Link>
-                    <Link href="/industries" className={isActive("/industries") ? "text-[#013B7A]" : ""}>Industries</Link>
-                    <Link href="/knowledge" className={isActive("/knowledge") ? "text-[#013B7A]" : ""}>Knowledge Hub</Link>
+                    <Link href="/publication" className={isActive("/publication") ? "text-[#013B7A]" : ""} onClick={handleCloseDrawer}>Publication</Link>
+                    <Link href="/industries" className={isActive("/industries") ? "text-[#013B7A]" : ""} onClick={handleCloseDrawer}>Industries</Link>
+                    <Link href="/knowledge" className={isActive("/knowledge") ? "text-[#013B7A]" : ""} onClick={handleCloseDrawer}>Knowledge Hub</Link>
 
                     <div className="flex justify-center md:justify-start">
-                      <Link href="/contact-us">
+                      <Link href="/contact-us" onClick={handleCloseDrawer}>
                         <button className="btn capitalize">Contact Us</button>
                       </Link>
                     </div>
@@ -259,21 +241,17 @@ const Navbar = ({ className = "" }) => {
 };
 
 /* ------------------------------------------------------------------ */
-/* mobile dropdown helper                                             */
+/* Updated MobileDropdown – closes drawer on sub‑link click           */
 /* ------------------------------------------------------------------ */
-/* ------------------------------------------------------------------ */
-/* mobile dropdown helper – accordion style                           */
-/* ------------------------------------------------------------------ */
-const MobileDropdown = ({ title, links }) => {
-  const [drawerOpen, setDrawerOpen] = useState(false);     // overall “Services” accordion
-  const [expanded, setExpanded] = useState(null);          // which main group is open
+const MobileDropdown = ({ title, links, onNavigate }) => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [expanded, setExpanded] = useState(null);
 
   const toggleGroup = (label) =>
     setExpanded(expanded === label ? null : label);
 
   return (
     <div className="pt-2">
-      {/* top‑level button (“Services”) */}
       <button
         onClick={() => setDrawerOpen(!drawerOpen)}
         className="w-full text-left font-semibold flex justify-between items-center"
@@ -286,12 +264,10 @@ const MobileDropdown = ({ title, links }) => {
         />
       </button>
 
-      {/* all service groups */}
       {drawerOpen && (
         <div className="mt-2 pl-2 space-y-2">
           {links.map((item) => (
             <div key={item.label}>
-              {/* main group row */}
               <button
                 onClick={() => toggleGroup(item.label)}
                 className="w-full flex justify-between items-center text-[#013B7A] font-medium py-2"
@@ -306,14 +282,14 @@ const MobileDropdown = ({ title, links }) => {
                 )}
               </button>
 
-              {/* sub‑services list */}
               {expanded === item.label && item.sub && (
                 <ul className="pl-4 space-y-1 pb-2">
                   {item.sub.map((sub) => (
                     <li key={sub.href}>
                       <Link
                         href={sub.href}
-                        className="block text-sm text-gray-600 hover:text-[#013B7A] py-1"
+                        onClick={onNavigate}
+                        className="block text-md text-gray-600 hover:text-[#013B7A] py-1"
                       >
                         {sub.label}
                       </Link>
@@ -328,7 +304,5 @@ const MobileDropdown = ({ title, links }) => {
     </div>
   );
 };
-
-
 
 export default Navbar;
