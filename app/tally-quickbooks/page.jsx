@@ -94,10 +94,10 @@ export default function TallyQuickbooksServices() {
       <Setsapart />
 
       {/* Platform Info */}
-      <div className="bg-white w-full py-12 px-4 md:px-10 lg:px-20">
+      <div className="bg-white w-full  px-4 md:px-10 lg:px-20">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1C398E] mb-4">
+            <h2 className="text-3xl md:text-4xl mt-8 font-extrabold text-[#1C398E] mb-4">
               Why Use Tally & QuickBooks?
             </h2>
             <p className="text-gray-700 text-base md:text-lg mb-4">

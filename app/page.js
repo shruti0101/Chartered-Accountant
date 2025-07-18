@@ -17,7 +17,7 @@ export default function Home() {
       <Whoweare></Whoweare>
       <Whychoose></Whychoose>
        <Services></Services>
-      <Count></Count>
+      {/* <Count></Count> */}
         <Cta></Cta>
      <Process></Process>
    

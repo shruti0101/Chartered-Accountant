@@ -97,8 +97,8 @@ export default function AboutSection() {
             data-aos="fade-right"
             className="relative max-w-3xl rounded-sm   bg-white shadow-xl   py-5 sm:px-12 sm:py-14 lg:px-16 lg:py-5   md:ml-16 mt-16 mb-12 text-left z-10 border-l-8 border-[#00C950]"
           >
-            <h2 className="text-2xl px-4 md:px-0 sm:text-4xl font-extrabold text-gray-800 leading-snug mb-0 md:mb-2">
-              Empowering Global <br /> Financial Confidence
+            <h2 className=" px-4 md:px-0 text-xl font-extrabold text-gray-800 leading-snug mb-0 md:mb-2">
+              Empowering Individuals with the knowledge to make informed financial decisions and to encourage Tax Compliance and better understanding of Tax Obligation
             </h2>
             <p className="md:text-lg text-sm p-4 md:p-0 text-gray-600 leading-relaxed">
               At <strong>Chintan Agrawal & Co.,</strong> we go beyond

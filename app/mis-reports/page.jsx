@@ -1,262 +1,133 @@
-'use client'
+'use client';
+
+import { useState } from "react";
+import {
+  FaCheckCircle, FaChartPie, FaFileContract, FaClipboardList,
+  FaMapMarkedAlt, FaUserTie, FaUniversity, FaLaptopCode, FaKey
+} from "react-icons/fa";
+
 import SectionTitle from "@/components/headcomponent/Sectiontitle";
-import StatsSection from "@/components/headcomponent/StatsSection";
 import FormSection from "@/components/headcomponent/Formsection";
-import TypesList from "@/components/headcomponent/Typelist";
 import BenefitsList from "@/components/headcomponent/Benefits";
 import ProcessSteps from "@/components/headcomponent/Process";
 import DocumentsRequired from "@/components/headcomponent/Documents";
 import FAQSection from "@/components/headcomponent/Faq";
 import Cta from "@/components/Cta/Cta";
+import Setsapart from "@/components/Setsapart/Setsapart";
 
-import { useState } from "react";
-import {
-  FaCheckCircle, FaRegBuilding, FaSmile, FaLock,
-  FaIdCard, FaMapMarkedAlt, FaFileContract,
-  FaUniversity, FaUserShield, FaKey
-} from "react-icons/fa";
-
-
-export default function gstregistration() {
+export default function MISReports() {
   const [open, setOpen] = useState(null);
   const toggle = (idx) => setOpen(open === idx ? null : idx);
-const types = [
-  "Profit & Loss Analysis",
-  "Cash Flow & Fund Flow Statements",
-  "Department-wise Performance Reports",
-  "Sales & Collection Dashboards",
-  "Budget vs Actual Comparison",
 
+  const benefits = [
+    { title: "Data-Driven Decisions", description: "MIS reports empower business owners to make informed decisions backed by real-time data." },
+    { title: "Improved Efficiency", description: "Streamlines operations by identifying bottlenecks and improving resource utilization." },
+    { title: "Performance Monitoring", description: "Track key performance indicators (KPIs) and measure productivity across departments." },
+    { title: "Strategic Planning", description: "Identify trends, set goals, and align strategies based on accurate financial and operational insights." },
+    { title: "Compliance & Accuracy", description: "Ensure accurate financial reporting and internal controls to stay compliant with statutory requirements." },
+    { title: "Customized Reporting", description: "Get tailored reports like P&L, sales summary, inventory, expense tracker, and cash flow statements." },
+  ];
 
-  "Custom Management Dashboards"
-];
+  const steps = [
+    { icon: FaFileContract, subtitle: "Understand Business Needs", desc: "Identify which reports your management team needs to track and improve performance." },
+    { icon: FaLaptopCode, subtitle: "Collect & Organize Data", desc: "We gather data from different departments including finance, HR, sales, and inventory." },
+    { icon: FaChartPie, subtitle: "Generate MIS Reports", desc: "Create monthly, quarterly, or custom reports including financials, operations, and compliance." },
+    { icon: FaClipboardList, subtitle: "Review & Interpret Reports", desc: "Our experts help decode insights and patterns to make the data actionable for your growth." },
+    { icon: FaCheckCircle, subtitle: "Implement Data-Driven Changes", desc: "Use insights to optimize processes, reduce costs, and improve profitability." },
+    { icon: FaUserTie, subtitle: "Ongoing Reporting Support", desc: "We offer regular updates and flexible MIS solutions as per your business needs." },
+  ];
 
-const head="Types of MIS Report"
+  const documents = [
+    { icon: FaFileContract, title: "Business Financial Statements", desc: "Profit & Loss, Balance Sheet, Cash Flow Statements." },
+    { icon: FaMapMarkedAlt, title: "Sales & Purchase Records", desc: "Invoices, purchase bills, and client/vendor ledgers." },
+    { icon: FaUniversity, title: "Bank Statements", desc: "Statements of all business accounts for the period of reporting." },
+    { icon: FaKey, title: "Inventory & Stock Records", desc: "Current stock levels, inventory movement, and valuations." },
+    { icon: FaUserTie, title: "HR & Payroll Data", desc: "Employee salary sheets, attendance, and statutory compliance records." },
+    { icon: FaLaptopCode, title: "Other Business Insights", desc: "Any custom internal data required for decision-making reports." },
+  ];
 
-const para="Our MIS reporting solutions cover every critical aspect of your business—from financial health to operational performance. Whether you need standard reports like Profit & Loss or advanced dashboards for inventory and budgeting, we tailor each report to your unique requirements."
-
-const benefits = [
-  {
-    title: "Better Business Control",
-    description: "Gain clear visibility into business performance across departments, regions, or teams.",
-  },
-  {
-    title: "Real-Time Decision Making",
-    description: "Empower leadership with real-time financial insights to support quick, informed actions.",
-  },
-  {
-    title: "Profitability Analysis",
-    description: "Track margins by product, customer, or business unit to focus on what's most profitable.",
-  },
-  {
-    title: "Cash Flow Planning",
-    description: "Monitor inflows and outflows with precision—avoid cash shortages and optimize usage.",
-  },
-  {
-    title: "Goal-Oriented Monitoring",
-    description: "Compare actual outcomes with budgets or projections to assess performance gaps.",
-  },
-  {
-    title: "Investor & Lender Confidence",
-    description: "Professionally prepared reports increase transparency and build trust with stakeholders.",
-  },
-  {
-    title: "Custom Dashboards",
-    description: "Get interactive dashboards tailored to your KPIs—sales, expenses, collections, and more.",
-  },
-  {
-    title: "Regulatory Readiness",
-    description: "Be ready with management-backed reports during audits, due diligence, or funding rounds.",
-  }
-];
-
-const steps = [
-
-    {
-  icon: FaLock,
-  subtitle: "Ongoing Support & Strategic Insights",
-  desc: "We don’t stop at reporting. Our team offers regular reviews, helps you interpret the numbers, and provides strategic inputs to improve business performance and profitability.",
-}
-,
-  {
-    icon: FaUserShield,
-    subtitle: "Understanding Your Requirements",
-    desc: "We start with a detailed consultation to identify the key metrics, departments, and goals relevant to your business reporting needs.",
-  },
-  {
-    icon: FaFileContract,
-    subtitle: "Data Gathering & Validation",
-    desc: "We extract data from accounting software, billing systems, or ERPs and ensure it is accurate, complete, and organized.",
-  },
-  {
-    icon: FaKey,
-    subtitle: "Report Structuring",
-    desc: "We design report templates aligned with your business goals—whether monthly, quarterly, or real-time MIS dashboards.",
-  },
-  {
-    icon: FaUniversity,
-    subtitle: "Report Generation & Delivery",
-    desc: "MIS reports are generated with deep analysis and commentary, delivered securely in your preferred format—PDF, Excel, or online dashboard.",
-  },
-  {
-    icon: FaCheckCircle,
-    subtitle: "Periodic Review & Optimization",
-    desc: "We continuously review the reporting format and improve it as your business evolves, ensuring you always get relevant insights.",
-  },
-];
-
-
-
-
-
-const faqs = [
-  {
-    q: "What are MIS Reports?",
-    a: "MIS Reports (Management Information System Reports) are strategic reports that summarize your business's financial and operational performance in a structured, decision-friendly format.",
-  },
-  {
-    q: "How often will I get MIS reports?",
-    a: "We offer flexible schedules—monthly, quarterly, or even real-time dashboards based on your business needs.",
-  },
-  {
-    q: "Can reports be customized for my business?",
-    a: "Absolutely. Every report we create is tailored to your KPIs, departments, and goals—no generic templates.",
-  },
-  {
-    q: "Do I need to change my accounting software?",
-    a: "No. We work with the tools you already use—Tally, QuickBooks, Zoho Books, SAP, or Excel—and integrate seamlessly.",
-  },
-  {
-    q: "Are these reports audit-ready?",
-    a: "Yes. Our MIS reports can support audit processes, lender presentations, and investor due diligence confidently.",
-  },
-];
-
-
-const gstStats = [
-  {
-    icon: FaRegBuilding,
-    number: "500+",
-    label: "MIS Dashboards Delivered",
-  },
-  {
-    icon: FaSmile,
-    number: "1,200+",
-    label: "Business Owners Empowered",
-  },
-  {
-    icon: FaCheckCircle,
-    number: "99.9%",
-    label: "On-Time Report Accuracy",
-  },
-];
-
-
+  const faqs = [
+    { q: "What is an MIS Report?", a: "A Management Information System (MIS) report is a tool that provides data insights to help management in decision-making and performance tracking." },
+    { q: "Which businesses need MIS reports?", a: "Any business—whether small or large—benefits from MIS reports for tracking performance, operations, and compliance." },
+    { q: "What types of MIS reports are available?", a: "Common types include financial statements, sales reports, inventory reports, employee performance reports, and custom dashboards." },
+    { q: "Can reports be customized?", a: "Yes. We offer fully customizable MIS reports tailored to your business’s unique requirements and KPIs." },
+    { q: "How frequently are MIS reports generated?", a: "Reports can be generated monthly, quarterly, or on-demand based on your preferences." },
+  ];
 
   return (
-
     <>
-    
-    <section id="gst-services" className="py-12 md:py-18  ">
-
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-100/90 via-sky-100/60 to-teal-50" />
-      <div className="absolute inset-0 -z-20 rotate-30 origin-top-left">
-        <div className=" hidden md:block h-[120%] w-[140%] bg-gradient-to-tr from-violet-200/40 to-fuchsia-100/70" />
-      </div>
-      <div className="container mx-auto ">
-        <div className="text-center mb-14">
-         <h2 className="text-3xl md:text-5xl max-w-3xl mx-auto font-extrabold text-[#1C398E] mb-4">
-  Business Insights That Drive Growth
-</h2>
-<p className="text-lg text-gray-600 max-w-3xl mx-auto">
-  At <strong>Chintan Agrawal & Co.</strong>, we transform your accounting data into strategic reports that empower better decision-making. Our customized MIS reports reveal trends, risks, and opportunities—helping you run your business smarter.
-</p>
-
+      <section className="">
+        <div className="absolute inset-0 -z-10 h-auto md:min-h-[670px] bg-gradient-to-br from-blue-100 via-green-100 to-white" />
+        <div className="container mx-auto px-4 py-12">
+          <div className="flex flex-col lg:flex-row items-center gap-10">
+            <div className="flex-1">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-[#1C398E] mb-4">
+                MIS Report Preparation for Businesses
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mb-4">
+                Stay ahead with data-driven management. Our MIS reporting service helps you analyze performance, monitor operations, and plan strategies with clarity.
+              </p>
+              <p className="text-lg text-gray-600 max-w-2xl">
+                We specialize in customized MIS solutions tailored to your industry and reporting frequency, whether monthly, quarterly, or annual.
+              </p>
+            </div>
+            <div className="flex-1 w-full max-w-xl">
+              <FormSection />
+            </div>
+          </div>
         </div>
+      </section>
 
-        <StatsSection stats ={gstStats}/>
+      <Setsapart />
 
-
-
-
-
-
-        <div className="grid lg:grid-cols-2 gap-10 md:mb-20">
-          <FormSection />
-          <TypesList types={types} head={head} para={para}/>
+      <section className="bg-white py-12 px-4 md:px-10 lg:px-20">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1C398E] mb-4">
+              Why Your Business Needs MIS Reporting
+            </h2>
+            <p className="text-gray-700 text-base md:text-lg mb-4">
+              MIS reports convert raw data into actionable insights to help you manage risks, forecast growth, and maintain compliance.
+            </p>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start gap-2">
+                <FaCheckCircle className="text-green-600 mt-1" />
+                <span><strong>Clarity & Control:</strong> Get a clear picture of financial health and operations.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <FaCheckCircle className="text-green-600 mt-1" />
+                <span><strong>Better Forecasting:</strong> Spot business trends and prepare for market changes.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <FaCheckCircle className="text-green-600 mt-1" />
+                <span><strong>Improved Strategy:</strong> Leverage reports to build stronger plans for growth and compliance.</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <img
+              src="/navservices/mis.png"
+              alt="MIS reporting process"
+              className="w-full h-auto object-contain rounded-md"
+              loading="lazy"
+            />
+          </div>
         </div>
+      </section>
 
+      <SectionTitle>Benefits of MIS Reporting</SectionTitle>
+      <BenefitsList benefits={benefits} />
 
+      <SectionTitle>MIS Reporting Process</SectionTitle>
+      <ProcessSteps steps={steps} />
 
-<div className="bg-white w-full py-12 px-4 md:px-10 lg:px-20  mb-14">
-  <div className="grid md:grid-cols-2 gap-10 items-center">
-    {/* LEFT TEXT SIDE */}
-    <div>
-      <h2 className="text-3xl md:text-4xl font-extrabold text-[#1C398E] mb-4">
-        What are MIS Reports?
-      </h2>
-      <p className="text-gray-700 text-base md:text-lg mb-4">
-        <strong>Management Information System (MIS) Reports</strong> are curated financial and operational summaries that help business leaders make informed decisions. These reports offer clarity on profit trends, cost leakages, collections, budgets, and more—turning raw data into actionable insights.
-      </p>
+      <SectionTitle>Documents Required for MIS Reports</SectionTitle>
+      <DocumentsRequired documents={documents} />
 
-      <div>
-        <h3 className="text-2xl font-bold text-[#1C398E] mb-4">Key Highlights</h3>
-        <ul className="space-y-3 text-gray-700">
-          <li className="flex items-start gap-2">
-            <FaCheckCircle className="text-green-600 mt-1" />
-            <span><strong>Performance Visibility:</strong> View real-time financial and operational health across departments.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <FaCheckCircle className="text-green-600 mt-1" />
-            <span><strong>Better Cash Control:</strong> Analyze inflow and outflow trends for accurate cash flow forecasting.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <FaCheckCircle className="text-green-600 mt-1" />
-            <span><strong>Decision Support:</strong> Drive smarter budgeting, cost reduction, and expansion plans.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <FaCheckCircle className="text-green-600 mt-1" />
-            <span><strong>Stakeholder Confidence:</strong> Present professional reports to banks, investors, and auditors.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <FaCheckCircle className="text-green-600 mt-1" />
-            <span><strong>Fully Customizable:</strong> Tailored layouts for departments, projects, locations, or investor use cases.</span>
-          </li>
-        </ul>
-      </div>
-    </div>
+      <SectionTitle>Frequently Asked Questions</SectionTitle>
+      <FAQSection faqs={faqs} open={open} toggle={toggle} />
 
-    {/* RIGHT IMAGE SIDE */}
-    <div>
-      <img
-        src="/navservices/mis.png"
-        alt="MIS Reports"
-        className="rounded-sm w-full h-auto object-contain"
-        loading="lazy"
-      />
-    </div>
-  </div>
-</div>
-
-
-
-
-
-        <div className="bg-gradient-to-br from-[#eef3fb]  to-[#fdfdff] md:py-12 mt-3 px-4   rounded-xl">
-          <SectionTitle>Benefits of MIS Reports</SectionTitle>
-          <BenefitsList benefits={benefits} />
-        </div>
-
-        <SectionTitle className="">Our MIS Reports Process</SectionTitle>
-        <ProcessSteps steps={steps} />
-
-     
-        <SectionTitle>Frequently Asked Questions</SectionTitle>
-        <FAQSection faqs={faqs} open={open} toggle={toggle} />
-      </div>
-    </section>
-
-    <Cta></Cta>
+      <Cta />
     </>
   );
 }

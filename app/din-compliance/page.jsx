@@ -1,161 +1,158 @@
+
+
+
+
 'use client';
 
-import React, { useState } from 'react';
-import dynamic from 'next/dynamic';
+import { useState } from "react";
 import {
-  FaCheckCircle, FaSmile, FaLock, FaIdCard, FaMapMarkedAlt,
-  FaFileContract, FaUserShield, FaKey, FaLaptopCode, FaCertificate, FaBuilding
-} from 'react-icons/fa';
+  FaCheckCircle, FaLock, FaIdCard, FaMapMarkedAlt,
+  FaFileContract, FaUniversity, FaUserShield, FaKey,
+  FaLaptopCode, FaCertificate, FaBuilding
+} from "react-icons/fa";
 
-import SectionTitle      from '@/components/headcomponent/Sectiontitle';
-import FormSection       from '@/components/headcomponent/Formsection';
-import TypesList         from '@/components/headcomponent/Typelist';
-import BenefitsList      from '@/components/headcomponent/Benefits';
-import ProcessSteps      from '@/components/headcomponent/Process';
-import DocumentsRequired from '@/components/headcomponent/Documents';
-import FAQSection        from '@/components/headcomponent/Faq';
-import Cta               from '@/components/Cta/Cta';
+import SectionTitle from "@/components/headcomponent/Sectiontitle";
+import FormSection from "@/components/headcomponent/Formsection";
+import BenefitsList from "@/components/headcomponent/Benefits";
+import ProcessSteps from "@/components/headcomponent/Process";
+import DocumentsRequired from "@/components/headcomponent/Documents";
+import FAQSection from "@/components/headcomponent/Faq";
+import Cta from "@/components/Cta/Cta";
+import Setsapart from "@/components/Setsapart/Setsapart";
 
-/* 🚫  Skip SSR for the animated counters to avoid hydration mismatch */
-const StatsSection = dynamic(
-  () => import('@/components/headcomponent/StatsSection'),
-  { ssr: false }
-);
-
-export default function DINCompliance() {
-  /* ----------------------- local state ------------------------ */
-  const [openIdx, setOpenIdx] = useState(null);
-  const toggle = (idx) => setOpenIdx(openIdx === idx ? null : idx);
-
-  /* ------------------------- content -------------------------- */
-  const heading = 'Types of DIN Compliance';
-  const para =
-    'Depending on your status as a director and your previous filings, ' +
-    'DIN compliance can fall under various categories. Below are the common ' +
-    'types of DIR‑3 KYC services. Each type is crucial to ensure seamless ' +
-    'legal and corporate operations.';
-
-  const types = [
-    'First‑time KYC Filing – For directors filing DIR‑3 KYC for the first time.',
-    'Annual DIR‑3 KYC – Mandatory yearly filing for active DIN holders.',
-    'Web‑based KYC – OTP‑based eKYC for those who filed last year.',
-    'DSC Assistance – Support in getting or renewing Digital Signatures.',
-  ];
+export default function DirectorKYC() {
+  const [open, setOpen] = useState(null);
+  const toggle = (idx) => setOpen(open === idx ? null : idx);
 
   const benefits = [
-    {
-      title: 'Avoid DIN Deactivation',
-      description:
-        'Filing DIR‑3 KYC on time ensures your DIN remains active and functional.',
-    },
-    {
-      title: 'Mandatory MCA Compliance',
-      description:
-        'Rule 12A of the Companies (Appointment and Qualification of Directors) Rules, 2018 makes annual filing compulsory.',
-    },
-    {
-      title: 'Avoid ₹5,000 Penalty',
-      description:
-        'Missing the 30 September deadline attracts an immediate ₹5,000 fee.',
-    },
-    {
-      title: 'Maintain Director Validity',
-      description:
-        'An active DIN is required for signing ROC forms, incorporations, board resolutions, etc.',
-    },
-    {
-      title: 'Hassle‑Free Process',
-      description:
-        'With a valid DSC, Aadhaar OTP and basic docs, filing takes under 30 minutes.',
-    },
-    {
-      title: 'Professional Credibility',
-      description:
-        'Timely compliance boosts trust among stakeholders and regulators.',
-    },
-    {
-      title: 'Avoid Business Disruption',
-      description:
-        'DIN deactivation can stall fund‑raising, director appointments and legal contracts.',
-    },
-    {
-      title: 'Applicable to All DIN Holders',
-      description:
-        'Even dormant directors must file DIR‑3 KYC annually to keep the DIN active.',
-    },
+    { title: "Mandatory Compliance", description: "Filing DIN KYC helps directors stay compliant with the Companies Act, 2013." },
+    { title: "Avoid DIN Deactivation", description: "Non-filing leads to deactivation of the Director Identification Number (DIN)." },
+    { title: "Prevents Penalties", description: "Avoids a late fee of ₹5,000 imposed by the Ministry of Corporate Affairs." },
+    { title: "Quick Online Process", description: "Entire process is digital and takes just a few minutes with proper documents." },
+    { title: "Maintains Director’s Status", description: "Necessary to maintain a valid and active status for board participation." },
+    { title: "Single Filing for Multiple Companies", description: "One KYC filing is sufficient even if the director serves multiple companies." }
   ];
 
   const steps = [
-    { icon: FaIdCard,       subtitle: 'Gather KYC Documents',  desc: 'PAN, Aadhaar, Passport (if any), Email, Mobile.' },
-    { icon: FaLaptopCode,   subtitle: 'DSC Validation',        desc: 'Ensure your Digital Signature Certificate is valid.' },
-    { icon: FaFileContract, subtitle: 'Form Preparation',      desc: 'Fill DIR‑3 KYC, OTP verify, digitally sign.' },
-    { icon: FaCertificate,  subtitle: 'MCA Filing',            desc: 'Upload to MCA portal; obtain SRN & confirmation.' },
-    { icon: FaCheckCircle,  subtitle: 'Receive Acknowledgment',desc: 'MCA sends a confirmation email on success.' },
-    { icon: FaLock,         subtitle: 'Stay Compliant Yearly', desc: 'File before 30 September every year.' },
+    { icon: FaIdCard, subtitle: "Gather Basic KYC Documents", desc: "PAN, Aadhaar, Email, Mobile Number, Passport (if applicable)." },
+    { icon: FaLaptopCode, subtitle: "Ensure Active DSC", desc: "Digital Signature Certificate is mandatory to sign and submit the form." },
+    { icon: FaFileContract, subtitle: "Fill DIR-3 KYC Form", desc: "Provide personal details and verify through OTP received on mobile and email." },
+    { icon: FaCertificate, subtitle: "Filing on MCA Portal", desc: "Upload the form to the Ministry of Corporate Affairs website." },
+    { icon: FaCheckCircle, subtitle: "Acknowledgment", desc: "Get SRN and acknowledgment mail from MCA upon successful filing." },
+    { icon: FaLock, subtitle: "Repeat Annually", desc: "File the KYC every year before 30th September to remain compliant." },
   ];
 
   const documents = [
-    { icon: FaIdCard,       title: 'PAN Card',                 desc: 'Identity proof for Indian nationals.' },
-    { icon: FaMapMarkedAlt, title: 'Aadhaar Card',             desc: 'Must be linked to your mobile for OTP.' },
-    { icon: FaUserShield,   title: 'Passport (if any)',        desc: 'For DIN holders of foreign nationality.' },
-    { icon: FaLaptopCode,   title: 'Email & Mobile',           desc: 'For MCA OTP validation.' },
-    { icon: FaKey,          title: 'Digital Signature',        desc: 'To e‑sign the DIR‑3 KYC form.' },
-    { icon: FaFileContract, title: 'Recent Photograph',        desc: 'Passport‑size photo for the form.' },
+    { icon: FaIdCard, title: "PAN Card", desc: "Mandatory identity proof for Indian nationals." },
+    { icon: FaMapMarkedAlt, title: "Aadhaar Card", desc: "Used for address proof and OTP verification. Must be linked with mobile." },
+    { icon: FaUserShield, title: "Passport (if applicable)", desc: "Compulsory for foreign directors." },
+    { icon: FaLaptopCode, title: "Email & Mobile Number", desc: "Personal email ID and mobile number for OTP-based eKYC." },
+    { icon: FaKey, title: "Digital Signature (DSC)", desc: "Active DSC required for digital submission of the form." },
+    { icon: FaFileContract, title: "Recent Passport Photo", desc: "Passport-size photograph to be uploaded along with the form." },
   ];
 
   const faqs = [
-    {
-      q: 'Who must file DIR‑3 KYC?',
-      a: 'Every DIN holder as on 31 March must file, even if the DIN is unused.',
-    },
-    { q: 'Is DSC mandatory?',         a: 'Yes. The form must be DSC‑signed and certified by a CA/CS/CMA.' },
-    { q: 'What if I miss the date?',  a: 'Your DIN gets deactivated and ₹5,000 is payable to reactivate.' },
-    { q: 'Deadline each year?',       a: '30 September for all directors with an active DIN.' },
-    { q: 'I’m not in any company?',   a: 'You still must file if your DIN is active.' },
+    { q: "Who must file DIR-3 KYC?", a: "Any individual who has been allotted a DIN on or before 31st March of the financial year must file the form." },
+    { q: "What if I don't file DIR-3 KYC?", a: "Your DIN will be deactivated, and a penalty of ₹5,000 will be applicable for reactivation." },
+    { q: "Is the filing required every year?", a: "Yes, even if there is no change in details, it must be filed annually before the deadline." },
+    { q: "Can I file KYC without a DSC?", a: "No, DSC is mandatory for filing DIR-3 KYC as per MCA norms." },
+    { q: "How long does it take?", a: "Filing takes only a few hours if all documents and DSC are ready." },
   ];
 
-  const stats = [
-    { icon: FaBuilding,    number: '2,500+', label: 'KYC Filings Handled' },
-    { icon: FaSmile,       number: '1,000+', label: 'DINs Reactivated'    },
-    { icon: FaCheckCircle, number: '100%',   label: 'MCA Approval Rate'   },
+  const filingTypes = [
+    { icon: <FaIdCard className="text-white text-3xl" />, title: "New Director KYC", subtitle: "For individuals who received DIN for the first time." },
+    { icon: <FaUserShield className="text-white text-3xl" />, title: "Annual KYC Filing", subtitle: "Annual compliance for all active DIN holders." },
+    { icon: <FaKey className="text-white text-3xl" />, title: "KYC Web Form", subtitle: "Quick KYC filing through MCA web platform (for repeat filers)." },
+    { icon: <FaLock className="text-white text-3xl" />, title: "DIN Reactivation", subtitle: "Reactivation of DINs deactivated due to non-filing." },
+    { icon: <FaCertificate className="text-white text-3xl" />, title: "Digital Signature Setup", subtitle: "Get DSC assistance if yours has expired." },
+    { icon: <FaBuilding className="text-white text-3xl" />, title: "Bulk KYC Filing", subtitle: "KYC filing for directors in multiple entities." },
   ];
 
-  /* --------------------------- render -------------------------- */
   return (
     <>
-      <section id="din-compliance" className="py-12 ">
-        {/* decorative gradients */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-100/90 via-sky-100/60 to-teal-50" />
-        <div className="absolute inset-0 -z-20 rotate-30 origin-top-left">
-          <div className="hidden md:block h-[120%] w-[140%] bg-gradient-to-tr from-violet-200/40 to-fuchsia-100/70" />
+      <section className="">
+        <div className="absolute inset-0 -z-10 h-auto md:min-h-[670px] bg-gradient-to-br from-blue-100 via-green-100 to-white" />
+        <div className="container mx-auto px-4 py-12">
+          <div className="flex flex-col lg:flex-row items-center gap-10">
+            <div className="flex-1">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-[#1C398E] mb-4">
+                DIN KYC Filing (DIR-3 KYC) for Company Directors
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mb-4">
+                Every director with an active DIN must file DIR-3 KYC annually. We provide expert support to complete your filing swiftly and accurately.
+              </p>
+              <p className="text-lg text-gray-600 max-w-2xl">
+                Whether first-time or repeat compliance, our team ensures hassle-free DIN KYC with timely reminders and complete documentation assistance.
+              </p>
+            </div>
+            <div className="flex-1 w-full max-w-xl">
+              <FormSection />
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div className="container mx-auto p-4">
-          {/* hero */}
-          <div className="text-center mb-14">
-            <h1 className="text-3xl md:text-5xl font-extrabold text-[#1C398E] mb-4 max-w-5xl mx-auto">
-              DIN Compliance (DIR‑3 KYC) Filing for Company Directors
-            </h1>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Ensure your DIN stays active and dodge the ₹5,000 penalty. File your DIR‑3 KYC with&nbsp;
-              <strong>Chintan Agrawal & Co.</strong>
+      <Setsapart />
+
+      <section className="bg-white py-12 px-4 md:px-10 lg:px-20">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1C398E] mb-4">
+              Importance of Filing DIN KYC on Time
+            </h2>
+            <p className="text-gray-700 text-base md:text-lg mb-4">
+              Stay compliant with the law and maintain active DIN status to avoid penalties and disruptions in your company roles.
             </p>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start gap-2">
+                <FaCheckCircle className="text-green-600 mt-1" />
+                <span><strong>Required for All DIN Holders:</strong> Filing is mandatory even if not currently holding a board position.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <FaCheckCircle className="text-green-600 mt-1" />
+                <span><strong>Prevents Legal & Operational Issues:</strong> Active DIN is essential for other company filings and updates.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <FaCheckCircle className="text-green-600 mt-1" />
+                <span><strong>Easy Annual Compliance:</strong> A simple step that protects your professional standing.</span>
+              </li>
+            </ul>
           </div>
-
-          {/* stats – client‑only */}
-          <StatsSection stats={stats} />
-
-          {/* form + service types */}
-          <div className="grid lg:grid-cols-2 gap-10 md:mb-20">
-            <FormSection />
-            <TypesList types={types} head={heading} para={para} />
+          <div>
+            <img
+              src="/navservices/kyc.jpg"
+              alt="DIR-3 KYC process for directors"
+              className="w-full h-auto object-contain rounded-md"
+              loading="lazy"
+            />
           </div>
+        </div>
+      </section>
 
-          {/* benefits */}
-          <div className="bg-gradient-to-br from-[#eef3fb] to-[#fdfdff] md:py-12 mt-3 px-4 rounded-xl">
-            <SectionTitle>Benefits of Filing DIR‑3 KYC</SectionTitle>
-            <BenefitsList benefits={benefits} />
+      <section className="py-12 px-4">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-10">
+            Filing Types for DIR-3 KYC
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {filingTypes.map((type, idx) => (
+              <div key={idx} className="flex flex-col items-center bg-[#E9FBFC] rounded-lg p-4 shadow hover:scale-105 transition-transform">
+                <div className="bg-[#1C398E] rounded-full p-3 mb-4">{type.icon}</div>
+                <h3 className="text-xl font-semibold text-gray-800">{type.title}</h3>
+                <p className="text-gray-600">{type.subtitle}</p>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-br from-[#eef3fb] to-[#fdfdff] md:py-12 px-4 rounded-xl">
+        <SectionTitle>Key Benefits of Filing DIN KYC</SectionTitle>
+        <BenefitsList benefits={benefits} />
+      </section>
+
+      <SectionTitle>Step-by-Step DIN KYC Process</SectionTitle>
+      <ProcessSteps steps={steps} />
 
           {/* why choose us */}
           <div className="my-10 mx-auto max-w-5xl">
@@ -170,19 +167,13 @@ export default function DINCompliance() {
             />
           </div>
 
-          {/* process, docs, faq */}
-          <SectionTitle>DIR‑3 KYC Filing Process</SectionTitle>
-          <ProcessSteps steps={steps} />
 
-          <SectionTitle>Documents Required</SectionTitle>
-          <DocumentsRequired documents={documents} />
+      <SectionTitle>Required Documents for DIN KYC</SectionTitle>
+      <DocumentsRequired documents={documents} />
 
-          <SectionTitle>Frequently Asked Questions</SectionTitle>
-          <FAQSection faqs={faqs} open={openIdx} toggle={toggle} />
-        </div>
-      </section>
+      <SectionTitle>Frequently Asked Questions</SectionTitle>
+      <FAQSection faqs={faqs} open={open} toggle={toggle} />
 
-      {/* global call‑to‑action banner */}
       <Cta />
     </>
   );

@@ -2,17 +2,17 @@
 
 import { useState } from 'react';
 import SectionTitle from "@/components/headcomponent/Sectiontitle";
-import FormSection from "@/components/headcomponent/Formsection";
-import TypesList from "@/components/headcomponent/Typelist";
+
+
 import BenefitsList from "@/components/headcomponent/Benefits";
 import ProcessSteps from "@/components/headcomponent/Process";
 import DocumentsRequired from "@/components/headcomponent/Documents";
 import FAQSection from "@/components/headcomponent/Faq";
 import Cta from "@/components/Cta/Cta";
-import Setsapart from "@/components/Setsapart/Setsapart";
+import Hero from "@/components/headcomponent/Hero/Hero";
 
 import {
-  FaCheckCircle, FaRegBuilding, FaSmile, FaLock,
+  FaCheckCircle, FaLock,
   FaIdCard, FaMapMarkedAlt, FaFileContract,
   FaUniversity, FaUserShield, FaKey, FaLaptopCode, FaCertificate,
   FaExpand, FaBuilding, FaStore, FaHandshake, FaMoneyBillWave, FaChild
@@ -58,46 +58,47 @@ export default function StartupRegistration() {
     { icon: FaKey, title: "Funding Proof (if applicable)", desc: "Details of investment from SEBI-recognized sources." },
   ];
 
-  const faqs = [
-    { q: "Who can register under Startup India?", a: "Any entity registered as Pvt Ltd, LLP, or Partnership Firm under 10 years old and under ₹100 Cr turnover." },
-    { q: "Is there any registration fee?", a: "No, DPIIT recognition is free." },
-    { q: "Is Startup India recognition mandatory?", a: "Not mandatory, but recommended for benefits." },
-    { q: "How long does approval take?", a: "Generally 2–7 working days." },
-    { q: "Can foreign-owned startups apply?", a: "Yes, if registered in India and meeting criteria." },
-  ];
+  const title="Register Your Startup Under Startup India";
+  const description="Get your business officially recognized under the Startup India Scheme with Chintan Agrawal & Co. From documentation to DPIIT certification, we manage everything for you. The Government of India has launched the Startup India initiative to empower budding entrepreneurs with regulatory relaxations, tax exemptions, and access to funding and mentorship..";
+
+ const faqs = [
+  {
+    q: "Who can register under Startup India?",
+    a: "Entities registered as a Private Limited Company, Limited Liability Partnership (LLP), or Partnership Firm in India are eligible. To qualify, the entity must be less than 10 years old and have an annual turnover of less than ₹100 crore in any previous financial year. Additionally, the business should be working toward innovation, development, or improvement of products or services, or have a scalable business model with high potential for employment or wealth creation.",
+  },
+  {
+    q: "Is there any registration fee?",
+    a: "No, there is absolutely no government fee for applying for Startup India recognition or DPIIT (Department for Promotion of Industry and Internal Trade) certification. However, professional assistance for document preparation and submission might involve a service fee depending on your consultant or CA firm.",
+  },
+  {
+    q: "Is Startup India recognition mandatory?",
+    a: "Startup India recognition is not mandatory for operating a business in India. However, obtaining DPIIT recognition is highly recommended because it offers numerous benefits including tax exemption under Section 80 IAC, access to government tenders, fast-track patent filing, easier funding access, and various state-level startup schemes.",
+  },
+  {
+    q: "How long does approval take?",
+    a: "Once all required documents are submitted correctly and the application is complete, DPIIT recognition approval typically takes 2 to 7 working days. In some cases, if additional clarification or documentation is needed, it might take slightly longer.",
+  },
+  {
+    q: "Can foreign-owned startups apply?",
+    a: "Yes, foreign-owned startups are eligible for Startup India recognition provided the business is registered in India as a Private Limited Company, LLP, or Partnership. The entity must also meet the turnover and age criteria. However, eligibility for certain benefits such as tax exemptions may depend on shareholding structure and other regulatory requirements.",
+  },
+];
+
+
+
 
   return (
     <>
       {/* Hero Section */}
-      <section>
-        <div className="absolute inset-0 -z-10 h-auto md:min-h-[660px] bg-gradient-to-br from-blue-100 via-green-100 to-white" />
-        <div className="container mx-auto px-4 py-12">
-          <div className="flex flex-col lg:flex-row items-center gap-10">
-            <div className="flex-1">
-              <h2 className="text-3xl md:text-5xl font-extrabold text-[#1C398E] mb-4">
-                Startup Registration in India
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mb-4">
-                Get your business officially recognized under the <strong>Startup India Scheme</strong> with Chintan Agrawal & Co. From documentation to DPIIT certification, we manage everything for you.
-              </p>
-              <p className="text-lg text-gray-600 max-w-2xl mb-4">
-                The Government of India has launched the Startup India initiative to empower budding entrepreneurs with regulatory relaxations, tax exemptions, and access to funding and mentorship.
-              </p>
-            </div>
-            <div className="flex-1 w-full max-w-xl">
-              <FormSection />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Setsapart />
+     
+    <Hero title={title} description={description}></Hero>
+   
 
       {/* Recognition Info */}
-      <div className="bg-white w-full py-12 px-4 md:px-10 lg:px-20">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+      <div className="bg-white w-full py-10 px-4 md:px-10 lg:px-20">
+        <div className="grid md:grid-cols-2 md:gap-10 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1C398E] mb-4">
+            <h2 className="text-3xl mt-7  md:text-4xl font-extrabold text-[#1C398E] mb-4">
               What is Startup India Recognition?
             </h2>
             <p className="text-gray-700 text-base md:text-lg mb-4">
@@ -119,13 +120,13 @@ export default function StartupRegistration() {
             </ul>
           </div>
           <div>
-            <img src="/navservices/startupp.jpg" alt="Startup India" className="w-full h-auto object-contain" loading="lazy" />
+            <img src="/navservices/startupp.jpg" alt="Startup India" className="w-full mt-3 h-auto object-contain" loading="lazy" />
           </div>
         </div>
       </div>
 
       {/* Types */}
-      <section className="py-12 px-4">
+      <section className="md:py-12  py-5 px-4">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-10">
             Types of Startups

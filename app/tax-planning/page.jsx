@@ -190,7 +190,7 @@ const steps = [
       <Types filingTypes={filingTypes} heading={heading} />
 
       {/* Benefits */}
-      <section className="bg-gradient-to-br from-[#eef3fb] to-[#fdfdff] md:py-12 px-4 rounded-xl">
+      <section className="bg-gradient-to-br from-[#eef3fb] to-[#fdfdff] md:py-12 mt-4 px-4 rounded-xl">
         <SectionTitle>Benefits of Strategic Tax Planning</SectionTitle>
         <BenefitsList benefits={benefits} />
       </section>

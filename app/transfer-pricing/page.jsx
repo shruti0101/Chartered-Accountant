@@ -86,7 +86,7 @@ export default function TransferPricingServices() {
 
   return (
     <>
-      <section className="">
+      <section className="py-12">
         <div className="absolute inset-0 -z-10 h-auto md:min-h-[675px] bg-gradient-to-br from-blue-100 via-green-100 to-white" />
         <div className="container mx-auto px-4 md:py-12">
           <div className="flex flex-col lg:flex-row items-center gap-10">
@@ -116,9 +116,9 @@ export default function TransferPricingServices() {
       
 
       <div className=" w-full  px-4 md:px-10 lg:px-20">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid md:grid-cols-2 md:gap-10 items-center">
           <div>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-[#1C398E] mb-4 md:mb-10">
+            <h2 className="text-3xl mt-8 md:text-5xl font-extrabold text-[#1C398E] mb-4 md:mb-10">
               Why Transfer Pricing Compliance Matters
             </h2>
             <p className="text-gray-700 text-base md:text-lg mb-4">
@@ -159,7 +159,7 @@ export default function TransferPricingServices() {
       <Types filingTypes={filingTypes} heading={heading} />
 
 
-   <section className="bg-[#f9f9f9] text-gray-800 px-4 md:py-12">
+   <section className="bg-[#f9f9f9] text-gray-800 px-4 py-8 md:py-12">
   <div className="mx-auto max-w-6xl">
     {/* heading */}
     <h2 className="text-center capitalize text-3xl sm:text-4xl font-bold text-[#1a3e72]">

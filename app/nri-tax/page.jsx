@@ -6,16 +6,14 @@ import {
   FaMapMarkedAlt,
   FaRegBuilding,
   FaChartPie,
-  FaSearch,
   FaLightbulb,
   FaFileContract,
   FaUniversity,
-  FaUserShield,
+  
   FaKey,
   FaBuilding,
   FaStore,
   FaHandshake,
-  FaClipboardList,
 } from "react-icons/fa";
 
 import SectionTitle from "@/components/headcomponent/Sectiontitle";
@@ -27,7 +25,7 @@ import Cta from "@/components/Cta/Cta";
 import Setsapart from "@/components/Setsapart/Setsapart";
 import Types from "@/components/headcomponent/Types";
 
-export default function ManagementAudit() {
+export default function NriTaxFilingPage() {
   const [open, setOpen] = useState(null);
   const toggle = (idx) => setOpen(open === idx ? null : idx);
 
@@ -76,22 +74,34 @@ export default function ManagementAudit() {
 
   const filingTypes = [
     {
-      icon: <FaBuilding className="text-white text-3xl" />, title: "NRO Income Filing", subtitle: "ITR filing for interest, rent, capital gains earned in India."
+      icon:  <FaBuilding className="text-3xl text-white" />,
+      title: "NRO Income Filing",
+      subtitle: "ITR filing for interest, rent, capital gains earned in India.",
     },
     {
-      icon: <FaStore className="text-white text-3xl" />, title: "DTAA-Based Filings", subtitle: "Tax treaty benefit application and reduced TDS." 
+      icon: <FaStore className="text-white text-3xl"/>,
+      title: "DTAA-Based Filings",
+      subtitle: "Tax treaty benefit application and reduced TDS.",
     },
     {
-      icon: <FaUniversity className="text-white text-3xl" />, title: "Repatriation Support", subtitle: "Help with documentation for fund repatriation abroad."
+      icon: <FaUniversity className="text-white text-3xl"/>,
+      title: "Repatriation Support",
+      subtitle: "Help with documentation for fund repatriation abroad.",
     },
     {
-      icon: <FaHandshake className="text-white text-3xl" />, title: "Capital Gains Reporting", subtitle: "Property, shares or MF sale disclosure with indexation."
+      icon: <FaHandshake className="text-white text-3xl"/>,
+      title: "Capital Gains Reporting",
+      subtitle: "Property, shares or MF sale disclosure with indexation.",
     },
     {
-      icon: <FaKey className="text-white text-3xl" />, title: "Schedule FA/TR Assistance", subtitle: "Support with global asset and tax disclosures."
+      icon: <FaKey className="text-white text-3xl"/>,
+      title: "Schedule FA/TR Assistance",
+      subtitle: "Support with global asset and tax disclosures.",
     },
     {
-      icon: <FaChartPie className="text-white text-3xl" />, title: "Refund Claim Services", subtitle: "Claim excess TDS paid on Indian income."
+      icon: <FaChartPie className="text-white text-3xl"/>,
+      title: "Refund Claim Services",
+      subtitle: "Claim excess TDS paid on Indian income.",
     },
   ];
 
@@ -157,24 +167,13 @@ export default function ManagementAudit() {
       </div>
 
       <Types filingTypes={filingTypes} heading={heading} />
+      
       <section className="bg-gradient-to-br from-[#eef3fb] to-[#fdfdff] md:py-12 px-4 rounded-xl">
         <SectionTitle>Why Choose Us for NRI ITR Filing</SectionTitle>
         <BenefitsList benefits={benefits} />
       </section>
 
-      <div className="mx-auto max-w-7xl ">
-        <h3 className="text-2xl md:text-4xl mt-5 capitalize font-bold text-center text-blue-900 ">
-          NRI Tax Filing Process
-        </h3>
-        
-     <img
-  src="/navservices/nri (2).png"
-  alt="NRI Tax Filing Process"
-  className="w-full h-auto object-contain rounded-md"
-  loading="lazy"
-/>
-
-      </div>
+      
 
       <SectionTitle>Documents Required</SectionTitle>
       <DocumentsRequired documents={documents} />

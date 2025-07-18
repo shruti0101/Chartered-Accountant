@@ -65,7 +65,7 @@ const servicesLinks = [
     sub: [
       { label: "Transfer Pricing", href: "/transfer-pricing" },
       { label: "DTAA Advisory", href: "/dtaa-advisory" },
-      { label: "NRI Tax Filing", href: "/nri-tax-filing" },
+      { label: "NRI Tax Filing", href: "/nri-tax" },
     ],
   },
   {
@@ -92,16 +92,28 @@ const Navbar = ({ className = "" }) => {
   return (
     <nav className="py-3 bg-background/70 border-b-white !sticky !top-0 backdrop-blur z-50 shadow-xl">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className={`flex items-center ml-1 gap-2 group py-3 ${className}`}>
-          <span className="leading-none">
-            <h1 className="text-lg md:text-xl font-bold tracking-tight text-[#004AAD]">
-              Chintan Agrawal <span className="text-green-600">& Co</span>
-            </h1>
-            <p className="text-[10px] md:text-xs uppercase tracking-wider text-gray-600">
-              Chartered Accountants
-            </p>
-          </span>
-        </Link>
+
+        {/* Logo and Title */}
+       {/* Logo and Title Combined */}
+<Link href="/" className={`flex items-center  group ${className}`}>
+  <img
+    src="/logo.png"
+    alt="Chintan Agrawal & Co. Logo"
+    className="w-15 h-16 object-contain" // Adjust size if needed
+    loading="lazy"
+  />
+  <span className="leading-none">
+    <h1 className="text-lg md:text-md font-bold tracking-tight text-[#004AAD]">
+      Chintan Agrawal <span className="text-green-600">& Co</span>
+    </h1>
+    <p className="text-[8px] md:text-xs uppercase tracking-wider text-gray-600">
+      Chartered Accountants
+
+    </p>
+    <p className="text-[10px] italic tracking-wider text-gray-600">Towards Excellence</p>
+  </span>
+</Link>
+
 
         <div className="hidden md:flex space-x-5 items-center text-base font-medium text-lg font-bold relative">
           {[
@@ -240,9 +252,8 @@ const Navbar = ({ className = "" }) => {
   );
 };
 
-/* ------------------------------------------------------------------ */
-/* Updated MobileDropdown – closes drawer on sub‑link click           */
-/* ------------------------------------------------------------------ */
+
+
 const MobileDropdown = ({ title, links, onNavigate }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [expanded, setExpanded] = useState(null);
@@ -264,7 +275,7 @@ const MobileDropdown = ({ title, links, onNavigate }) => {
         />
       </button>
 
-      {drawerOpen && (
+{drawerOpen && (
         <div className="mt-2 pl-2 space-y-2">
           {links.map((item) => (
             <div key={item.label}>

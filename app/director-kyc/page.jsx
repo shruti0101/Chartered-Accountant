@@ -36,7 +36,7 @@ export default function DirectorKYC() {
     { icon: FaCertificate, subtitle: "MCA Portal Filing", desc: "Upload form with DSC on MCA portal and obtain SRN/Acknowledgment." },
     { icon: FaCheckCircle, subtitle: "Receive Confirmation", desc: "Receive MCA confirmation mail with successful filing status." },
     { icon: FaLock, subtitle: "Stay Compliant Yearly", desc: "Ensure annual eKYC is completed before every 30th September." },
-    { icon: FaUniversity, subtitle: "Track Filing & Notices", desc: "We monitor MCA filings and alert you on future compliance or MCA notices." }
+  
   ];
 
   const documents = [

@@ -18,7 +18,7 @@ const slides = [
     lines: ["Trusted by Businesses Across India"],
     description:
       "From GST registration to corporate filings, we simplify tax processes so you can focus on scaling your business.",
-    cta: { label: "Request Consultation", href: "/contact" },
+    cta: { label: "Request Consultation", href: "/contact-us" },
   },
   {
     image: "/home1.jpg",
@@ -28,7 +28,7 @@ const slides = [
     ],
     description:
       "We provide a comprehensive range of financial and tax services tailored for individuals, businesses, and corporations.",
-    cta: { label: "Book a Consultation", href: "/contact" },
+    cta: { label: "Book a Consultation", href: "/contact-us" },
   },
   {
     image: "/home3.jpg",
@@ -36,7 +36,7 @@ const slides = [
     lines: ["Chartered Accountants You Can Trust for Clarity & Compliance"],
     description:
       "Our expert team ensures timely compliance, strategic tax planning, and proactive advisory for sustainable business growth.",
-    cta: { label: "Contact With Us", href: "/contact" },
+    cta: { label: "Contact With Us", href: "/contact-us" },
   },
 ];
 

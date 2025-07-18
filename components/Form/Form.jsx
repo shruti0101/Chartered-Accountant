@@ -93,7 +93,7 @@ export default function ContactSection() {
               <div>
                 <p className="text-gray-500 text-sm font-semibold">EMAIL</p>
                 <p className="text-gray-800 font-medium">
-                  agarwalchintan27@gmail.com
+                  agrawalchintan27@gmail.com
                 </p>
                 <p className="text-gray-800 font-medium">
                   info@cachintanagrawal.com
@@ -117,21 +117,9 @@ export default function ContactSection() {
           {/* Social Icons */}
           <div className="mt-10 flex gap-4">
             {[
-              {
-                icon: <FaFacebookF />,
-                link: "https://facebook.com",
-                bg: "bg-blue-600",
-              },
-              {
-                icon: <FaInstagram />,
-                link: "https://instagram.com",
-                bg: "bg-gradient-to-tr from-pink-500 to-yellow-500",
-              },
-              {
-                icon: <FaLinkedinIn />,
-                link: "https://linkedin.com",
-                bg: "bg-[#0A66C2]",
-              },
+            
+            
+            
               {
                 icon: <FaWhatsapp />,
                 link: "https://wa.me/919818111206",

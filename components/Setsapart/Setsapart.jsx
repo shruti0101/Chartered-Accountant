@@ -7,19 +7,19 @@ const features = [
     label: "What Sets Us Apart",
   },
   {
-    icon: <FaUsers className="text-[#1C398E] text-2xl" />,
+    icon: <FaUsers className="text-[#1C398E] md:text-2xl" />,
     label: <span><span className="text-orange-500 font-bold">500+</span> Professionals Network</span>,
   },
   {
-    icon: <FaMapMarkedAlt className="text-[#1C398E] text-2xl" />,
+    icon: <FaMapMarkedAlt className="text-[#1C398E] md:text-2xl" />,
     label: <span><span className="text-orange-500 font-bold">5000+</span> All India Clients</span>,
   },
   {
-    icon: <FaUserPlus className="text-[#1C398E] text-2xl" />,
+    icon: <FaUserPlus className="text-[#1C398E] md:text-2xl" />,
     label: <span><span className="text-orange-500 font-bold">2000+</span> Monthly Clients Onboarded</span>,
   },
   {
-    icon: <FaStar className="text-[#1C398E] text-2xl" />,
+    icon: <FaStar className="text-[#1C398E] md:text-2xl" />,
     label: <span><span className="text-orange-500 font-bold">3500+</span> Trusted Ratings</span>,
   },
 ];

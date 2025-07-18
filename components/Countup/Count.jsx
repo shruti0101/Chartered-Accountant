@@ -6,33 +6,33 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import VanillaTilt from "vanilla-tilt";
 import {
-  FaUserTie,
-  FaFileInvoice,
-  FaCheckCircle,
+  FaMapMarkedAlt,
+  FaUsers,
+  FaStar,
   FaBuilding,
 } from "react-icons/fa";
 import statsImage from "@/public/who.jpg";
 
 const stats = [
   {
-    icon: <FaUserTie className="text-sky-500 text-4xl mb-2" />,
-    label: "Trusted Clients",
-    value: 760,
+    icon: <FaMapMarkedAlt className="text-sky-500 text-4xl mb-2" />,
+    label: "All India Clients ",
+    value: 5000,
   },
   {
-    icon: <FaFileInvoice className="text-sky-500 text-4xl mb-2" />,
-    label: "Successful Filings",
-    value: 355,
+    icon: <FaUsers className="text-sky-500 text-4xl mb-2" />,
+    label: " Professionals Network",
+    value: 500,
   },
   {
-    icon: <FaCheckCircle className="text-sky-500 text-4xl mb-2" />,
-    label: "Audits Completed",
-    value: 617,
+    icon: <FaStar className="text-sky-500 text-4xl mb-2" />,
+    label: "Monthly Clients Onboarded ",
+    value: 2000,
   },
   {
     icon: <FaBuilding className="text-sky-500 text-4xl mb-2" />,
-    label: "Entities Registered",
-    value: 722,
+    label: "Trusted Ratings",
+    value: 3500,
   },
 ];
 

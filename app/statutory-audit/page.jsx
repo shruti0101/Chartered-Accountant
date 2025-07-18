@@ -1,5 +1,6 @@
 "use client";
 
+
 import { useState } from "react";
 import {
   FaCheckCircle,  FaCertificate, FaClipboardList, FaShieldAlt,
@@ -10,7 +11,7 @@ import {
 import SectionTitle       from "@/components/headcomponent/Sectiontitle";
 import FormSection        from "@/components/headcomponent/Formsection";
 import BenefitsList       from "@/components/headcomponent/Benefits";
-import ProcessSteps       from "@/components/headcomponent/Process";
+
 import DocumentsRequired  from "@/components/headcomponent/Documents";
 import FAQSection         from "@/components/headcomponent/Faq";
 import Cta                from "@/components/Cta/Cta";
@@ -140,6 +141,9 @@ export default function StatutoryAudit() {
       {/* Audit coverage types */}
       <Types filingTypes={filingTypes} heading={heading} />
 
+
+
+
       {/* Benefits */}
       <section className="bg-gradient-to-br from-[#eef3fb] to-[#fdfdff] md:py-12 px-4 rounded-xl">
         <SectionTitle>Benefits of a Statutory Audit</SectionTitle>
@@ -147,8 +151,36 @@ export default function StatutoryAudit() {
       </section>
 
       {/* Process */}
-      <SectionTitle>Our Statutory Audit Methodology</SectionTitle>
-      <ProcessSteps steps={steps} />
+       <section className="bg-white py-16 px-4 md:px-8 lg:px-20">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-[#1C398E] mb-6">
+          Statutory Audit Process
+        </h2>
+        <p className="text-gray-600 md:text-lg mb-10 max-w-3xl mx-auto">
+          The statutory audit process ensures compliance with regulatory standards and offers valuable insights into your financial practices. Here's a step-by-step breakdown of how it works:
+        </p>
+
+        <div className="flex justify-center mb-10">
+          <img
+            src="/statutory-process.png"
+            alt="Statutory Audit Process"
+            width={600}
+            height={600}
+            className="w-full max-w-xl object-contain"
+          />
+        </div>
+
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left text-gray-700 text-base md:text-lg">
+          <li><span className="font-semibold text-[#1C398E]">1. Appointment:</span> The auditor is formally appointed by the organization.</li>
+          <li><span className="font-semibold text-[#1C398E]">2. Acceptance of Engagement:</span> The auditor reviews and accepts the terms of the audit engagement.</li>
+          <li><span className="font-semibold text-[#1C398E]">3. Pre-Audit Meeting:</span> Initial discussion with management to understand the scope and expectations.</li>
+          <li><span className="font-semibold text-[#1C398E]">4. Audit Planning:</span> Development of a detailed audit plan including risk assessment and timeline.</li>
+          <li><span className="font-semibold text-[#1C398E]">5. Audit Execution:</span> Performing audit procedures such as testing and data verification.</li>
+          <li><span className="font-semibold text-[#1C398E]">6. Audit Report:</span> Drafting and finalizing the audit report with findings and recommendations.</li>
+          <li><span className="font-semibold text-[#1C398E]">7. Follow-up:</span> Reviewing implementation of audit recommendations and compliance improvements.</li>
+        </ul>
+      </div>
+    </section>
 
       {/* Documents */}
       <SectionTitle>Documents & Data Required</SectionTitle>

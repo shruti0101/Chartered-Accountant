@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "Do you assist with company incorporation and ROC compliances?",
-    a: "Yes. We provide end-to-end support for registering your company, including selecting the right entity type, drafting MOA/AOA, filing SPICe+ forms, obtaining DIN & DSC, and post-incorporation compliances like PAN/TAN/GST registrations, opening bank accounts, and filing annual returns with the Registrar of Companies."
+    a: "Yes. We provide end-to-end support for registering your company, and handling post-incorporation compliances like various ROC forms, including annual filings with registrar of companies."
   },
   {
     q: "What is the difference between tax audit and statutory audit?",

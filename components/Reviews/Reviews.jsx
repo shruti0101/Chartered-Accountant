@@ -119,54 +119,47 @@ export default function ClientReviews() {
       </div>
 
       {/* running slider */}
-      <div className="w-full">
-         <Swiper
-  modules={[Autoplay, FreeMode]}
-  slidesPerView="auto"
-  spaceBetween={30}
-  loop={true}
-  freeMode={{
-    enabled: true,
-    momentum: false,
-  }}
-  speed={6000}
-  autoplay={{
-    delay: 0,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: false,
-  }}
->
-
-        {reviews.map(({ name, designation, review }, i) => (
-  <SwiperSlide key={i} className="!w-[330px] md:!w-[410px]">
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 h-full flex flex-col justify-between text-center min-h-[320px]">
-      
-      {/* Review Text */}
-      <p className="text-gray-700 text-sm md:text-md italic mb-6 leading-relaxed">
-        “{review}”
-      </p>
-
-      {/* Star Rating */}
-      <div className="flex justify-center gap-1 mb-4 text-yellow-400">
-        {[...Array(5)].map((_, idx) => (
-          <FaStar key={idx} />
-        ))}
-      </div>
-
-      {/* Name & Designation */}
-      <div className="mt-auto">
-        <h4 className="text-base md:text-xl mb-4 font-semibold text-gray-800">{name}</h4>
-        <p className="text-xs md:text-[18px] text-gray-500">{designation}</p>
-      </div>
-
-    </div>
-  </SwiperSlide>
-))}
-
-        
+  <div className="w-full">
+        <Swiper
+          modules={[Autoplay, FreeMode]}
+          slidesPerView="auto"
+          spaceBetween={30}
+          freeMode={{
+            enabled: true,
+            momentum: false,
+          }}
+          speed={7000}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+          }}
+          loop={false} // Remove loop for smooth marquee
+        >
+          {/* Duplicate slides for seamless effect */}
+          {[...reviews, ...reviews].map(({ name, designation, review }, i) => (
+            <SwiperSlide key={i} className="!w-[330px] md:!w-[410px]">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 h-full flex flex-col justify-between text-center min-h-[320px]">
+                {/* Review Text */}
+                <p className="text-gray-700 text-sm md:text-md italic mb-6 leading-relaxed">
+                  “{review}”
+                </p>
+                {/* Star Rating */}
+                <div className="flex justify-center gap-1 mb-4 text-yellow-400">
+                  {[...Array(5)].map((_, idx) => (
+                    <FaStar key={idx} />
+                  ))}
+                </div>
+                {/* Name & Designation */}
+                <div className="mt-auto">
+                  <h4 className="text-base md:text-xl mb-4 font-semibold text-gray-800">{name}</h4>
+                  <p className="text-xs md:text-[18px] text-gray-500">{designation}</p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
-
       {/* linear timing‑function for smooth marquee feel */}
       <style jsx global>{`
         .swiper-wrapper {

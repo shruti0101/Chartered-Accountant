@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import Image from "next/image";
 import lawyersImage from "@/public/whoweare.jpg";
 import rocket from "@/public/rocket-image.png";
@@ -79,16 +79,19 @@ const Whoweare = () => {
              
 
               <li>  ➜ GST Advisory and Filing</li>
-              <li>  ➜ Intellectual Property Protection</li>
+            
               <li>  ➜ Auditing & Compliance Solutions</li>
               <li>  ➜ internation taxation</li>
               <li>  ➜ book keeping and Accounting services </li>
               <li>  ➜ business setup solution </li>
-              <li>  ➜ ROC Compliance</li>
+              <li>  ➜ ROC related services</li>
             </ul>
           </div>
 
           <div className="flex justify-center md:justify-start mt-2">
+
+            <Link href="/contact-us">
+            
             <button className="group relative inline-flex items-center overflow-hidden cursor-pointer rounded-full bg-sky-500 px-4 py-3 font-semibold text-white shadow-md transition-all duration-300 hover:bg-sky-600 hover:scale-105">
               <span className="mr-1 mx-auto">Know More</span>
               <svg
@@ -105,6 +108,7 @@ const Whoweare = () => {
                 />
               </svg>
             </button>
+            </Link>
           </div>
         </div>
 

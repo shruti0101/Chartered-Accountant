@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 
 import SectionTitle from "@/components/headcomponent/Sectiontitle";
-import StatsSection from "@/components/headcomponent/StatsSection";
+
 import FormSection from "@/components/headcomponent/Formsection";
 import TypesList from "@/components/headcomponent/Typelist";
 import BenefitsList from "@/components/headcomponent/Benefits";
@@ -29,34 +29,40 @@ export default function GstRegistration() {
 
 const head="Types Of GST Registration"
 
-  const para="jhfyubg"
+  const para="Businesses in India must choose the appropriate type of GST registration based on their turnover, operations, and nature of supply.Selecting the correct category ensures compliance and helps avoid penalties or mismatches in tax filings."
 
-  const benefits = [
-    {
-      title: "Legal Compliance",
-      description: "Registering under GST ensures compliance with tax laws, avoiding penalties and legal issues.",
-    },
-    {
-      title: "Input Tax Credit",
-      description: "Claim input tax credit on GST paid for business use, reducing overall tax liability.",
-    },
-    {
-      title: "Interstate Sales",
-      description: "Enables businesses to operate and sell across state borders without restrictions.",
-    },
-    {
-      title: "Market Competitiveness",
-      description: "Builds credibility with customers and vendors by being a compliant entity.",
-    },
-    {
-      title: "Access to Government Contracts",
-      description: "Many government tenders require GST registration, unlocking new opportunities.",
-    },
-    {
-      title: "Smooth Business Operations",
-      description: "Simplifies tax returns, invoicing, and ongoing GST compliance.",
-    },
-  ];
+const benefits = [
+  {
+    title: "Legal Compliance",
+    description:
+      "Registering under GST ensures your business complies with India’s indirect tax laws. It helps you avoid penalties, interest charges, and legal complications, while also maintaining transparency in all financial dealings.",
+  },
+  {
+    title: "Input Tax Credit",
+    description:
+      "GST-registered businesses can claim credit for the tax paid on purchases used for business operations. This reduces the overall tax burden and prevents tax cascading, making your operations more cost-efficient.",
+  },
+  {
+    title: "Interstate Sales",
+    description:
+      "GST registration allows businesses to freely sell goods and services across state lines in India without needing multiple tax registrations. This is especially beneficial for eCommerce sellers, distributors, and manufacturers.",
+  },
+  {
+    title: "Market Competitiveness",
+    description:
+      "Being GST-registered adds to your credibility and trustworthiness in the eyes of vendors, customers, and large organizations. It positions your business as legally compliant and professionally managed.",
+  },
+  {
+    title: "Access to Government Contracts",
+    description:
+      "Many government and PSU tenders require valid GST registration as a mandatory pre-condition. Being registered opens up new business avenues in public sector projects and institutional contracts.",
+  },
+  {
+    title: "Smooth Business Operations",
+    description:
+      "GST simplifies tax structures by unifying multiple indirect taxes into one. It streamlines processes like invoicing, tax return filings, and reconciliation—ensuring smoother business workflows and easier compliance.",
+  },
+];
 
   const steps = [
     {
@@ -159,34 +165,38 @@ const head="Types Of GST Registration"
 
   return (
     <>
-      {/* Hero + Stats Section */}
-      <section id="gst-services" className="py-12 md:py-25 ">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-100/90 via-sky-100/60 to-teal-50" />
-        <div className="absolute inset-0 -z-20 rotate-30 origin-top-left hidden md:block">
-          <div className="h-[120%] w-[140%] bg-gradient-to-tr from-violet-200/40 to-fuchsia-100/70" />
-        </div>
+ {/* Hero Section */}
+ <section>
+  <div className="absolute inset-0 -z-10 h-auto md:min-h-[680px] h-auto bg-gradient-to-br from-blue-100 via-green-100 to-white" />
+  <div className="container mx-auto px-4 py-12">
+    <div className="flex flex-col lg:flex-row items-center gap-10">
+      {/* Left Side: Content */}
+      <div className="flex-1">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-[#1C398E] mb-4 pt-5">
+          Hassle-Free GST Registration Services
+        </h2>
+        <p className="text-lg text-gray-600 max-w-2xl mb-4">
+          Get your business GST-compliant with <strong>Chintan Agrawal & Co.</strong>—a trusted name in taxation and regulatory services. Whether you're a small trader, eCommerce seller, freelancer, or service provider, we handle the entire registration process from start to finish with speed, accuracy, and transparency.
+        </p>
+        <p className="text-lg text-gray-600 max-w-2xl mb-4">
+          Our experts ensure proper documentation, timely application filing, and follow-up with GST authorities so you can focus on your business without worrying about compliance headaches. We also guide you on post-registration requirements like invoicing formats, return filings, and input tax credits.
+        </p>
+        <p className="text-lg text-gray-600 max-w-2xl">
+          Start your GST journey the right way—professional, compliant, and stress-free.
+        </p>
+      </div>
 
-        <div className="container mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-[#1C398E] mb-4">
-              Simplified GST Registration with Experts
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              At <strong>Chintan Agrawal & Co.</strong>, we simplify GST compliance so you can focus on business growth.
-            </p>
-          </div>
+      {/* Right Side: Form */}
+      <div className="flex-1 w-full max-w-xl">
+        <FormSection />
+      </div>
+    </div>
+  </div>
+</section>
 
-          <StatsSection stats={gstStats} />
-
-          <div className="grid lg:grid-cols-2 gap-10  mt-12">
-            <FormSection />
-            <TypesList types={types} para={para}  head={head}/>
-          </div>
-        </div>
-      </section>
 
       {/* What is GST Section */}
-      <section className="bg-white w-full py-12 px-4 md:px-10 lg:px-20 mb-14">
+      <section className="bg-white w-full md:py-12 px-4 md:px-10 lg:px-20 md:mb-14">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#1C398E] mb-4">
@@ -232,10 +242,20 @@ const head="Types Of GST Registration"
         </div>
       </section>
 
+      
+
       {/* Benefits */}
       <section className="bg-gradient-to-br from-[#eef3fb] to-[#fdfdff] md:py-12 px-4 rounded-xl">
         <SectionTitle>Benefits of Registering under GST</SectionTitle>
         <BenefitsList benefits={benefits} />
+      </section>
+
+      <section className="max-w-7xl text-center">
+       
+        <h2 className="text-[#1C398E] mb-12 text-center text-4xl font-bold capitalize">Our GST compliance services include:</h2>
+         
+         <img src="/GST-Compliance-info.png" alt="" className="max-w-3xl mx-auto" />
+      
       </section>
 
       {/* Process */}

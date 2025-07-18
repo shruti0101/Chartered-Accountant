@@ -10,7 +10,7 @@ import {
 import SectionTitle       from "@/components/headcomponent/Sectiontitle";
 import FormSection        from "@/components/headcomponent/Formsection";
 import BenefitsList       from "@/components/headcomponent/Benefits";
-import ProcessSteps       from "@/components/headcomponent/Process";
+// import ProcessSteps       from "@/components/headcomponent/Process";
 import DocumentsRequired  from "@/components/headcomponent/Documents";
 import FAQSection         from "@/components/headcomponent/Faq";
 import Cta                from "@/components/Cta/Cta";
@@ -167,8 +167,60 @@ export default function InternalAudit() {
       </section>
 
       {/* Process */}
-      <SectionTitle>Our Internal Audit Methodology</SectionTitle>
-      <ProcessSteps steps={steps} />
+   <section className="bg-white py-16 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-[#1C398E]">
+          Our Internal Audit Process Includes the Following Steps:
+        </h2>
+
+        {/* 3 column grid layout: left text - center image - right text */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+          {/* LEFT TEXT */}
+          <div className="space-y-10">
+            <div>
+              <h3 className="text-xl font-semibold text-[#131A46] uppercase mb-2">Follow-up</h3>
+              <p className="text-gray-700 text-base">
+                We ensure timely implementation of all audit recommendations. Follow-up is a key phase to confirm corrective actions have been taken and internal controls are functioning effectively post-audit.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-[#131A46] uppercase mb-2">Reporting</h3>
+              <p className="text-gray-700 text-base">
+                A comprehensive audit report is prepared highlighting observations, control weaknesses, and actionable insights. Our reports are concise, easy to interpret, and customized to client expectations.
+              </p>
+            </div>
+          </div>
+
+          {/* CENTER IMAGE */}
+          <div className="flex justify-center">
+            <img
+              src="/internal-audit-process.png"
+              alt="Internal Audit Cycle"
+              width={500}
+              height={500}
+              className="w-full max-w-sm mx-auto"
+            />
+          </div>
+
+          {/* RIGHT TEXT */}
+          <div className="space-y-10">
+            <div>
+              <h3 className="text-xl font-semibold text-[#131A46] uppercase mb-2">Planning</h3>
+              <p className="text-gray-700 text-base">
+                We initiate with understanding the client's business environment, identifying key risk areas, and defining the scope. Our audit plan is structured to ensure thorough coverage and minimal disruption.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-[#131A46] uppercase mb-2">Fieldwork</h3>
+              <p className="text-gray-700 text-base">
+                Our team conducts in-depth testing, document reviews, and interviews. This phase helps us gather solid evidence to assess internal controls and compliance with applicable policies and regulations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
       {/* Documents */}
       <SectionTitle>Documents & Information Required</SectionTitle>
