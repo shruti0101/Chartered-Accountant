@@ -1,7 +1,7 @@
 import User from "@/models/userModel";
-import {  NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
-import {connect} from "@/Database/Db"
+import { connect } from "@/Database/Db"
 import jwt from "jsonwebtoken";
 
 connect();
@@ -23,7 +23,7 @@ export async function POST(req) {
             username: user.username,
             email: user.email
         }
-        const token =  jwt.sign(tokenData, process.env.TOKEN_SECRET, { expiresIn: "1d" });
+        const token = jwt.sign(tokenData, process.env.TOKEN_SECRET, { expiresIn: "1d" });
         const res = NextResponse.json(
             {
                 message: `Welcome back ${user.username}`,
@@ -32,11 +32,10 @@ export async function POST(req) {
             { status: 200 }
         );
 
-        res.cookies.set("token", token, {httpOnly:true});
+        res.cookies.set("token", token, { httpOnly: true, path: "/" });
 
         return res;
     } catch (error) {
-        return NextResponse.json({error:error.message}, { status: 500 });
+        return NextResponse.json({ error: error.message }, { status: 500 });
     }
-
 }
